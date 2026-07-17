@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Allan Maisak · Coaching Confiance · Arrête de courir après une copine</title>
+<meta name="description" content="Tu veux une copine, des résultats avec les femmes ? Le vrai blocage, c'est pas ton game : c'est le besoin de validation. 6 mois de coaching 1-à-1 pour le régler. La rencontre vient en bonus. Premier appel offert.">
+<meta name="theme-color" content="#0a0a10">
+<link rel="canonical" href="https://allanm-coder.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Arrête de courir après. C'est comme ça que tu l'auras.">
+<meta property="og:description" content="6 mois de coaching 1-à-1 pour régler le besoin de validation qui fait fuir ce que tu veux. Premier appel offert, par Allan Maisak.">
+<meta property="og:url" content="https://allanm-coder.github.io/">
+<meta property="og:image" content="https://allanm-coder.github.io/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0a10'/%3E%3Ctext x='32' y='44' font-family='Arial,sans-serif' font-size='30' font-weight='800' fill='%23818cf8' text-anchor='middle'%3EAM%3C/text%3E%3C/svg%3E">
+<noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a10;
+  --bg-soft:#101019;
+  --surface:#14141f;
+  --line:rgba(129,140,248,.14);
+  --line-soft:rgba(255,255,255,.07);
+  --text:#e7e7ef;
+  --text-dim:#9b9bb0;
+  --accent:#818cf8;
+  --accent-strong:#6366f1;
+  --accent-soft:rgba(99,102,241,.12);
+  --radius:16px;
+  --font:'Outfit',system-ui,-apple-system,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font);
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:var(--accent-strong);color:#fff}
+img{max-width:100%;display:block}
+a{color:var(--accent);text-decoration:none}
+strong{color:var(--text);font-weight:600}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.narrow{max-width:720px;margin:0 auto}
+
+/* ---------- glow ambiance ---------- */
+.glow{
+  position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(600px 400px at 75% -5%, rgba(99,102,241,.22), transparent 60%),
+    radial-gradient(900px 600px at -10% 40%, rgba(99,102,241,.08), transparent 60%),
+    radial-gradient(700px 500px at 110% 85%, rgba(129,140,248,.10), transparent 60%);
+}
+
+/* ---------- nav ---------- */
+nav{
+  position:sticky;top:0;z-index:50;height:64px;
+  display:flex;align-items:center;
+  background:rgba(10,10,16,.72);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line-soft);
+}
+nav .wrap{width:100%;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:800;letter-spacing:.06em;font-size:15px;color:var(--text)}
+.brand em{font-style:normal;color:var(--accent)}
+.nav-cta{
+  font-size:14px;font-weight:600;padding:9px 18px;border-radius:999px;
+  background:var(--accent-strong);color:#fff;
+  transition:transform .2s ease,box-shadow .2s ease;
+  box-shadow:0 0 0 1px rgba(129,140,248,.35),0 4px 18px rgba(99,102,241,.35);
+}
+.nav-cta:hover{transform:translateY(-1px)}
+.nav-cta:active{transform:scale(.98)}
+
+/* ---------- hero ---------- */
+.hero{min-height:calc(100dvh - 64px);display:flex;align-items:center;padding:48px 0 64px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.eyebrow{
+  font-family:var(--mono);font-size:12px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:20px;
+}
+h1{
+  font-size:clamp(2.2rem,4.6vw,3.6rem);
+  line-height:1.05;letter-spacing:-.02em;font-weight:800;
+  margin-bottom:22px;
+}
+h1 .grad{
+  background:linear-gradient(100deg,#a5b4fc 0%,#6366f1 55%,#a5b4fc 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero-sub{font-size:1.15rem;color:var(--text-dim);max-width:44ch;margin-bottom:34px}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn-main{
+  display:inline-block;font-weight:700;font-size:16px;
+  padding:15px 30px;border-radius:999px;color:#fff;
+  background:linear-gradient(135deg,#6366f1,#4f46e5);
+  box-shadow:0 0 0 1px rgba(129,140,248,.4),0 8px 30px rgba(99,102,241,.45);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(129,140,248,.55),0 12px 40px rgba(99,102,241,.6)}
+.btn-main:active{transform:scale(.98)}
+.btn-ghost{
+  display:inline-block;font-weight:600;font-size:16px;
+  padding:15px 26px;border-radius:999px;color:var(--text);
+  border:1px solid var(--line);background:rgba(255,255,255,.02);
+  transition:border-color .2s ease,transform .2s ease;
+}
+.btn-ghost:hover{border-color:var(--accent);transform:translateY(-2px)}
+
+/* photo slots */
+.photo{
+  position:relative;border-radius:var(--radius);overflow:hidden;
+  border:1px solid var(--line);
+  background:
+    radial-gradient(120% 90% at 30% 10%, rgba(99,102,241,.28), transparent 55%),
+    linear-gradient(160deg,#181827 0%,#0d0d16 100%);
+  display:flex;align-items:center;justify-content:center;
+}
+.photo::after{
+  content:"";position:absolute;inset:0;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08);border-radius:inherit;
+}
+.photo-hero{aspect-ratio:4/5}
+.photo-note{
+  font-family:var(--mono);font-size:12px;color:var(--text-dim);
+  text-align:center;line-height:1.8;padding:0 24px;
+}
+.photo-note b{color:var(--accent);display:block;font-size:13px}
+
+/* ---------- sections ---------- */
+section{padding:110px 0;border-top:1px solid var(--line-soft)}
+h2{
+  font-size:clamp(1.7rem,3.4vw,2.5rem);
+  line-height:1.15;letter-spacing:-.015em;font-weight:800;margin-bottom:20px;
+}
+.lead{font-size:1.1rem;color:var(--text-dim)}
+
+/* miroir */
+.mirror-list{margin-top:44px;display:flex;flex-direction:column}
+.mirror-item{
+  padding:22px 6px;border-bottom:1px solid var(--line-soft);
+  font-size:1.15rem;line-height:1.5;color:var(--text-dim);
+  display:flex;gap:18px;align-items:baseline;
+}
+.mirror-item:first-child{border-top:1px solid var(--line-soft)}
+.mirror-item span{color:var(--text)}
+.mirror-x{font-family:var(--mono);color:var(--accent);font-size:.95rem;flex-shrink:0}
+.mirror-punch{margin-top:40px;font-size:1.25rem;font-weight:600;line-height:1.5}
+.mirror-punch em{color:var(--accent);font-style:normal}
+
+/* histoire */
+.story p{margin-bottom:26px;font-size:1.12rem;color:var(--text-dim)}
+.story p.big{font-size:1.35rem;font-weight:600;color:var(--text);line-height:1.45}
+.story .caps{color:var(--text);font-weight:700}
+.story-quote{
+  margin:44px 0;padding:28px 32px;border-left:3px solid var(--accent);
+  background:var(--accent-soft);border-radius:0 var(--radius) var(--radius) 0;
+  font-size:1.2rem;font-weight:500;line-height:1.55;
+}
+/* timeline */
+.timeline{margin-top:56px;display:flex;flex-direction:column;gap:0;position:relative}
+.timeline::before{
+  content:"";position:absolute;left:7px;top:8px;bottom:8px;width:1.5px;
+  background:linear-gradient(180deg,var(--accent) 0%,rgba(129,140,248,.15) 100%);
+}
+.tl-item{position:relative;padding:0 0 46px 44px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{
+  content:"";position:absolute;left:0;top:8px;width:15px;height:15px;border-radius:50%;
+  background:var(--bg);border:2px solid var(--accent);
+}
+.tl-item.low::before{background:var(--bg);border-color:var(--text-dim)}
+.tl-item h3{font-size:1.2rem;font-weight:700;margin-bottom:10px}
+.tl-item h3 span{
+  font-family:var(--mono);font-size:.75rem;color:var(--accent);
+  letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:8px;
+}
+.tl-item p{margin-bottom:0;font-size:1.08rem}
+.tl-item p + p{margin-top:14px}
+figure.ph{margin:26px 0 0;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line)}
+figure.ph img{width:100%;height:auto;display:block}
+figure.ph figcaption{
+  font-family:var(--mono);font-size:12px;color:var(--text-dim);
+  padding:12px 16px;background:var(--bg-soft);border-top:1px solid var(--line-soft);
+}
+/* garantie */
+.garantie{
+  margin-top:52px;border-radius:var(--radius);padding:44px 40px;
+  border:1px solid rgba(129,140,248,.35);
+  background:
+    radial-gradient(130% 130% at 50% 0%, rgba(99,102,241,.18), transparent 60%),
+    var(--bg-soft);
+  box-shadow:0 0 50px rgba(99,102,241,.10);
+}
+.garantie h3{font-size:1.5rem;font-weight:800;margin-bottom:16px}
+.garantie p{color:var(--text-dim);font-size:1.08rem;margin-bottom:16px;max-width:64ch}
+.garantie p:last-child{margin-bottom:0}
+.garantie .cond{
+  margin-top:24px;padding:20px 24px;border-radius:12px;
+  background:rgba(255,255,255,.03);border:1px solid var(--line-soft);
+  font-size:1rem;color:var(--text-dim);
+}
+.garantie .cond b{color:var(--text)}
+
+/* bascule 2 colonnes */
+.versus{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:52px}
+.versus-col{
+  border-radius:var(--radius);padding:36px 32px;
+  border:1px solid var(--line-soft);background:var(--bg-soft);
+}
+.versus-col.win{
+  border-color:rgba(129,140,248,.35);
+  background:
+    radial-gradient(140% 110% at 80% 0%, rgba(99,102,241,.16), transparent 55%),
+    var(--bg-soft);
+  box-shadow:0 0 40px rgba(99,102,241,.12);
+}
+.versus-col h3{font-size:1.05rem;font-weight:700;margin-bottom:20px;letter-spacing:.01em}
+.versus-col.win h3{color:var(--accent)}
+.versus-col ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+.versus-col li{color:var(--text-dim);font-size:1rem;line-height:1.5;padding-left:22px;position:relative}
+.versus-col li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:1.5px;background:var(--text-dim);opacity:.5}
+.versus-col.win li::before{background:var(--accent);opacity:1}
+.versus-col.win li{color:var(--text)}
+
+/* piliers bento */
+.bento{display:grid;grid-template-columns:1.25fr 1fr;grid-auto-rows:minmax(230px,auto);gap:22px;margin-top:52px}
+.tile{
+  border-radius:var(--radius);padding:34px 32px;
+  border:1px solid var(--line-soft);background:var(--surface);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  position:relative;overflow:hidden;
+  transition:transform .25s ease,border-color .25s ease;
+}
+.tile:hover{transform:translateY(-3px);border-color:rgba(129,140,248,.4)}
+.tile h3{font-size:1.3rem;font-weight:700;margin-bottom:10px}
+.tile p{color:var(--text-dim);font-size:.98rem;max-width:46ch}
+.tile .num{
+  font-family:var(--mono);font-size:.8rem;color:var(--accent);
+  margin-bottom:auto;padding-bottom:26px;letter-spacing:.1em;
+}
+.tile.t1{
+  grid-row:span 2;
+  background:
+    radial-gradient(130% 80% at 20% 0%, rgba(99,102,241,.25), transparent 55%),
+    var(--surface);
+}
+.tile.t2{
+  background:
+    radial-gradient(120% 120% at 100% 100%, rgba(129,140,248,.14), transparent 60%),
+    var(--surface);
+}
+.tile.t4{
+  background:
+    linear-gradient(150deg, rgba(99,102,241,.16), transparent 45%),
+    var(--surface);
+}
+
+/* accompagnement */
+.stack-list{margin-top:48px;display:flex;flex-direction:column;gap:0}
+.stack-item{
+  display:grid;grid-template-columns:56px 1fr;gap:22px;
+  padding:30px 4px;border-bottom:1px solid var(--line-soft);align-items:start;
+}
+.stack-item:first-child{border-top:1px solid var(--line-soft)}
+.stack-icon{
+  width:46px;height:46px;border-radius:12px;flex-shrink:0;
+  background:var(--accent-soft);border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+}
+.stack-icon svg{width:22px;height:22px;stroke:var(--accent)}
+.stack-item h3{font-size:1.15rem;font-weight:700;margin-bottom:6px}
+.stack-item p{color:var(--text-dim);font-size:1rem;max-width:62ch}
+
+/* qualification */
+.qual{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:52px}
+.qual-col{border-radius:var(--radius);padding:36px 32px;border:1px solid var(--line-soft)}
+.qual-col.yes{background:var(--accent-soft);border-color:rgba(129,140,248,.3)}
+.qual-col.no{background:var(--bg-soft)}
+.qual-col h3{font-size:1.1rem;font-weight:700;margin-bottom:22px}
+.qual-col.yes h3{color:var(--accent)}
+.qual-col.no h3{color:var(--text-dim)}
+.qual-col ul{list-style:none;display:flex;flex-direction:column;gap:16px}
+.qual-col li{font-size:1rem;line-height:1.5;color:var(--text-dim);padding-left:26px;position:relative}
+.qual-col.yes li{color:var(--text)}
+.qual-col li svg{position:absolute;left:0;top:.32em;width:15px;height:15px}
+.qual-col.yes li svg{stroke:var(--accent)}
+.qual-col.no li svg{stroke:var(--text-dim)}
+
+/* l'appel : 3 étapes */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+.step{
+  border-radius:var(--radius);padding:32px 28px;
+  background:var(--bg-soft);border:1px solid var(--line-soft);
+}
+.step h3{font-size:1.1rem;font-weight:700;margin-bottom:10px;color:var(--accent)}
+.step p{color:var(--text-dim);font-size:.98rem}
+.call-honest{
+  margin-top:44px;padding:30px 34px;border-radius:var(--radius);
+  border:1px solid rgba(129,140,248,.3);
+  background:radial-gradient(120% 140% at 50% 0%, rgba(99,102,241,.14), transparent 60%);
+  font-size:1.12rem;line-height:1.6;
+}
+
+/* FAQ */
+.faq{margin-top:48px;display:flex;flex-direction:column}
+details{border-bottom:1px solid var(--line-soft)}
+details:first-child{border-top:1px solid var(--line-soft)}
+summary{
+  cursor:pointer;list-style:none;padding:26px 4px;
+  font-size:1.12rem;font-weight:600;
+  display:flex;justify-content:space-between;align-items:center;gap:20px;
+  transition:color .2s ease;
+}
+summary:hover{color:var(--accent)}
+summary::-webkit-details-marker{display:none}
+summary .plus{
+  font-family:var(--mono);color:var(--accent);font-size:1.2rem;
+  transition:transform .25s ease;flex-shrink:0;
+}
+details[open] summary .plus{transform:rotate(45deg)}
+details .answer{padding:0 4px 30px;color:var(--text-dim);font-size:1.02rem;max-width:66ch}
+details .answer p{margin-bottom:14px}
+details .answer p:last-child{margin-bottom:0}
+
+/* CTA final */
+.final{text-align:center;padding:130px 0 120px}
+.final h2{font-size:clamp(2rem,4.5vw,3.2rem);max-width:20ch;margin:0 auto 24px}
+.final .lead{max-width:52ch;margin:0 auto 40px}
+.final-sign{
+  margin-top:64px;font-size:1.05rem;color:var(--text-dim);
+}
+.final-sign b{color:var(--text);font-size:1.15rem;display:block;margin-top:4px}
+
+footer{
+  border-top:1px solid var(--line-soft);padding:34px 0;
+  font-size:13px;color:var(--text-dim);
+}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+/* reveals */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .btn-main,.btn-ghost,.nav-cta,.tile{transition:none}
+}
+
+/* ---------- tablette ---------- */
+@media (max-width:1024px){
+  .wrap{padding:0 28px}
+  .hero-grid{grid-template-columns:1.05fr .95fr;gap:40px}
+  section{padding:90px 0}
+  .steps{gap:16px}
+  .step{padding:26px 22px}
+  .bento{gap:16px}
+  .tile{padding:28px 24px}
+}
+/* ---------- mobile large / petite tablette ---------- */
+@media (max-width:860px){
+  section{padding:72px 0}
+  .hero{padding:36px 0 56px;min-height:auto}
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .photo-hero{aspect-ratio:4/5;width:100%;max-width:420px;margin:0 auto}
+  .photo-hero img{object-position:center 25%}
+  .versus,.qual,.steps{grid-template-columns:1fr}
+  .bento{grid-template-columns:1fr;grid-auto-rows:auto}
+  .tile.t1{grid-row:auto;min-height:340px}
+  .tile{min-height:0}
+  .stack-item{grid-template-columns:46px 1fr;gap:16px;padding:24px 2px}
+}
+/* ---------- mobile ---------- */
+@media (max-width:640px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+  section{padding:56px 0}
+  h1{font-size:clamp(2rem,8.6vw,2.5rem)}
+  h2{font-size:clamp(1.45rem,6.4vw,1.9rem)}
+  .hero-sub{font-size:1.05rem;margin-bottom:28px}
+  .cta-row{flex-direction:column;align-items:stretch}
+  .btn-main,.btn-ghost{width:100%;text-align:center;padding:15px 20px}
+  .nav-cta{padding:8px 14px;font-size:13px}
+  .mirror-item{font-size:1.05rem;gap:14px;padding:18px 2px}
+  .mirror-punch{font-size:1.15rem}
+  .story p{font-size:1.05rem}
+  .story p.big{font-size:1.2rem}
+  .story-quote{padding:20px 22px;font-size:1.08rem;margin:32px 0}
+  .tl-item{padding:0 0 38px 34px}
+  .tl-item p{font-size:1.02rem}
+  .versus-col,.qual-col{padding:26px 22px}
+  .tile{padding:26px 22px}
+  .tile.t1{min-height:280px}
+  .step{padding:24px 20px}
+  .call-honest{padding:22px 20px;font-size:1.02rem}
+  .garantie{padding:30px 22px}
+  .garantie h3{font-size:1.25rem}
+  .garantie .cond{padding:16px 18px}
+  summary{font-size:1.02rem;padding:20px 2px}
+  details .answer{font-size:.98rem}
+  .final{padding:80px 0 72px}
+  .final-sign{margin-top:44px}
+  footer .wrap{flex-direction:column;gap:6px}
+}
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">ALLAN <em>MAISAK</em></div>
+    <a class="nav-cta" href="#reserver">Mon appel offert</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Pour les mecs qui courent après les filles</div>
+      <h1>Arrête de courir après. <span class="grad">C'est comme ça que tu l'auras.</span></h1>
+      <p class="hero-sub">Tu veux une copine, des résultats avec les femmes. Sauf que plus t'en as <em>besoin</em>, plus ça te fuit — et elles le sentent. 6 mois en 1-à-1 pour régler le vrai problème : le besoin de validation. La rencontre, c'est le bonus.</p>
+      <div class="cta-row">
+        <a class="btn-main" href="#reserver">Réserver mon appel offert</a>
+        <a class="btn-ghost" href="#histoire">Lire mon histoire</a>
+      </div>
+    </div>
+    <div class="photo photo-hero">
+      <img src="img/allan-portrait.jpg" alt="Allan Maisak, coach confiance en soi, sur un toit de Paris face à la tour Eiffel" fetchpriority="high" style="width:100%;height:100%;object-fit:cover">
+    </div>
+  </div>
+</header>
+
+<!-- ============ LE MIROIR ============ -->
+<section>
+  <div class="wrap narrow">
+    <div class="reveal">
+      <h2>Sois honnête : pourquoi tu la veux à ce point ?</h2>
+      <p class="lead">Une copine, des dates, des résultats. OK. Mais regarde ce qui se passe vraiment quand t'es dans la course :</p>
+    </div>
+    <div class="mirror-list reveal">
+      <div class="mirror-item"><span class="mirror-x">01</span><span>Un match, un regard, un numéro : t'es bien… deux heures. Après, il te faut ta prochaine dose.</span></div>
+      <div class="mirror-item"><span class="mirror-x">02</span><span>Tu relis tes messages trois fois avant d'envoyer. Pas pour être clair. Pour être <strong>approuvé</strong>.</span></div>
+      <div class="mirror-item"><span class="mirror-x">03</span><span>Depuis cette rupture, cette trahison ou cet échec, t'oses plus vraiment t'ouvrir à quelqu'un.</span></div>
+      <div class="mirror-item"><span class="mirror-x">04</span><span>Quand une fille te plaît, tu deviens quelqu'un d'autre : plus drôle, plus lisse, moins toi. Et ça te bouffe.</span></div>
+      <div class="mirror-item"><span class="mirror-x">05</span><span>Tu peux passer une soirée entouré et te sentir seul quand même. Parce que personne connaît le vrai toi.</span></div>
+    </div>
+    <p class="mirror-punch reveal">Le problème, c'est pas ton « game ». C'est que ta confiance est stockée <em>chez les autres</em> — surtout chez elles. Et ce qui est chez les autres, tu le contrôles pas.</p>
+    <p class="mirror-punch reveal" style="margin-top:14px">Et le pire scénario, c'est même pas de rester seul. C'est de l'avoir, ta copine, <em>sans avoir réglé ça</em> : elle sent le besoin, elle part, et tu tombes de plus haut. Régler le fond d'abord, c'est comme ça que tu la trouves — et que tu la <strong>gardes</strong>.</p>
+  </div>
+</section>
+
+<!-- ============ HISTOIRE ============ -->
+<section id="histoire">
+  <div class="wrap narrow story">
+    <div class="reveal">
+      <div class="eyebrow">Mon histoire</div>
+      <h2>J'ai été le mec le plus « validé » que je connaisse. Et le plus vide.</h2>
+    </div>
+    <div class="reveal">
+      <p>Je vais être full transparent avec toi, parce que c'est comme ça que je fonctionne. Voilà le chemin, sans filtre.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item low reveal">
+        <h3><span>Le départ</span>Seul, anxieux, zéro succès</h3>
+        <p>Au début j'étais le mec seul, sans meuf, incapable d'aller parler à une fille. Zéro confiance. Et j'ai décidé de « régler le problème » comme on m'avait appris : en performant.</p>
+      </div>
+      <div class="tl-item reveal">
+        <h3><span>La machine</span>Des centaines de rencontres, une drogue</h3>
+        <p>J'ai tellement bossé le truc que j'en ai fait mon métier : coach en séduction. 167 approches en 6 semaines, à une époque. Ouais, je comptais, j'avais un tableur. Des centaines de rencontres. Vu de dehors : le mec confiant. En vrai, chaque validation me faisait exister… deux heures.</p>
+        <figure class="ph">
+          <img src="img/allan-machine.jpg" alt="Allan à cette époque de la validation" loading="lazy">
+          <figcaption>Cette époque. Tout pour la validation, jusque devant Rodin.</figcaption>
+        </figure>
+      </div>
+      <div class="tl-item reveal">
+        <h3><span>Le vide</span>Plus je « réussissais », plus j'étais vide</h3>
+        <p>Toulouse, un soir d'octobre. Un date sympa, rien de dramatique. Je la quitte, je marche, et là ça me tombe dessus : <span class="caps">VIDE</span>. Vide et seul. Et tu sais c'était quoi mon réflexe ? Aller dans un bar parler à des inconnus. Chercher ma dose. Je me suis arrêté net dans la rue : « Mais est-ce que c'est sain, ça ? » Ma confiance, c'était pas de la confiance. C'était une addiction.</p>
+      </div>
+      <div class="tl-item low reveal">
+        <h3><span>Le fond, novembre 2025</span>La nuit où le système m'a lâché</h3>
+        <p>23h, je raccompagne une fille chez sa pote. J'avais même pas vraiment envie d'être là, je jouais mon rôle, encore. Deux mecs entrent dans le bâtiment en même temps qu'elle. Je poireaute dehors, sous le lampadaire. Ils ressortent. Ils marchent droit sur moi.</p>
+        <p>J'ai couru comme jamais de ma vie. Mon cœur a battu la chamade pendant trois heures. Et le pire, c'est ce que j'ai compris après : je m'étais mis en danger pour une fille qui me plaisait même pas. Le système m'avait envoyé au casse-pipe pour <span class="caps">RIEN</span>. La semaine d'après, je suis quand même sorti de chez moi, mais dedans, tout s'écroulait. Je suis descendu bas. Dépression.</p>
+      </div>
+      <div class="tl-item reveal">
+        <h3><span>La reconstruction</span>Psy, émotions, les vraies conversations</h3>
+        <p>Fin août, j'ai poussé la porte d'un psy. J'ai mis toute ma vie à le prendre, ce rendez-vous. 60 balles la séance pour apprendre à mettre mon ego de côté et prendre des claques. J'y suis encore.</p>
+        <p>Et puis les trucs durs, les vrais. Je me suis ouvert à mon frère, je lui ai même demandé, littéralement, ce qu'il appréciait chez moi. Sa réponse m'a fait pleurer devant mes colocs. Première fois de ma vie que je pleurais devant eux. Il m'avait écrit : « Bordel, t'en as mis du temps à te réveiller. » J'ai dit « je t'aime » à ma mère. Puis à mon père. Ça a l'air de rien, dit comme ça. C'est le truc le plus dur que j'aie fait.</p>
+      </div>
+      <div class="tl-item reveal">
+        <h3><span>Aujourd'hui</span>Aligné, pour de vrai</h3>
+        <p>Aujourd'hui j'ai passé un cap : j'ai presque plus besoin de validation. Je dis « presque » parce que je te mentirai jamais : la confiance, c'est pas de ne plus jamais tomber. C'est le droit de t'écrouler, et la certitude de te relever. Entre-temps, accompagner des mecs est devenu mon métier : j'en coache des dizaines chaque semaine, en atelier et en 1-à-1. Et j'en parle à visage découvert.</p>
+        <figure class="ph">
+          <img src="img/allan-today.jpg" alt="Allan Maisak en podcast, dans son studio" loading="lazy">
+          <figcaption>Aujourd'hui. Tout le chemin est raconté dans <a href="https://www.youtube.com/watch?v=E4zPflwS37E" target="_blank" rel="noopener">le podcast « On a passé 5 ans matrixés »</a>, sur ma chaîne.</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="story-quote reveal">« J'ai envie d'inspirer les gens à s'exprimer, à être honnêtes sur leurs émotions. Surtout : être transparents. »<br><span style="font-size:.85rem;color:var(--text-dim)">Allan, dans son podcast</span></div>
+    <div class="reveal">
+      <p class="big" style="margin-top:26px">Ce chemin, je l'ai payé plein tarif : des années à chercher au mauvais endroit, une agression et une dépression pour ouvrir les yeux. Toi, tu peux prendre le raccourci, avec quelqu'un qui a la carte.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LA BASCULE ============ -->
+<section>
+  <div class="wrap">
+    <div class="narrow reveal">
+      <h2>Deux façons de vivre la même vie.</h2>
+      <p class="lead">Même taf, mêmes potes, même ville. Ce qui change tout, c'est d'où vient ta confiance.</p>
+    </div>
+    <div class="versus reveal">
+      <div class="versus-col">
+        <h3>Validation externe</h3>
+        <ul>
+          <li>Ton humeur dépend du dernier regard, du dernier message, de la dernière fille qui t'a répondu.</li>
+          <li>Tu joues un rôle, et tu sors de chaque soirée lessivé.</li>
+          <li>Le silence des autres = angoisse. La solitude = vide à fuir.</li>
+          <li>Tu intellectualises, tu repousses, tu attends d'être « prêt ».</li>
+          <li>Chaque échec est une preuve que tu ne vaux rien.</li>
+        </ul>
+      </div>
+      <div class="versus-col win">
+        <h3>Validation interne</h3>
+        <ul>
+          <li>Ta confiance repose sur ce que TU contrôles : tes actions, ta parole tenue.</li>
+          <li>Tu es le même dedans et dehors. Zéro rôle, zéro fatigue de personnage.</li>
+          <li>La solitude devient un moment avec quelqu'un que t'apprécies : toi.</li>
+          <li>Tu dis ce que tu ressens, aux potes, à la famille, aux femmes. Sans calculer.</li>
+          <li>T'as le droit de t'écrouler. La différence : tu sais te relever par toi-même.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LES 4 PILIERS ============ -->
+<section>
+  <div class="wrap">
+    <div class="narrow reveal">
+      <h2>La méthode : 4 piliers, zéro blabla.</h2>
+      <p class="lead">La confiance, ça se « pense » pas. Ça se construit avec des preuves. Et c'est dans le lien qu'elle se perd, donc c'est dans le lien qu'on la regagne.</p>
+    </div>
+    <div class="bento reveal">
+      <div class="tile t1">
+        <div class="num">PILIER 1</div>
+        <h3>Relations</h3>
+        <p>Mieux te comprendre, pour mieux relationner. On trie ce qui te vide, on nourrit ce qui te remplit, et surtout : tu apprends à dire ce que tu ressens : à tes potes, ta famille, aux femmes. Les conversations que tu repousses depuis des années, on les prépare ensemble et tu les as pour de vrai. C'est là que la confiance revient : pas dans ta tête, dans tes liens.</p>
+      </div>
+      <div class="tile t2">
+        <div class="num">PILIER 2</div>
+        <h3>Sortie de zone de confort</h3>
+        <p>Des défis calibrés sur TA vie, en surcharge progressive : on passe de 50 à 50,5 kilos, pas de 50 à 100. Chaque défi réussi est une preuve que ton cerveau peut plus nier. Un stock de preuves internes que personne peut te retirer.</p>
+      </div>
+      <div class="tile t3">
+        <div class="num">PILIER 3</div>
+        <h3>Sport</h3>
+        <p>Pas pour la vitrine. Pour la parole tenue. Chaque séance honorée, c'est toi qui te prouves que tu peux compter sur toi. La validation la plus pure : elle ne dépend de personne.</p>
+      </div>
+      <div class="tile t4">
+        <div class="num">PILIER 4</div>
+        <h3>Expression des émotions</h3>
+        <p>Tout ce que je gardais pour moi, ça ressortait ailleurs : anxiété, besoin de validation. Journal d'humeur, debriefs, mots posés sur ce qui se passe dedans. C'est le travail le plus dur, et celui qui change tout.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ L'ACCOMPAGNEMENT ============ -->
+<section>
+  <div class="wrap narrow">
+    <div class="reveal">
+      <h2>6 mois. Toi et moi. Pour de vrai.</h2>
+      <p class="lead">C'est pas une formation vidéo que tu vas regarder à moitié. C'est un accompagnement 1-à-1 où t'as accès à moi, et où je m'implique sur ton cas précis. Je prends <strong>5 personnes</strong>, pas une de plus : l'accès direct, ça se partage pas en 50.</p>
+    </div>
+    <div class="stack-list reveal">
+      <div class="stack-item">
+        <div class="stack-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+        <div>
+          <h3>Appels personnalisés avec moi</h3>
+          <p>En visio, rien que nous deux : un appel par semaine le premier mois, puis toutes les deux semaines. On débriefe tes défis, on ajuste le plan, on va chercher ce qui bloque vraiment. Pas de script : chaque appel part de TA semaine.</p>
+        </div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div>
+        <div>
+          <h3>Accès direct entre les appels</h3>
+          <p>Un doute avant une conversation difficile ? Un défi qui te fait flipper ? Tu m'écris, je te réponds. T'es pas seul entre deux rendez-vous, et c'est exactement ça qui fait la différence.</p>
+        </div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+        <div>
+          <h3>Plan d'action sur mesure</h3>
+          <p>Tes défis de sortie de zone de confort sont construits pour ta vie à toi, pas copiés d'un PDF. Recalibrés à chaque appel selon tes preuves accumulées.</p>
+        </div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+        <div>
+          <h3>Le système journal d'humeur</h3>
+          <p>L'outil qui a tout changé pour moi. Tu apprends à capter tes émotions en temps réel, à les écrire, à les décoder. Au bout de quelques semaines, tu te connais mieux qu'en 10 ans.</p>
+        </div>
+      </div>
+    </div>
+    <div class="garantie reveal">
+      <h3>Ma garantie : tu fais le travail, ou je te rembourse.</h3>
+      <p>Je suis prêt à porter le risque à ta place, à une seule condition : que tu joues le jeu.</p>
+      <p><strong>Si tu fais le travail</strong> (pas parfaitement, mais vraiment : les défis, les appels, le journal) et qu'au bout des 6 mois <strong>TOI</strong> tu estimes que rien n'a bougé, <strong>je te rembourse intégralement.</strong></p>
+      <div class="cond"><b>Et pour que ce soit vérifiable :</b> au premier appel, on écrit noir sur blanc où t'en es : les situations que t'évites, les conversations que tu repousses. À la fin, on compare. Si t'as fait le travail et que ces lignes ont pas bougé, tu récupères tout. Si tu fais pas le travail, la garantie saute. Ça me semble réglo.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POUR QUI ============ -->
+<section>
+  <div class="wrap">
+    <div class="narrow reveal">
+      <h2>Je ne prends pas tout le monde.</h2>
+      <p class="lead">Un accompagnement 1-à-1, ça veut dire mon temps et mon énergie sur ton cas. Donc je choisis. Franchement, ça vaut mieux pour nous deux.</p>
+    </div>
+    <div class="qual reveal">
+      <div class="qual-col yes">
+        <h3>C'est pour toi si :</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>T'en as marre de courir — après les filles, après les regards, après la validation.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>T'es prêt à AGIR, pas juste à comprendre. Les défis, tu les feras.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Tu veux qu'on te dise la vérité, même quand elle pique.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Tu vois les 6 mois comme un investissement sur les 40 prochaines années.</li>
+        </ul>
+      </div>
+      <div class="qual-col no">
+        <h3>C'est pas pour toi si :</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>Tu cherches une pilule magique en 3 semaines sans rien changer.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>Tu veux collectionner du contenu de développement perso sans l'appliquer.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>T'es vraiment au fond du trou là, tout de suite (dépression, idées noires). Là c'est un psy qu'il te faut d'abord, pas un coach. Et je serai le premier à te le dire, j'y suis passé.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="lead reveal" style="margin-top:36px">Précision : ça, c'est pour l'accompagnement, lui, je le réserve. <strong>L'appel, il est ouvert.</strong> Si tu t'es reconnu plus haut, prends-le.</p>
+  </div>
+</section>
+
+<!-- ============ L'APPEL ============ -->
+<section id="reserver">
+  <div class="wrap">
+    <div class="narrow reveal">
+      <h2>On commence par un appel. Offert, et utile.</h2>
+      <p class="lead">Pas un « appel découverte » où on te récite un pitch. Un vrai point sur toi, où tu repars avec des trucs concrets à appliquer, même si on bosse jamais ensemble.</p>
+    </div>
+    <div class="steps reveal">
+      <div class="step">
+        <h3>On fait le point</h3>
+        <p>Tu me racontes où t'en es. Moi, je creuse, pour trouver d'où vient VRAIMENT ta perte de confiance.</p>
+      </div>
+      <div class="step">
+        <h3>Je t'aide, direct</h3>
+        <p>Pendant l'appel, je te donne mes premières pistes concrètes pour ta situation. Tu repars avec un plan de départ, quoi qu'il arrive.</p>
+      </div>
+      <div class="step">
+        <h3>Je te dis la vérité</h3>
+        <p>Si je pense pouvoir t'emmener loin, je te propose l'accompagnement et je t'explique tout. Si c'est pas pertinent pour toi, je te le dis cash. Pas de forcing, jamais.</p>
+      </div>
+    </div>
+    <div class="call-honest reveal">
+      <strong>Mon engagement :</strong> je préfère refuser quelqu'un que d'accompagner quelqu'un que je peux pas aider. C'est ma réputation, et surtout c'est ma manière de bosser. Je prends <strong>10 appels par semaine</strong>, pas plus. Je les prépare tous.
+    </div>
+    <div class="reveal" style="margin-top:44px">
+      <div id="cal-inline" style="width:100%;min-height:560px;border-radius:16px;overflow:hidden"></div>
+    </div>
+    <div class="cta-row reveal" style="margin-top:20px;justify-content:center">
+      <a class="btn-main" href="https://cal.com/allan-figfsv/appel-confiance-offert" target="_blank" rel="noopener">Ouvrir le calendrier dans un nouvel onglet</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section>
+  <div class="wrap narrow">
+    <div class="reveal">
+      <h2>Les questions que tu te poses déjà.</h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>Moi je veux des résultats avec les filles, pas un « travail sur moi ».<span class="plus">+</span></summary>
+        <div class="answer">
+          <p>Je sais. C'est exactement ce que je voulais aussi, et j'ai passé des années à optimiser le « comment » : les approches, les techniques, le personnage. 167 approches en 6 semaines. Résultat : des rencontres, oui. Une vie meilleure, non. Parce que le besoin, lui, était toujours là — et un besoin, ça se sent.</p>
+          <p>Le paradoxe, il est là : les résultats que tu veux sont un <em>sous-produit</em>. Le mec qui n'a plus besoin de plaire devient celui qui plaît. Et surtout, quand ça marche, ça tient — parce que t'as pas besoin d'elle pour exister. C'est pas de la philosophie, c'est le raccourci le plus direct que je connaisse. J'ai testé l'autre chemin pour toi.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Pourquoi 6 mois ? C'est long.<span class="plus">+</span></summary>
+        <div class="answer">
+          <p>Parce qu'un changement d'identité, ça prend du temps. T'as passé 20 ou 30 ans à construire le réflexe de chercher la validation dehors. C'est pas en 3 semaines que ton cerveau désapprend ça.</p>
+          <p>6 mois, c'est le temps qu'il faut pour accumuler assez de preuves internes pour que la nouvelle version de toi devienne la version par défaut. Plus court, c'est du vernis. Et le vernis, ça saute au premier choc.</p>
+        </div>
+      </details>
+      <details>
+        <summary>J'ai déjà lu des livres, vu des vidéos… en quoi c'est différent ?<span class="plus">+</span></summary>
+        <div class="answer">
+          <p>Comprendre, tu sais déjà faire. C'est même peut-être ton piège : intellectualiser permet de ne pas agir. Je le sais, c'était le mien.</p>
+          <p>La différence ici, c'est l'action calibrée + quelqu'un qui te connaît, qui te suit, et qui ne te laisse pas te raconter d'histoires. Un livre ne te rappelle pas que t'avais dit que tu le ferais.</p>
+        </div>
+      </details>
+      <details>
+        <summary>C'est pas plutôt un psy qu'il me faut ?<span class="plus">+</span></summary>
+        <div class="answer">
+          <p>Peut-être. Et si c'est le cas, je te le dis dès l'appel. Je serai le premier, parce que moi-même j'en vois un, et je l'assume.</p>
+          <p>En vrai, les deux se complètent : le psy m'a aidé à comprendre d'où ça venait. Le taf concret (les défis, les conversations, le journal), c'est ce qui m'a reconstruit. Le psy travaille sur le passé. Moi je t'aide à construire des preuves au présent.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Combien ça coûte ?<span class="plus">+</span></summary>
+        <div class="answer">
+          <p>Le prix, je te le donne pendant l'appel, une fois qu'on sait tous les deux si je peux t'aider, et avant que tu décides quoi que ce soit.</p>
+          <p>Ce que je peux te dire : c'est un investissement sérieux, cohérent avec 6 mois de mon implication sur 5 personnes max. Si tu cherches le moins cher, c'est pas ici.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Et si je peux le faire seul ?<span class="plus">+</span></summary>
+        <div class="answer">
+          <p>Tu peux. Moi je l'ai fait « seul »… en 6 ans. GG à moi. Des détours qui m'ont coûté cher, une thérapie, et beaucoup de soirées à me sentir vide sans comprendre pourquoi.</p>
+          <p>La vraie question c'est pas « est-ce que je peux », c'est « combien de temps je suis encore prêt à perdre ». Si ta réponse est « plus un seul jour », réserve l'appel.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Je suis pas dans la séduction, c'est pour moi quand même ?<span class="plus">+</span></summary>
+        <div class="answer">
+          <p>Oui. La dépendance à la validation, c'est le même mécanisme partout : au taf, en couple, avec les potes, dans la famille. La séduction c'est juste le terrain où moi je l'ai vécu à l'extrême.</p>
+          <p>Ce qu'on construit ensemble, c'est une confiance qui tient dans TOUS les domaines, parce qu'elle vient de toi.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="final">
+  <div class="wrap">
+    <div class="reveal">
+      <h2>Dans 6 mois, tu seras validé. <span class="grad">Par toi.</span></h2>
+      <p class="lead">Les 6 mois vont passer de toute façon. Tu peux les passer à courir après, ou à devenir le mec qui n'a plus besoin de courir.</p>
+      <div class="cta-row" style="justify-content:center">
+        <a class="btn-main" href="https://cal.com/allan-figfsv/appel-confiance-offert" target="_blank" rel="noopener">Réserver mon appel offert</a>
+        <a class="btn-ghost" href="https://www.youtube.com/watch?v=E4zPflwS37E" target="_blank" rel="noopener">Pas encore prêt ? Regarde le podcast</a>
+      </div>
+      <div class="final-sign">À bientôt,<b>Allan</b></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Allan Maisak · Coaching Confiance</span>
+    <span><a href="https://www.youtube.com/@allanmaisak" target="_blank" rel="noopener">Ma chaîne YouTube</a> · Allan, Toulouse</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els = document.querySelectorAll('.reveal');
+  if (reduce || !('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.15 });
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script>
+<script type="text/javascript">
+(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", {origin: "https://cal.com"});
+Cal("inline", {
+  elementOrSelector: "#cal-inline",
+  calLink: "allan-figfsv/appel-confiance-offert",
+  config: {theme: "dark", layout: "month_view"}
+});
+Cal("ui", {theme: "dark", hideEventTypeDetails: false});
+</script>
+</body>
+</html>
