@@ -120,7 +120,11 @@ h1 .grad{background:linear-gradient(100deg,#a5b4fc,#6366f1 55%,#a5b4fc);-webkit-
    2) LEAD_ENDPOINT : filet de securite sans inscription (FormSubmit) -> chaque lead
       (email + profil + scores) arrive dans la boite Gmail d'Allan. Aucun lead perdu.
       Necessite UN clic d'activation la 1re fois (email envoye par FormSubmit). */
-const BREVO_FORM_ACTION = "https://743a4372.sibforms.com/serve/MUIFABSna1zhAKdj4EiDq2Q0E9CEwxJpeHCYS54NDT-f1iYp19uxwBvilT_ecTIdTN0vCKElvqr3RKe4JPUyR5Uj_0f_d6ykVnhMln0IVXPgx-G9JGa_Yv-eUXPGoCWP91-xYZ8xv55TASG-TuXDBGTvrhTaH2HaCMqp5nVxj50coph5-4WEAzTXuSD2SqvcsOKGj1UwhiasCdEV7g==";
+/* Note : le POST direct vers un formulaire Brevo (sibforms) ne fonctionne pas depuis
+   un quiz custom — Brevo exige son propre JS pour poser un token de session, un POST
+   brut est ignoré. La capture passe donc par FormSubmit -> Gmail -> script serveur
+   cal-brevo qui pousse dans la liste Brevo (clé API côté serveur, jamais exposée). */
+const BREVO_FORM_ACTION = "";
 const LEAD_ENDPOINT = "https://formsubmit.co/ajax/allanmaisak@gmail.com";
 const BOOK_URL = "https://cal.com/allan-figfsv/appel-confiance-offert";
 
@@ -331,7 +335,9 @@ function submitEmail(e, key, total){
         email, profil:payload.PROFIL,
         score_total:total, score_validation:t.V, score_jugement:t.J,
         score_masque:t.A, score_discipline:t.D, score_rupture:t.R,
-        source:payload.SOURCE
+        source:payload.SOURCE,
+        // ligne machine pour le script serveur -> Brevo (parsing robuste)
+        lead_data:`LEADV1|${email}|${PROFILES[key].name}|${total}|${t.V}|${t.J}|${t.A}|${t.D}|${t.R}|${payload.SOURCE}`
       })
     }).catch(()=>{});
   }
