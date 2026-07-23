@@ -165,6 +165,11 @@ const PROFILES = {
     body:"Une rupture, un vide, une humiliation — un truc t'a mis par terre et t'a fait réaliser que ta vie était pas alignée. C'est douloureux, mais c'est le meilleur point de départ qui existe. La plupart des mecs restent endormis. Toi t'as vu. Reste à reconstruire sur des bases qui tiennent, cette fois.",
     punch:"Le but c'est pas de re-choper vite pour combler. C'est de devenir le mec qui n'a plus jamais peur de se retrouver seul.",
     plan:["Écris ce que cette rupture (ou ce vide) t'a appris sur toi. Noir sur blanc. C'est ta base.","Reconstruis UN pilier à toi cette semaine (sport, projet, amitié) — un truc qui ne dépend d'aucune meuf.","Réapprends à être bien seul un soir : sors, aborde, sans chercher à rentrer avec qui que ce soit."] },
+  D:{ name:"Le Dispersé", tag:"Ton titre de séducteur",
+    title:["Tu sais quoi faire. ","Tu le fais pas","."],
+    body:"T'as compris le game. T'as les infos, les conseils, peut-être même les résultats quand tu t'y mets. Ton problème c'est pas le savoir, c'est la constance. Tu démarres fort, puis tu lâches. Tu vois le travail à faire comme une montagne, alors tu ne le fais pas. Et sans régularité, ton niveau stagne malgré tout ton potentiel.",
+    punch:"La discipline bat le talent quand le talent n'est pas discipliné. Ton palier suivant est de l'autre côté de la constance.",
+    plan:["Choisis UNE action minuscule à faire tous les jours cette semaine (2 abordages, 1 analyse). Non négociable.","Après chaque interaction, note 3 lignes à chaud. Pas une montagne : 3 lignes.","Rends des comptes à quelqu'un (un pote, un coach). Ce qui est suivi se fait."] },
   aligned:{ name:"L'Ancré", tag:"Ton titre de séducteur",
     title:["T'es plus proche ","que tu crois","."],
     body:"T'as déjà fait une grosse partie du taf : t'es à peu près à l'aise, tu te connais, tu cours pas après grand-chose. Ce qui te manque, c'est pas une transformation, c'est un dernier cran — de la constance et quelqu'un pour t'ajuster au bon moment.",
@@ -237,7 +242,7 @@ function profileKey(t){
 function result(){
   const t = score();
   const total = t.V+t.J+t.A+t.D+t.R;
-  const key = profileKey(t);
+  const key = PROFILES[profileKey(t)] ? profileKey(t) : "aligned";
   const p = PROFILES[key];
   const s = namedScores(t);
   setProgress(); prog.style.width="100%"; counter.textContent="Résultat";
