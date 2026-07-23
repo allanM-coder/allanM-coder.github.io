@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Le test — Tu cours après, ou on court après toi ? · Allan Maisak</title>
-<meta name="description" content="9 questions, 2 minutes. Ton profil + le vrai truc qui te bloque avec les filles (spoiler : c'est pas ton game). Test offert par Allan Maisak.">
+<meta name="description" content="9 questions, 2 minutes. Ton titre de séducteur, tes scores (dépendance à la validation, confiance en toi) et ton mini-plan d'action. Test offert par Allan Maisak.">
 <meta name="theme-color" content="#0a0a10">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:title" content="Tu cours après, ou on court après toi ? — le test en 2 min">
-<meta property="og:description" content="9 questions pour trouver le vrai blocage entre toi et les filles. C'est pas ton game.">
+<meta property="og:description" content="Ton titre de séducteur + tes scores + ton mini-plan. Le vrai blocage, c'est pas ton game.">
 <meta property="og:image" content="https://allanmaisak.com/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0a10'/%3E%3Ctext x='32' y='44' font-family='Arial,sans-serif' font-size='30' font-weight='800' fill='%23818cf8' text-anchor='middle'%3EAM%3C/text%3E%3C/svg%3E">
@@ -39,66 +39,64 @@ strong{color:var(--text);font-weight:600}
 .brand{font-weight:800;letter-spacing:.06em;font-size:14px}
 .brand em{font-style:normal;color:var(--accent)}
 .mono{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
-
-/* progress */
 .bar{height:4px;background:rgba(255,255,255,.06);border-radius:999px;overflow:hidden;margin:18px 0 34px}
 .bar>i{display:block;height:100%;width:0;background:linear-gradient(90deg,#6366f1,#a5b4fc);border-radius:999px;transition:width .4s cubic-bezier(.4,0,.2,1)}
-
 .card{flex:1;display:flex;flex-direction:column;justify-content:center}
 .reveal{animation:fade .5s ease both}
 @keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-
-/* intro */
 h1{font-size:clamp(1.9rem,6vw,2.7rem);line-height:1.06;letter-spacing:-.02em;font-weight:800;margin-bottom:18px}
 h1 .grad{background:linear-gradient(100deg,#a5b4fc,#6366f1 55%,#a5b4fc);-webkit-background-clip:text;background-clip:text;color:transparent}
 .lead{color:var(--text-dim);font-size:1.1rem;margin-bottom:16px;max-width:46ch}
 .meta{font-family:var(--mono);font-size:12px;color:var(--text-dim);margin-bottom:32px;letter-spacing:.04em}
-
-/* question */
 .qnum{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--accent);margin-bottom:14px}
 .qtext{font-size:clamp(1.35rem,4.5vw,1.7rem);font-weight:700;line-height:1.25;letter-spacing:-.01em;margin-bottom:28px}
 .opts{display:flex;flex-direction:column;gap:12px}
-.opt{
-  text-align:left;width:100%;cursor:pointer;color:var(--text);
-  background:var(--surface);border:1px solid var(--line-soft);border-radius:14px;
-  padding:17px 20px;font-family:var(--font);font-size:16.5px;line-height:1.4;
-  display:flex;align-items:center;gap:14px;
-  transition:border-color .18s ease,background .18s ease,transform .12s ease;
-}
+.opt{text-align:left;width:100%;cursor:pointer;color:var(--text);background:var(--surface);border:1px solid var(--line-soft);border-radius:14px;padding:17px 20px;font-family:var(--font);font-size:16.5px;line-height:1.4;display:flex;align-items:center;gap:14px;transition:border-color .18s ease,background .18s ease,transform .12s ease}
 .opt:hover{border-color:var(--accent);background:#181826}
 .opt:active{transform:scale(.99)}
 .opt .dot{flex:none;width:22px;height:22px;border-radius:50%;border:2px solid var(--line);transition:.18s}
 .opt:hover .dot{border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
 .opt.sel{border-color:var(--accent-strong);background:#191930}
 .opt.sel .dot{border-color:var(--accent-strong);background:var(--accent-strong);box-shadow:0 0 0 4px var(--accent-soft)}
-
-.btn{display:inline-block;font-weight:700;font-size:16px;padding:15px 30px;border-radius:999px;color:#fff;cursor:pointer;border:none;font-family:var(--font);
-  background:linear-gradient(135deg,#6366f1,#4f46e5);box-shadow:0 0 0 1px rgba(129,140,248,.4),0 8px 30px rgba(99,102,241,.45);transition:transform .2s ease,box-shadow .2s ease}
+.btn{display:inline-block;font-weight:700;font-size:16px;padding:15px 30px;border-radius:999px;color:#fff;cursor:pointer;border:none;font-family:var(--font);background:linear-gradient(135deg,#6366f1,#4f46e5);box-shadow:0 0 0 1px rgba(129,140,248,.4),0 8px 30px rgba(99,102,241,.45);transition:transform .2s ease,box-shadow .2s ease}
 .btn:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(129,140,248,.55),0 12px 40px rgba(99,102,241,.6)}
 .btn:active{transform:scale(.98)}
 .btn.full{width:100%;text-align:center}
 .back{margin-top:22px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--text-dim);cursor:pointer;background:none;border:none;text-transform:uppercase}
 .back:hover{color:var(--text)}
-
-/* result */
-.badge{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line);border-radius:999px;padding:7px 15px;margin-bottom:20px}
-.rtitle{font-size:clamp(2rem,6.5vw,2.9rem);font-weight:800;letter-spacing:-.02em;line-height:1.05;margin-bottom:18px}
+.badge{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line);border-radius:999px;padding:7px 15px;margin-bottom:16px}
+.rtitle{font-size:clamp(2rem,6.5vw,2.9rem);font-weight:800;letter-spacing:-.02em;line-height:1.05;margin-bottom:8px}
 .rtitle .grad{background:linear-gradient(100deg,#a5b4fc,#6366f1 55%,#a5b4fc);-webkit-background-clip:text;background-clip:text;color:transparent}
-.rbody{color:var(--text-dim);font-size:1.08rem;margin-bottom:16px}
+.rsub{color:var(--text-dim);font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:24px}
+/* scores */
+.scores{display:flex;flex-direction:column;gap:16px;margin:24px 0 6px}
+.score .srow{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px}
+.score .slabel{font-size:.98rem;font-weight:500}
+.score .sval{font-family:var(--mono);font-size:1rem;color:var(--accent);font-weight:500}
+.score .strack{height:9px;background:rgba(255,255,255,.06);border-radius:999px;overflow:hidden}
+.score .sfill{height:100%;border-radius:999px;width:0;transition:width 1s cubic-bezier(.4,0,.2,1)}
+.sfill.indigo{background:linear-gradient(90deg,#6366f1,#a5b4fc)}
+.sfill.warm{background:linear-gradient(90deg,#f59e0b,#f43f5e)}
+.rbody{color:var(--text-dim);font-size:1.06rem;margin:22px 0 4px}
 .rbody strong{color:var(--text)}
-.punch{border-left:2px solid var(--accent-strong);padding:2px 0 2px 18px;margin:22px 0;font-size:1.12rem;color:var(--text);font-weight:500}
-.capture{margin-top:30px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px}
+.punch{border-left:2px solid var(--accent-strong);padding:2px 0 2px 18px;margin:22px 0;font-size:1.1rem;color:var(--text);font-weight:500}
+.plan{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;margin-top:26px}
+.plan h3{font-size:1.08rem;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.plan ol{list-style:none;counter-reset:p;display:flex;flex-direction:column;gap:12px}
+.plan li{counter-increment:p;position:relative;padding-left:38px;font-size:1rem;color:var(--text)}
+.plan li::before{content:counter(p);position:absolute;left:0;top:-1px;width:26px;height:26px;border-radius:50%;background:var(--accent-soft);border:1px solid var(--line);color:var(--accent);font-family:var(--mono);font-size:13px;display:flex;align-items:center;justify-content:center;font-weight:600}
+.capture{margin-top:26px;background:linear-gradient(180deg,#171728,#111119);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px}
 .capture h3{font-size:1.2rem;font-weight:700;margin-bottom:8px}
 .capture p{color:var(--text-dim);font-size:.98rem;margin-bottom:18px}
-.field{display:flex;gap:10px;flex-wrap:wrap}
-.field input{flex:1;min-width:200px;background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;padding:15px 18px;color:var(--text);font-family:var(--font);font-size:16px}
-.field input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
-.fine{font-family:var(--mono);font-size:11px;color:var(--text-dim);margin-top:14px;letter-spacing:.03em}
+.frow{display:flex;gap:10px}
+.capture input{width:100%;background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;padding:14px 16px;color:var(--text);font-family:var(--font);font-size:16px;margin-bottom:10px}
+.capture input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.frow input{margin-bottom:0}
+.fine{font-family:var(--mono);font-size:11px;color:var(--text-dim);margin-top:12px;letter-spacing:.03em}
 .ok{text-align:center;padding:10px 0}
 .ok .check{width:56px;height:56px;border-radius:50%;margin:0 auto 18px;background:var(--accent-soft);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:26px}
-.err{color:#fca5a5;font-size:.9rem;margin-top:10px;display:none}
 .foot{margin-top:40px;text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--text-dim)}
-@media(max-width:520px){.shell{padding:22px 18px 60px}.opt{padding:15px 17px;font-size:15.5px}}
+@media(max-width:520px){.shell{padding:22px 18px 60px}.opt{padding:15px 17px;font-size:15.5px}.frow{flex-direction:column;gap:0}}
 </style>
 </head>
 <body>
@@ -115,16 +113,9 @@ h1 .grad{background:linear-gradient(100deg,#a5b4fc,#6366f1 55%,#a5b4fc);-webkit-
 
 <script>
 /* ============ CONFIG CAPTURE ============
-   1) BREVO_FORM_ACTION : endpoint d'un formulaire Brevo (sibforms) -> lead direct
-      dans la liste "Prospects Coaching". A renseigner quand le form Brevo est cree.
-   2) LEAD_ENDPOINT : filet de securite sans inscription (FormSubmit) -> chaque lead
-      (email + profil + scores) arrive dans la boite Gmail d'Allan. Aucun lead perdu.
-      Necessite UN clic d'activation la 1re fois (email envoye par FormSubmit). */
-/* Note : le POST direct vers un formulaire Brevo (sibforms) ne fonctionne pas depuis
-   un quiz custom — Brevo exige son propre JS pour poser un token de session, un POST
-   brut est ignoré. La capture passe donc par FormSubmit -> Gmail -> script serveur
-   cal-brevo qui pousse dans la liste Brevo (clé API côté serveur, jamais exposée). */
-const BREVO_FORM_ACTION = "";
+   Le POST direct vers Brevo (sibforms) ne marche pas depuis un quiz custom
+   (Brevo exige son propre JS). La capture passe par FormSubmit -> Gmail ->
+   script serveur -> liste Brevo. Clé API Brevo côté serveur, jamais exposée. */
 const LEAD_ENDPOINT = "https://formsubmit.co/ajax/allanmaisak@gmail.com";
 const BOOK_URL = "https://cal.com/allan-figfsv/appel-confiance-offert";
 
@@ -133,99 +124,61 @@ const BOOK_URL = "https://cal.com/allan-figfsv/appel-confiance-offert";
           D=discipline/passivité · R=rapport à la rupture/au manque */
 const Q = [
   { q:"Une meuf te plaît dans la rue. Ce qui te traverse en premier :",
-    o:[
-      ["« Elle va me prendre pour qui ? »",{J:2}],
-      ["« J'ai pas le temps, pas là, pas maintenant. »",{D:2}],
-      ["« Faut LE truc parfait à dire. »",{A:2}],
-      ["J'y vais, on verra bien.",{}],
-    ]},
+    o:[["« Elle va me prendre pour qui ? »",{J:2}],["« J'ai pas le temps, pas là, pas maintenant. »",{D:2}],["« Faut LE truc parfait à dire. »",{A:2}],["J'y vais, on verra bien.",{}]]},
   { q:"Tu postes une story ou une photo. Franchement :",
-    o:[
-      ["Je check les vues toutes les 5 minutes.",{V:2}],
-      ["Je regarde une fois, ça m'affecte un peu.",{V:1}],
-      ["J'ai coupé les réseaux, exprès.",{}],
-      ["Je m'en fous complètement.",{}],
-    ]},
+    o:[["Je check les vues toutes les 5 minutes.",{V:2}],["Je regarde une fois, ça m'affecte un peu.",{V:1}],["J'ai coupé les réseaux, exprès.",{}],["Je m'en fous complètement.",{}]]},
   { q:"Une meuf te plaît VRAIMENT. Ton réflexe :",
-    o:[
-      ["Je deviens bizarre, je me contrôle trop.",{A:2}],
-      ["J'en fais des caisses pour lui plaire.",{V:2}],
-      ["Je me dégonfle.",{J:2}],
-      ["Je reste moi, tranquille.",{}],
-    ]},
+    o:[["Je deviens bizarre, je me contrôle trop.",{A:2}],["J'en fais des caisses pour lui plaire.",{V:2}],["Je me dégonfle.",{J:2}],["Je reste moi, tranquille.",{}]]},
   { q:"On te rejette. Le soir, dans ta tête :",
-    o:[
-      ["« Qu'est-ce qui cloche chez moi ? »",{V:2}],
-      ["Je rumine pendant des heures.",{V:1,R:1}],
-      ["« Tant pis, next. » — et je le pense.",{}],
-      ["Sur le moment ça va, mais ça revient la nuit.",{R:2}],
-    ]},
+    o:[["« Qu'est-ce qui cloche chez moi ? »",{V:2}],["Je rumine pendant des heures.",{V:1,R:1}],["« Tant pis, next. » — et je le pense.",{}],["Sur le moment ça va, mais ça revient la nuit.",{R:2}]]},
   { q:"Ta vie sociale, aujourd'hui :",
-    o:[
-      ["Je brille avec mes potes, je m'éteins avec des inconnus.",{J:2}],
-      ["Trou noir en société.",{J:2,A:1}],
-      ["À l'aise à peu près partout.",{}],
-      ["Je m'isole pas mal en ce moment.",{R:1,D:1}],
-    ]},
+    o:[["Je brille avec mes potes, je m'éteins avec des inconnus.",{J:2}],["Trou noir en société.",{J:2,A:1}],["À l'aise à peu près partout.",{}],["Je m'isole pas mal en ce moment.",{R:1,D:1}]]},
   { q:"Être 100 % toi-même avec une meuf, c'est :",
-    o:[
-      ["Risqué. Je montre une version « acceptable ».",{A:2}],
-      ["En vrai, je sais plus trop qui je suis.",{A:2,V:1}],
-      ["Naturel, mais j'ose pas toujours.",{J:1}],
-      ["Facile.",{}],
-    ]},
+    o:[["Risqué. Je montre une version « acceptable ».",{A:2}],["En vrai, je sais plus trop qui je suis.",{A:2,V:1}],["Naturel, mais j'ose pas toujours.",{J:1}],["Facile.",{}]]},
   { q:"La discipline dans ta vie (hors sport) :",
-    o:[
-      ["Absente. Je tiens rien.",{D:2}],
-      ["Par à-coups, ça tient jamais.",{D:2}],
-      ["Solide sur un ou deux trucs.",{D:1}],
-      ["Carrée.",{}],
-    ]},
+    o:[["Absente. Je tiens rien.",{D:2}],["Par à-coups, ça tient jamais.",{D:2}],["Solide sur un ou deux trucs.",{D:1}],["Carrée.",{}]]},
   { q:"Ta dernière rupture (ou le fait d'être seul), tu le vis comment :",
-    o:[
-      ["Une vraie claque, ça m'a réveillé.",{R:2}],
-      ["J'évite d'y penser.",{R:2}],
-      ["Digéré. J'en ai tiré des leçons.",{}],
-      ["Je cherche à combler vite avec quelqu'un.",{R:1,V:2}],
-    ]},
+    o:[["Une vraie claque, ça m'a réveillé.",{R:2}],["J'évite d'y penser.",{R:2}],["Digéré. J'en ai tiré des leçons.",{}],["Je cherche à combler vite avec quelqu'un.",{R:1,V:2}]]},
   { q:"Au fond, ce que tu veux vraiment :",
-    o:[
-      ["Qu'on me valide, qu'on me choisisse enfin.",{V:2}],
-      ["Arrêter d'avoir peur du regard des autres.",{J:2}],
-      ["Une relation vraie, pas des plans.",{R:1}],
-      ["Me sentir bien seul, d'abord.",{}],
-    ]},
+    o:[["Qu'on me valide, qu'on me choisisse enfin.",{V:2}],["Arrêter d'avoir peur du regard des autres.",{J:2}],["Une relation vraie, pas des plans.",{R:1}],["Me sentir bien seul, d'abord.",{}]]},
 ];
 
 /* ============ PROFILS ============ */
 const PROFILES = {
-  V:{ name:"Le Coureur", tag:"Profil : besoin de validation",
+  V:{ name:"L'Affamé", tag:"Ton titre de séducteur",
     title:["Tu cours après ","la validation","."],
-    body:"Tu cherches dehors — dans le regard des meufs, les vues, les likes — une valeur que tu ne t'accordes pas à toi-même. Le problème, c'est que ça se sent. Une meuf sent en 3 secondes le mec qui a besoin d'elle pour se sentir quelqu'un. Et ça, ça fait fuir exactement ce que tu veux.",
-    punch:"Le jour où t'arrêtes de courir après, elles commencent à courir après toi. C'est pas une punchline, c'est mécanique." },
-  A:{ name:"Le Caméléon", tag:"Profil : le masque",
+    body:"Tu cherches dehors — dans le regard des meufs, les vues, les likes — une valeur que tu ne t'accordes pas à toi-même. Le problème, c'est que ça se sent. Une meuf sent en 3 secondes le mec qui a besoin d'elle pour se sentir quelqu'un. Et ça fait fuir exactement ce que tu veux.",
+    punch:"Le jour où t'arrêtes de courir après, elles commencent à courir après toi. C'est pas une punchline, c'est mécanique.",
+    plan:["Cette semaine, coupe une source de validation externe (désactive les vues de tes stories, ou un réseau).","Note chaque soir 1 truc dont t'es fier — sans que personne le sache. Tu réapprends à te valider seul.","Aborde une meuf sans aucun objectif de résultat. Juste pour t'entraîner à ne rien attendre d'elle."] },
+  A:{ name:"Le Masqué", tag:"Ton titre de séducteur",
     title:["Tu joues un rôle, ","tu t'effaces","."],
     body:"T'as tellement peur de pas plaire que tu montres une version lissée, « acceptable » de toi. Sauf qu'une meuf tombe pas amoureuse d'un rôle. Elle tombe amoureuse d'un mec entier, avec ses angles. En te cachant, tu la prives de la seule chose qui pouvait l'attirer : toi.",
-    punch:"T'as pas besoin de devenir quelqu'un d'autre. T'as besoin d'oser être toi, à voix haute." },
-  J:{ name:"Le Bridé", tag:"Profil : peur du jugement",
+    punch:"T'as pas besoin de devenir quelqu'un d'autre. T'as besoin d'oser être toi, à voix haute.",
+    plan:["Dis UN truc vrai qui te fait un peu peur à ta prochaine interaction (un avis tranché, un goût de geek, un désaccord).","Arrête de valider tout ce qu'elle dit. Assume quand t'es pas d'accord.","Repère la version de toi que tu caches le plus, et montre-la exprès une fois cette semaine."] },
+  J:{ name:"Le Retenu", tag:"Ton titre de séducteur",
     title:["Tu sais qui tu es. ","La peur te fige","."],
     body:"Le problème c'est pas ton game, c'est ce regard imaginaire des autres qui te paralyse au moment d'agir. Aborder devant un groupe, parler fort, assumer — ton corps dit non avant même que t'essaies. Résultat : tu regardes passer des meufs que t'aurais pu.",
-    punch:"La liberté sociale, ça se muscle. Sur le terrain, une interaction à la fois." },
-  R:{ name:"Le Cabossé", tag:"Profil : le réveil",
+    punch:"La liberté sociale, ça se muscle. Sur le terrain, une interaction à la fois.",
+    plan:["Fais 3 micro-actions gênantes cette semaine (demander l'heure fort, tenir un regard, parler à un inconnu).","Aborde dans les 3 secondes, avant que ta tête invente une excuse.","Aborde une fois devant un groupe. Le pire scénario que t'imagines n'arrivera pas."] },
+  R:{ name:"Le Renaissant", tag:"Ton titre de séducteur",
     title:["Une claque ","t'a réveillé","."],
     body:"Une rupture, un vide, une humiliation — un truc t'a mis par terre et t'a fait réaliser que ta vie était pas alignée. C'est douloureux, mais c'est le meilleur point de départ qui existe. La plupart des mecs restent endormis. Toi t'as vu. Reste à reconstruire sur des bases qui tiennent, cette fois.",
-    punch:"Le but c'est pas de « re-choper » vite pour combler. C'est de devenir le mec qui n'a plus jamais peur de se retrouver seul." },
-  aligned:{ name:"L'Aligné en devenir", tag:"Profil : sur la bonne voie",
+    punch:"Le but c'est pas de re-choper vite pour combler. C'est de devenir le mec qui n'a plus jamais peur de se retrouver seul.",
+    plan:["Écris ce que cette rupture (ou ce vide) t'a appris sur toi. Noir sur blanc. C'est ta base.","Reconstruis UN pilier à toi cette semaine (sport, projet, amitié) — un truc qui ne dépend d'aucune meuf.","Réapprends à être bien seul un soir : sors, aborde, sans chercher à rentrer avec qui que ce soit."] },
+  aligned:{ name:"L'Ancré", tag:"Ton titre de séducteur",
     title:["T'es plus proche ","que tu crois","."],
-    body:"T'as déjà fait une grosse partie du taf : t'es à peu près à l'aise, tu te connais, tu cours pas après grand-chose. Ce qui te manque, c'est pas une transformation, c'est un dernier cran — de la constance et quelqu'un pour t'ajuster au bon moment. C'est là que ça se joue.",
-    punch:"Le dernier 20 % est celui qui change tout. C'est le plus dur à faire seul." },
+    body:"T'as déjà fait une grosse partie du taf : t'es à peu près à l'aise, tu te connais, tu cours pas après grand-chose. Ce qui te manque, c'est pas une transformation, c'est un dernier cran — de la constance et quelqu'un pour t'ajuster au bon moment.",
+    punch:"Le dernier 20 % est celui qui change tout. C'est le plus dur à faire seul.",
+    plan:["Fixe-toi un standard plus haut : arrête de valider les interactions moyennes.","Bosse la régularité : 3 interactions de qualité par semaine, analysées, pas 50 à l'arrache.","Trouve un œil extérieur qui te dit la vérité sur ton point aveugle — c'est là qu'est ton dernier cran."] },
 };
 
-let step = -1;          // -1 = intro
-const answers = [];     // index choisi par question
+/* ============ ÉTAT ============ */
+let step = -1;
+const answers = [];
 const card = document.getElementById('card');
 const prog = document.getElementById('progress');
 const counter = document.getElementById('counter');
+const clamp = (n,a,b)=> Math.max(a, Math.min(b, n));
 
 function setProgress(){
   const pct = step < 0 ? 0 : Math.round((step)/(Q.length)*100);
@@ -239,7 +192,7 @@ function intro(){
   card.innerHTML = `
     <div class="mono" style="margin-bottom:18px">Le test · 2 minutes · 9 questions</div>
     <h1>Tu cours après,<br><span class="grad">ou on court après toi</span> ?</h1>
-    <p class="lead">Neuf questions honnêtes. À la fin : ton profil, et le <strong>vrai</strong> truc qui te bloque avec les filles. Spoiler : c'est presque jamais ton game.</p>
+    <p class="lead">Neuf questions honnêtes. À la fin : ton <strong>titre de séducteur</strong>, tes <strong>scores</strong> et ton <strong>mini-plan</strong> pour débloquer le vrai truc. Spoiler : c'est presque jamais ton game.</p>
     <p class="meta">Réponds cash, comme si on était en terrasse. Personne te juge.</p>
     <button class="btn" onclick="go(0)">Commencer le test →</button>`;
 }
@@ -259,11 +212,7 @@ function render(){
     ${step>0?'<button class="back" onclick="go('+(step-1)+')">← Retour</button>':''}`;
 }
 
-function pick(i){
-  answers[step] = i;
-  // petit délai pour voir la sélection puis avancer
-  setTimeout(()=>{ step+1 < Q.length ? go(step+1) : result(); }, 190);
-}
+function pick(i){ answers[step] = i; setTimeout(()=>{ step+1 < Q.length ? go(step+1) : result(); }, 190); }
 function go(s){ step = s; render(); }
 
 function score(){
@@ -271,89 +220,113 @@ function score(){
   answers.forEach((ai,qi)=>{ const m=Q[qi].o[ai][1]; for(const k in m) t[k]+=m[k]; });
   return t;
 }
+/* scores "grand public" 0-100 dérivés des axes */
+function namedScores(t){
+  return {
+    validation: clamp(Math.round(t.V/8*100), 4, 98),
+    confiance:  clamp(100 - Math.round((t.V+t.J+t.A)/17*100), 4, 98),
+    liberte:    clamp(100 - Math.round(t.J/6*100), 4, 98),
+  };
+}
+function profileKey(t){
+  const total = t.V+t.J+t.A+t.D+t.R;
+  if(total < 5) return "aligned";
+  return Object.keys(t).reduce((a,b)=> t[b]>t[a]?b:a, "V");
+}
 
 function result(){
   const t = score();
   const total = t.V+t.J+t.A+t.D+t.R;
-  // profil dominant ; si score global faible -> aligné
-  let key="aligned";
-  if(total >= 5){
-    key = Object.keys(t).reduce((a,b)=> t[b]>t[a]?b:a, "V");
-  }
+  const key = profileKey(t);
   const p = PROFILES[key];
+  const s = namedScores(t);
   setProgress(); prog.style.width="100%"; counter.textContent="Résultat";
   card.className="card reveal";
   card.innerHTML = `
     <div class="badge">${p.tag}</div>
-    <div class="rtitle">${p.title[0]}<span class="grad">${p.title[1]}</span>${p.title[2]}</div>
+    <div class="rtitle">${p.name}</div>
+    <div class="rsub">${p.title[0]}${p.title[1]}${p.title[2]}</div>
+
+    <div class="scores">
+      ${scoreBar("Dépendance à la validation", s.validation, "warm")}
+      ${scoreBar("Confiance en toi", s.confiance, "indigo")}
+      ${scoreBar("Liberté sociale", s.liberte, "indigo")}
+    </div>
+
     <p class="rbody">${p.body}</p>
     <div class="punch">${p.punch}</div>
+
+    <div class="plan">
+      <h3>🎯 Ton mini-plan pour cette semaine</h3>
+      <ol>${p.plan.map(a=>`<li>${a}</li>`).join("")}</ol>
+    </div>
+
     <div class="capture">
-      <h3>Reçois ton plan perso 👇</h3>
-      <p>Je t'envoie ton diagnostic complet + les 3 premiers leviers concrets pour <strong>${p.name}</strong>, à appliquer cette semaine. Direct dans ta boîte mail.</p>
-      <form class="field" id="capForm" onsubmit="return submitEmail(event,'${key}',${total})">
+      <h3>Reçois ton plan complet 👇</h3>
+      <p>Je t'envoie ton analyse détaillée + les leviers avancés pour passer <strong>${p.name}</strong> au niveau supérieur. Direct par mail.</p>
+      <form id="capForm" onsubmit="return submitLead(event,'${key}',${total})">
+        <div class="frow">
+          <input type="text" id="prenom" placeholder="Prénom" required autocomplete="given-name">
+          <input type="text" id="nom" placeholder="Nom" required autocomplete="family-name">
+        </div>
         <input type="email" id="email" placeholder="ton@email.com" required autocomplete="email">
-        <button class="btn" type="submit">Recevoir mon plan</button>
+        <button class="btn full" type="submit">Recevoir mon plan complet</button>
       </form>
-      <div class="err" id="err">Un souci. Réessaie dans un instant.</div>
-      <p class="fine">Pas de spam, pas de blabla. Tu te désabonnes en un clic.</p>
+      <p class="fine">Pas de spam. Tu te désabonnes en un clic.</p>
     </div>
     <button class="back" style="margin-top:26px" onclick="intro()">↺ Refaire le test</button>`;
+  // animer les barres
+  requestAnimationFrame(()=>{ setTimeout(()=>{
+    document.querySelectorAll('.sfill').forEach(el=> el.style.width = el.dataset.v + "%");
+  }, 120); });
 }
 
-function submitEmail(e, key, total){
+function scoreBar(label, val, cls){
+  return `<div class="score">
+    <div class="srow"><span class="slabel">${label}</span><span class="sval">${val}%</span></div>
+    <div class="strack"><div class="sfill ${cls}" data-v="${val}"></div></div>
+  </div>`;
+}
+
+function submitLead(e, key, total){
   e.preventDefault();
+  const prenom = document.getElementById('prenom').value.trim();
+  const nom = document.getElementById('nom').value.trim();
   const email = document.getElementById('email').value.trim();
-  if(!email || email.indexOf('@')<0) return false;
-  const t = score();
-  const payload = {
-    EMAIL: email, PROFIL: PROFILES[key].name,
-    SCORE_VALIDATION:t.V, SCORE_JUGEMENT:t.J, SCORE_MASQUE:t.A,
-    SCORE_DISCIPLINE:t.D, SCORE_RUPTURE:t.R, SCORE_TOTAL:total,
-    SOURCE:"Quiz - tu cours apres"
-  };
-  try{ localStorage.setItem('quiz_lead', JSON.stringify(payload)); }catch(_){}
+  if(!email || email.indexOf('@')<0 || !prenom) return false;
+  const t = score(); const s = namedScores(t);
+  const profil = PROFILES[key].name;
+  const src = "Quiz - tu cours apres";
+  try{ localStorage.setItem('quiz_lead', JSON.stringify({prenom,nom,email,profil,total,scores:s})); }catch(_){}
 
-  let fired = false;
-  const done = ()=>{ if(!fired){ fired = true; success(key); } };
-
-  // 1) Brevo (sibforms) : email -> liste "Prospects Coaching". Marche immediatement.
-  if(BREVO_FORM_ACTION){
-    const b = new URLSearchParams();
-    b.append('EMAIL', email);
-    b.append('email_address_check', ''); // honeypot anti-bot, doit rester vide
-    b.append('locale', 'fr');
-    fetch(BREVO_FORM_ACTION, {method:'POST', mode:'no-cors', body:b}).catch(()=>{});
-  }
-  // 2) FormSubmit : diagnostic complet (profil + scores) -> boite Gmail d'Allan.
   if(LEAD_ENDPOINT){
     fetch(LEAD_ENDPOINT, {
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify({
-        _subject:`Nouveau lead quiz — ${payload.PROFIL}`,
-        email, profil:payload.PROFIL,
-        score_total:total, score_validation:t.V, score_jugement:t.J,
-        score_masque:t.A, score_discipline:t.D, score_rupture:t.R,
-        source:payload.SOURCE,
+        _subject:`Nouveau lead quiz — ${prenom} ${nom} (${profil})`,
+        prenom, nom, email, profil,
+        score_validation:s.validation, score_confiance:s.confiance, score_liberte:s.liberte,
+        score_total:total, source:src,
         // ligne machine pour le script serveur -> Brevo (parsing robuste)
-        lead_data:`LEADV1|${email}|${PROFILES[key].name}|${total}|${t.V}|${t.J}|${t.A}|${t.D}|${t.R}|${payload.SOURCE}`
+        lead_data:`LEADV2|${email}|${prenom}|${nom}|${profil}|${total}|${t.V}|${t.J}|${t.A}|${t.D}|${t.R}|${src}`
       })
     }).catch(()=>{});
   }
-  // On remercie sans attendre le retour reseau (no-cors = reponse opaque).
+  let fired=false;
+  const done=()=>{ if(!fired){ fired=true; success(key, prenom); } };
   setTimeout(done, 600);
   return false;
 }
 
-function success(key){
+function success(key, prenom){
   const p = PROFILES[key];
   card.className="card reveal";
   card.innerHTML = `
     <div class="ok">
       <div class="check">✓</div>
-      <div class="rtitle" style="font-size:clamp(1.6rem,5.5vw,2.2rem)">C'est parti.</div>
-      <p class="rbody" style="max-width:42ch;margin:0 auto 8px">Ton plan pour <strong>${p.name}</strong> arrive dans ta boîte mail. Check tes spams si tu vois rien d'ici 5 min.</p>
+      <div class="rtitle" style="font-size:clamp(1.6rem,5.5vw,2.2rem)">C'est parti${prenom?', '+prenom:''}.</div>
+      <p class="rbody" style="max-width:42ch;margin:0 auto 8px">Ton plan complet pour <strong>${p.name}</strong> arrive dans ta boîte mail. Check tes spams si tu vois rien d'ici 5 min.</p>
       <div class="punch" style="display:inline-block;text-align:left;margin:24px auto">Envie d'aller plus vite ? Le premier appel avec moi est offert. On regarde ta situation ensemble, sans engagement.</div>
       <div style="margin-top:8px"><a class="btn" href="${BOOK_URL}" target="_blank" rel="noopener">Réserver mon appel offert →</a></div>
       <div style="margin-top:26px"><a href="/" class="mono" style="letter-spacing:.1em">← Revenir au site</a></div>
