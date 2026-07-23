@@ -120,7 +120,7 @@ h1 .grad{background:linear-gradient(100deg,#a5b4fc,#6366f1 55%,#a5b4fc);-webkit-
    2) LEAD_ENDPOINT : filet de securite sans inscription (FormSubmit) -> chaque lead
       (email + profil + scores) arrive dans la boite Gmail d'Allan. Aucun lead perdu.
       Necessite UN clic d'activation la 1re fois (email envoye par FormSubmit). */
-const BREVO_FORM_ACTION = ""; // ex: "https://xxxx.sibforms.com/serve/MUIF..."
+const BREVO_FORM_ACTION = "https://743a4372.sibforms.com/serve/MUIFABSna1zhAKdj4EiDq2Q0E9CEwxJpeHCYS54NDT-f1iYp19uxwBvilT_ecTIdTN0vCKElvqr3RKe4JPUyR5Uj_0f_d6ykVnhMln0IVXPgx-G9JGa_Yv-eUXPGoCWP91-xYZ8xv55TASG-TuXDBGTvrhTaH2HaCMqp5nVxj50coph5-4WEAzTXuSD2SqvcsOKGj1UwhiasCdEV7g==";
 const LEAD_ENDPOINT = "https://formsubmit.co/ajax/allanmaisak@gmail.com";
 const BOOK_URL = "https://cal.com/allan-figfsv/appel-confiance-offert";
 
@@ -310,18 +310,20 @@ function submitEmail(e, key, total){
   };
   try{ localStorage.setItem('quiz_lead', JSON.stringify(payload)); }catch(_){}
 
-  const done = ()=> success(key);
+  let fired = false;
+  const done = ()=>{ if(!fired){ fired = true; success(key); } };
+
+  // 1) Brevo (sibforms) : email -> liste "Prospects Coaching". Marche immediatement.
   if(BREVO_FORM_ACTION){
-    // Voie directe -> liste Brevo (sibforms), attributs en champs caches.
-    const body = new URLSearchParams();
-    body.append('EMAIL', email);
-    body.append('PROFIL', PROFILES[key].name);
-    body.append('SOURCE', payload.SOURCE);
-    body.append('SCORE_TOTAL', total);
-    fetch(BREVO_FORM_ACTION,{method:'POST',mode:'no-cors',body}).then(done).catch(done);
-  } else if(LEAD_ENDPOINT){
-    // Filet de securite -> boite mail d'Allan, avec tout le diagnostic.
-    fetch(LEAD_ENDPOINT,{
+    const b = new URLSearchParams();
+    b.append('EMAIL', email);
+    b.append('email_address_check', ''); // honeypot anti-bot, doit rester vide
+    b.append('locale', 'fr');
+    fetch(BREVO_FORM_ACTION, {method:'POST', mode:'no-cors', body:b}).catch(()=>{});
+  }
+  // 2) FormSubmit : diagnostic complet (profil + scores) -> boite Gmail d'Allan.
+  if(LEAD_ENDPOINT){
+    fetch(LEAD_ENDPOINT, {
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify({
@@ -331,10 +333,10 @@ function submitEmail(e, key, total){
         score_masque:t.A, score_discipline:t.D, score_rupture:t.R,
         source:payload.SOURCE
       })
-    }).then(done).catch(done);
-  } else {
-    done();
+    }).catch(()=>{});
   }
+  // On remercie sans attendre le retour reseau (no-cors = reponse opaque).
+  setTimeout(done, 600);
   return false;
 }
 
