@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Le test — Tu cours après, ou on court après toi ? · Allan Maisak</title>
+<title>Le test · Tu cours après, ou on court après toi ? · Allan Maisak</title>
 <meta name="description" content="9 questions, 2 minutes. Ton titre de séducteur, tes scores (dépendance à la validation, confiance en toi) et ton mini-plan d'action. Test offert par Allan Maisak.">
 <meta name="theme-color" content="#0a0a10">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
-<meta property="og:title" content="Tu cours après, ou on court après toi ? — le test en 2 min">
+<meta property="og:title" content="Tu cours après, ou on court après toi ? Le test en 2 min.">
 <meta property="og:description" content="Ton titre de séducteur + tes scores + ton mini-plan. Le vrai blocage, c'est pas ton game.">
 <meta property="og:image" content="https://allanmaisak.com/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -108,7 +108,7 @@ h1 .grad{background:linear-gradient(100deg,#a5b4fc,#6366f1 55%,#a5b4fc);-webkit-
   </div>
   <div class="bar"><i id="progress"></i></div>
   <div class="card" id="card"></div>
-  <div class="foot">Test honnête. Zéro spam. Tu peux le fermer quand tu veux.</div>
+  <div class="foot">Test honnête, zéro spam. Tu fermes quand tu veux.</div>
 </div>
 
 <script>
@@ -123,58 +123,58 @@ const BOOK_URL = "https://cal.com/allan-figfsv/appel-confiance-offert";
    Axes : V=besoin de validation · J=peur du jugement · A=masque/inauthenticité
           D=discipline/passivité · R=rapport à la rupture/au manque */
 const Q = [
-  { q:"Une meuf te plaît dans la rue. Ce qui te traverse en premier :",
+  { q:"Une meuf te plaît dans la rue. Le premier truc qui te traverse :",
     o:[["« Elle va me prendre pour qui ? »",{J:2}],["« J'ai pas le temps, pas là, pas maintenant. »",{D:2}],["« Faut LE truc parfait à dire. »",{A:2}],["J'y vais, on verra bien.",{}]]},
   { q:"Tu postes une story ou une photo. Franchement :",
-    o:[["Je check les vues toutes les 5 minutes.",{V:2}],["Je regarde une fois, ça m'affecte un peu.",{V:1}],["J'ai coupé les réseaux, exprès.",{}],["Je m'en fous complètement.",{}]]},
-  { q:"Une meuf te plaît VRAIMENT. Ton réflexe :",
+    o:[["Je check les vues toutes les 5 minutes.",{V:2}],["Je regarde une fois… et ouais, ça me fait un truc.",{V:1}],["J'ai coupé les réseaux, exprès.",{}],["Je m'en fous complètement.",{}]]},
+  { q:"Une meuf te plaît VRAIMENT. Ton réflexe, c'est quoi :",
     o:[["Je deviens bizarre, je me contrôle trop.",{A:2}],["J'en fais des caisses pour lui plaire.",{V:2}],["Je me dégonfle.",{J:2}],["Je reste moi, tranquille.",{}]]},
-  { q:"On te rejette. Le soir, dans ta tête :",
-    o:[["« Qu'est-ce qui cloche chez moi ? »",{V:2}],["Je rumine pendant des heures.",{V:1,R:1}],["« Tant pis, next. » — et je le pense.",{}],["Sur le moment ça va, mais ça revient la nuit.",{R:2}]]},
-  { q:"Ta vie sociale, aujourd'hui :",
+  { q:"Tu te fais rejeter. Le soir, dans ta tête :",
+    o:[["« Qu'est-ce qui cloche chez moi ? »",{V:2}],["Je rumine pendant des heures.",{V:1,R:1}],["« Tant pis, next. » Et je le pense vraiment.",{}],["Sur le moment ça va… mais ça revient la nuit.",{R:2}]]},
+  { q:"Ta vie sociale, en ce moment :",
     o:[["Je brille avec mes potes, je m'éteins avec des inconnus.",{J:2}],["Trou noir en société.",{J:2,A:1}],["À l'aise à peu près partout.",{}],["Je m'isole pas mal en ce moment.",{R:1,D:1}]]},
-  { q:"Être 100 % toi-même avec une meuf, c'est :",
+  { q:"Être 100 % toi devant une meuf, c'est :",
     o:[["Risqué. Je montre une version « acceptable ».",{A:2}],["En vrai, je sais plus trop qui je suis.",{A:2,V:1}],["Naturel, mais j'ose pas toujours.",{J:1}],["Facile.",{}]]},
-  { q:"La discipline dans ta vie (hors sport) :",
-    o:[["Absente. Je tiens rien.",{D:2}],["Par à-coups, ça tient jamais.",{D:2}],["Solide sur un ou deux trucs.",{D:1}],["Carrée.",{}]]},
-  { q:"Ta dernière rupture (ou le fait d'être seul), tu le vis comment :",
-    o:[["Une vraie claque, ça m'a réveillé.",{R:2}],["J'évite d'y penser.",{R:2}],["Digéré. J'en ai tiré des leçons.",{}],["Je cherche à combler vite avec quelqu'un.",{R:1,V:2}]]},
-  { q:"Au fond, ce que tu veux vraiment :",
-    o:[["Qu'on me valide, qu'on me choisisse enfin.",{V:2}],["Arrêter d'avoir peur du regard des autres.",{J:2}],["Une relation vraie, pas des plans.",{R:1}],["Me sentir bien seul, d'abord.",{}]]},
+  { q:"La discipline dans ta vie, le sport mis à part :",
+    o:[["Absente. Je tiens rien.",{D:2}],["Par à-coups. Ça tient jamais.",{D:2}],["Solide sur un ou deux trucs.",{D:1}],["Carrée.",{}]]},
+  { q:"Ta dernière rupture, ou juste être seul… tu le vis comment ?",
+    o:[["Une vraie claque. Ça m'a réveillé.",{R:2}],["J'évite d'y penser.",{R:2}],["Digéré. J'en ai tiré des leçons.",{}],["Je cherche à combler vite, avec n'importe qui.",{R:1,V:2}]]},
+  { q:"Au fond, là, ce que tu veux VRAIMENT :",
+    o:[["Qu'on me valide. Qu'on me choisisse, enfin.",{V:2}],["Arrêter d'avoir peur du regard des autres.",{J:2}],["Une relation vraie. Pas des plans.",{R:1}],["Me sentir bien seul, d'abord.",{}]]},
 ];
 
 /* ============ PROFILS ============ */
 const PROFILES = {
   V:{ name:"L'Affamé", tag:"Ton titre de séducteur",
     title:["Tu cours après ","la validation","."],
-    body:"Tu cherches dehors — dans le regard des meufs, les vues, les likes — une valeur que tu ne t'accordes pas à toi-même. Le problème, c'est que ça se sent. Une meuf sent en 3 secondes le mec qui a besoin d'elle pour se sentir quelqu'un. Et ça fait fuir exactement ce que tu veux.",
-    punch:"Le jour où t'arrêtes de courir après, elles commencent à courir après toi. C'est pas une punchline, c'est mécanique.",
-    plan:["Cette semaine, coupe une source de validation externe (désactive les vues de tes stories, ou un réseau).","Note chaque soir 1 truc dont t'es fier — sans que personne le sache. Tu réapprends à te valider seul.","Aborde une meuf sans aucun objectif de résultat. Juste pour t'entraîner à ne rien attendre d'elle."] },
+    body:"Tu vas chercher dehors une valeur que tu t'accordes pas tout seul. Le regard des meufs, les vues, les likes. Moi j'ai tourné là-dedans des années, du coup je te parle pas d'en haut. Le truc… ça se sent. Une meuf capte en 3 secondes le mec qui a besoin d'elle pour exister. Et ça fait fuir pile ce que tu veux.",
+    punch:"Le jour où t'arrêtes de courir après… c'est là qu'elles commencent à courir après toi. C'est pas une punchline, c'est mécanique.",
+    plan:["Cette semaine, coupe UNE source de validation. Désactive les vues de tes stories, ou lâche un réseau. Une seule, mais tu le fais.","Chaque soir, note 1 truc dont t'es fier. Sans le dire à personne. Tu réapprends à te valider tout seul.","Aborde une meuf sans aucun objectif de résultat. Le résultat, c'est que t'as osé. Rien d'autre."] },
   A:{ name:"Le Masqué", tag:"Ton titre de séducteur",
     title:["Tu joues un rôle, ","tu t'effaces","."],
-    body:"T'as tellement peur de pas plaire que tu montres une version lissée, « acceptable » de toi. Sauf qu'une meuf tombe pas amoureuse d'un rôle. Elle tombe amoureuse d'un mec entier, avec ses angles. En te cachant, tu la prives de la seule chose qui pouvait l'attirer : toi.",
-    punch:"T'as pas besoin de devenir quelqu'un d'autre. T'as besoin d'oser être toi, à voix haute.",
-    plan:["Dis UN truc vrai qui te fait un peu peur à ta prochaine interaction (un avis tranché, un goût de geek, un désaccord).","Arrête de valider tout ce qu'elle dit. Assume quand t'es pas d'accord.","Repère la version de toi que tu caches le plus, et montre-la exprès une fois cette semaine."] },
+    body:"T'as tellement peur de pas plaire que tu montres une version lissée, « correcte » de toi. Sauf qu'une meuf, elle tombe pas amoureuse d'un rôle. Elle tombe amoureuse d'un mec entier, avec ses angles, ses trucs bizarres. Et toi, à force de te cacher, tu la prives de la seule chose qui pouvait l'attirer… bah, toi.",
+    punch:"T'as pas besoin de devenir quelqu'un d'autre. T'as juste besoin d'oser être toi… à voix haute.",
+    plan:["À ta prochaine interaction, dis UN truc vrai qui te fait un peu flipper. Un avis tranché, un délire de geek, un désaccord. Un seul.","Arrête d'acquiescer à tout ce qu'elle dit. Quand t'es pas d'accord, assume, tranquille.","Repère la version de toi que tu planques le plus… et montre-la exprès une fois cette semaine."] },
   J:{ name:"Le Retenu", tag:"Ton titre de séducteur",
     title:["Tu sais qui tu es. ","La peur te fige","."],
-    body:"Le problème c'est pas ton game, c'est ce regard imaginaire des autres qui te paralyse au moment d'agir. Aborder devant un groupe, parler fort, assumer — ton corps dit non avant même que t'essaies. Résultat : tu regardes passer des meufs que t'aurais pu.",
-    punch:"La liberté sociale, ça se muscle. Sur le terrain, une interaction à la fois.",
-    plan:["Fais 3 micro-actions gênantes cette semaine (demander l'heure fort, tenir un regard, parler à un inconnu).","Aborde dans les 3 secondes, avant que ta tête invente une excuse.","Aborde une fois devant un groupe. Le pire scénario que t'imagines n'arrivera pas."] },
+    body:"Ton souci c'est pas ton game, c'est ce regard imaginaire des autres qui te bloque pile au moment d'y aller. Aborder devant un groupe, parler fort, assumer… ton corps dit non avant même que t'aies essayé. Du coup tu regardes passer des meufs que t'aurais carrément pu avoir.",
+    punch:"La liberté sociale ça se muscle. Comme à la salle : surcharge progressive, une interaction à la fois.",
+    plan:["Cette semaine, fais 3 micro-actions un peu gênantes. Demander l'heure en parlant fort, tenir un regard, causer à un inconnu.","Aborde dans les 3 secondes. Avant que ta tête ait le temps d'inventer une excuse.","Aborde une fois devant un groupe. Le pire que t'imagines, il arrivera pas. Et même si… t'es toujours vivant."] },
   R:{ name:"Le Renaissant", tag:"Ton titre de séducteur",
     title:["Une claque ","t'a réveillé","."],
-    body:"Une rupture, un vide, une humiliation — un truc t'a mis par terre et t'a fait réaliser que ta vie était pas alignée. C'est douloureux, mais c'est le meilleur point de départ qui existe. La plupart des mecs restent endormis. Toi t'as vu. Reste à reconstruire sur des bases qui tiennent, cette fois.",
-    punch:"Le but c'est pas de re-choper vite pour combler. C'est de devenir le mec qui n'a plus jamais peur de se retrouver seul.",
-    plan:["Écris ce que cette rupture (ou ce vide) t'a appris sur toi. Noir sur blanc. C'est ta base.","Reconstruis UN pilier à toi cette semaine (sport, projet, amitié) — un truc qui ne dépend d'aucune meuf.","Réapprends à être bien seul un soir : sors, aborde, sans chercher à rentrer avec qui que ce soit."] },
+    body:"Une rupture, un vide, une humiliation… un truc t'a mis par terre et t'a fait capter que ta vie était pas alignée. Ça fait mal, je sais. Mais franchement c'est le meilleur point de départ qui existe. La plupart des mecs restent endormis toute leur vie. Toi t'as vu. Reste juste à reconstruire sur des bases qui tiennent, cette fois.",
+    punch:"Le but c'est pas de re-choper vite pour combler le vide. C'est de devenir le mec qui a plus jamais peur de se retrouver SEUL.",
+    plan:["Écris ce que cette claque t'a appris sur toi. Noir sur blanc, vraiment. C'est ta base pour la suite.","Cette semaine, reconstruis UN pilier à toi. Sport, projet, une amitié. Un truc qui dépend d'aucune meuf.","Réapprends à être bien seul un soir. Sors, aborde, parle aux gens… sans chercher à rentrer avec qui que ce soit."] },
   D:{ name:"Le Dispersé", tag:"Ton titre de séducteur",
     title:["Tu sais quoi faire. ","Tu le fais pas","."],
-    body:"T'as compris le game. T'as les infos, les conseils, peut-être même les résultats quand tu t'y mets. Ton problème c'est pas le savoir, c'est la constance. Tu démarres fort, puis tu lâches. Tu vois le travail à faire comme une montagne, alors tu ne le fais pas. Et sans régularité, ton niveau stagne malgré tout ton potentiel.",
-    punch:"La discipline bat le talent quand le talent n'est pas discipliné. Ton palier suivant est de l'autre côté de la constance.",
-    plan:["Choisis UNE action minuscule à faire tous les jours cette semaine (2 abordages, 1 analyse). Non négociable.","Après chaque interaction, note 3 lignes à chaud. Pas une montagne : 3 lignes.","Rends des comptes à quelqu'un (un pote, un coach). Ce qui est suivi se fait."] },
+    body:"T'as compris le game. T'as les infos, les conseils, parfois même les résultats quand tu t'y mets vraiment. Ton problème c'est pas le savoir, c'est la constance. Tu démarres à fond, et puis tu lâches. Tu vois le taf comme une montagne, du coup tu le fais pas. Et sans régularité, ton niveau stagne alors que t'as tout le potentiel.",
+    punch:"Le talent sans constance, putain ça vaut rien. Ton prochain palier, il est juste de l'autre côté de la régularité.",
+    plan:["Choisis UNE action minuscule, tous les jours cette semaine. 2 abordages, 1 analyse. Non négociable, même les jours sans.","Après chaque interaction, note 3 lignes à chaud. Pas un roman. 3 lignes, c'est tout.","Rends des comptes à quelqu'un. Un pote, un coach, peu importe. Ce que t'as promis à voix haute, tu le fais."] },
   aligned:{ name:"L'Ancré", tag:"Ton titre de séducteur",
     title:["T'es plus proche ","que tu crois","."],
-    body:"T'as déjà fait une grosse partie du taf : t'es à peu près à l'aise, tu te connais, tu cours pas après grand-chose. Ce qui te manque, c'est pas une transformation, c'est un dernier cran — de la constance et quelqu'un pour t'ajuster au bon moment.",
-    punch:"Le dernier 20 % est celui qui change tout. C'est le plus dur à faire seul.",
-    plan:["Fixe-toi un standard plus haut : arrête de valider les interactions moyennes.","Bosse la régularité : 3 interactions de qualité par semaine, analysées, pas 50 à l'arrache.","Trouve un œil extérieur qui te dit la vérité sur ton point aveugle — c'est là qu'est ton dernier cran."] },
+    body:"T'as déjà fait le gros du taf. T'es à peu près à l'aise, tu te connais, tu cours pas après grand-chose. Ce qui te manque c'est pas une transformation, franchement non. C'est un dernier cran. Un peu plus de constance, et un œil qui t'ajuste au bon moment.",
+    punch:"Le dernier 20 %, c'est celui qui change tout. Et c'est le plus dur à faire seul.",
+    plan:["Monte ton standard. Arrête de valider les interactions moyennes, tu vaux mieux que ça.","Bosse la régularité. 3 interactions de qualité par semaine, analysées. Pas 50 à l'arrache.","Trouve un œil extérieur qui te dit la vérité sur ton angle mort. C'est là qu'il est, ton dernier cran."] },
 };
 
 /* ============ ÉTAT ============ */
@@ -195,11 +195,11 @@ function intro(){
   step = -1; setProgress();
   card.className = "card reveal";
   card.innerHTML = `
-    <div class="mono" style="margin-bottom:18px">Le test · 2 minutes · 9 questions</div>
+    <div class="mono" style="margin-bottom:18px">Le test · 2 min · 9 questions</div>
     <h1>Tu cours après,<br><span class="grad">ou on court après toi</span> ?</h1>
-    <p class="lead">Neuf questions honnêtes. À la fin : ton <strong>titre de séducteur</strong>, tes <strong>scores</strong> et ton <strong>mini-plan</strong> pour débloquer le vrai truc. Spoiler : c'est presque jamais ton game.</p>
-    <p class="meta">Réponds cash, comme si on était en terrasse. Personne te juge.</p>
-    <button class="btn" onclick="go(0)">Commencer le test →</button>`;
+    <p class="lead">Neuf questions honnêtes, et tu réponds sans te mentir. À la fin t'as ton <strong>titre</strong>, tes <strong>scores</strong> et un <strong>mini-plan</strong> pour débloquer le vrai truc. Parce que le vrai truc… c'est presque jamais ton game.</p>
+    <p class="meta">Réponds cash, comme si on était en terrasse tous les deux. Personne te juge.</p>
+    <button class="btn" onclick="go(0)">Let's go →</button>`;
 }
 
 function render(){
@@ -267,17 +267,17 @@ function result(){
     </div>
 
     <div class="capture">
-      <h3>Reçois ton plan complet 👇</h3>
-      <p>Je t'envoie ton analyse détaillée + les leviers avancés pour passer <strong>${p.name}</strong> au niveau supérieur. Direct par mail.</p>
+      <h3>Ton plan complet, je te l'envoie 👇</h3>
+      <p>Je t'envoie ton analyse complète, et les leviers plus avancés pour faire passer <strong>${p.name}</strong> au niveau au-dessus. Direct par mail, rien d'autre.</p>
       <form id="capForm" onsubmit="return submitLead(event,'${key}',${total})">
         <div class="frow">
           <input type="text" id="prenom" placeholder="Prénom" required autocomplete="given-name">
           <input type="text" id="nom" placeholder="Nom" required autocomplete="family-name">
         </div>
         <input type="email" id="email" placeholder="ton@email.com" required autocomplete="email">
-        <button class="btn full" type="submit">Recevoir mon plan complet</button>
+        <button class="btn full" type="submit">Envoie-moi mon plan complet</button>
       </form>
-      <p class="fine">Pas de spam. Tu te désabonnes en un clic.</p>
+      <p class="fine">Zéro spam, promis. Tu te désabonnes en un clic.</p>
     </div>
     <button class="back" style="margin-top:26px" onclick="intro()">↺ Refaire le test</button>`;
   // animer les barres
@@ -309,7 +309,7 @@ function submitLead(e, key, total){
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify({
-        _subject:`Nouveau lead quiz — ${prenom} ${nom} (${profil})`,
+        _subject:`Nouveau lead quiz : ${prenom} ${nom} (${profil})`,
         prenom, nom, email, profil,
         score_validation:s.validation, score_confiance:s.confiance, score_liberte:s.liberte,
         score_total:total, source:src,
@@ -331,9 +331,9 @@ function success(key, prenom){
     <div class="ok">
       <div class="check">✓</div>
       <div class="rtitle" style="font-size:clamp(1.6rem,5.5vw,2.2rem)">C'est parti${prenom?', '+prenom:''}.</div>
-      <p class="rbody" style="max-width:42ch;margin:0 auto 8px">Ton plan complet pour <strong>${p.name}</strong> arrive dans ta boîte mail. Check tes spams si tu vois rien d'ici 5 min.</p>
-      <div class="punch" style="display:inline-block;text-align:left;margin:24px auto">Envie d'aller plus vite ? Le premier appel avec moi est offert. On regarde ta situation ensemble, sans engagement.</div>
-      <div style="margin-top:8px"><a class="btn" href="${BOOK_URL}" target="_blank" rel="noopener">Réserver mon appel offert →</a></div>
+      <p class="rbody" style="max-width:42ch;margin:0 auto 8px">Ton plan complet pour <strong>${p.name}</strong> arrive dans ta boîte mail, là, tout de suite. Check tes spams si tu vois rien d'ici 5 min.</p>
+      <div class="punch" style="display:inline-block;text-align:left;margin:24px auto">Envie d'aller plus vite ? Le premier appel avec moi est offert. On regarde ta situation ensemble, tranquille, zéro engagement.</div>
+      <div style="margin-top:8px"><a class="btn" href="${BOOK_URL}" target="_blank" rel="noopener">Je réserve mon appel offert →</a></div>
       <div style="margin-top:26px"><a href="/" class="mono" style="letter-spacing:.1em">← Revenir au site</a></div>
     </div>`;
 }
