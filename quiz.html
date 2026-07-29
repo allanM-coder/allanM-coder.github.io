@@ -3,79 +3,86 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Le test · Quel est ton style d'attachement ? · Allan Maisak</title>
-<meta name="description" content="9 questions, 2 minutes. Ton style d'attachement, ton score de dépendance à la validation, et un plan d'action. Test offert par Allan Maisak.">
-<meta name="theme-color" content="#0a0a10">
+<title>Le test · Tu bloques à quel niveau ? · Allan Maisak</title>
+<meta name="description" content="9 questions, 2 minutes. Provoquer la rencontre, séduire, fréquenter : le test te dit lequel des trois niveaux te bloque, et par où commencer.">
+<meta name="theme-color" content="#0b0b0d">
+<link rel="canonical" href="https://allanm-coder.github.io/quiz.html">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
-<meta property="og:title" content="Quel est ton style d'attachement ? Le test en 2 min.">
-<meta property="og:description" content="Ton style d'attachement + ton score de dépendance à la validation + ton plan. Le vrai truc qui te bloque avec les filles.">
-<meta property="og:image" content="https://allanmaisak.com/img/og.jpg">
+<meta property="og:title" content="Tu bloques à quel niveau ? Le test en 2 minutes.">
+<meta property="og:description" content="Provoquer la rencontre, séduire, fréquenter. Il y en a un des trois qui te bloque. Le test te dit lequel, et quoi faire cette semaine.">
+<meta property="og:url" content="https://allanm-coder.github.io/quiz.html">
+<meta property="og:image" content="https://allanm-coder.github.io/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0a10'/%3E%3Ctext x='32' y='44' font-family='Arial,sans-serif' font-size='30' font-weight='800' fill='%23818cf8' text-anchor='middle'%3EAM%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0b0d'/%3E%3Ctext x='32' y='44' font-family='Arial,sans-serif' font-size='30' font-weight='800' fill='%23f5f0e8' text-anchor='middle'%3EAM%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0a0a10; --bg-soft:#101019; --surface:#14141f;
-  --line:rgba(129,140,248,.14); --line-soft:rgba(255,255,255,.07);
-  --text:#e7e7ef; --text-dim:#9b9bb0;
-  --accent:#818cf8; --accent-strong:#6366f1; --accent-soft:rgba(99,102,241,.12);
-  --radius:16px; --font:'Outfit',system-ui,-apple-system,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+  --bg:#0b0b0d; --bg-soft:#0e0d10; --surface:#15141a;
+  --line:rgba(245,158,11,.20); --line-soft:rgba(255,255,255,.06);
+  --text:#f0ede6; --text-hi:#fdfbf7; --text-dim:#a39e93;
+  --accent:#fbbf24; --accent-strong:#f59e0b; --accent-hover:#fcd34d; --accent-ink:#201404; --accent-soft:rgba(245,158,11,.10);
+  --radius:14px; --font:'Outfit',system-ui,-apple-system,sans-serif; --mono:'Outfit',system-ui,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100dvh}
-::selection{background:var(--accent-strong);color:#fff}
+::selection{background:var(--accent-strong);color:var(--accent-ink)}
 a{color:var(--accent);text-decoration:none}
 strong{color:var(--text);font-weight:600}
 .glow{position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background:radial-gradient(600px 400px at 75% -5%,rgba(99,102,241,.22),transparent 60%),
-  radial-gradient(900px 600px at -10% 40%,rgba(99,102,241,.08),transparent 60%),
-  radial-gradient(700px 500px at 110% 85%,rgba(129,140,248,.10),transparent 60%)}
+  background:radial-gradient(700px 460px at 78% -8%,rgba(245,158,11,.10),transparent 62%),
+  radial-gradient(900px 620px at -12% 45%,rgba(245,158,11,.045),transparent 62%)}
 .shell{max-width:640px;margin:0 auto;padding:28px 22px 80px;min-height:100dvh;display:flex;flex-direction:column}
-.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:8px}
 .brand{font-weight:800;letter-spacing:.06em;font-size:14px}
 .brand em{font-style:normal;color:var(--accent)}
-.mono{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.top-right{display:flex;align-items:center;justify-content:flex-end;gap:12px}
+.top-call{display:inline-flex;align-items:center;justify-content:center;padding:9px 12px;border-radius:9px;border:1px solid rgba(245,158,11,.38);background:rgba(245,158,11,.08);color:var(--accent);font-size:12.5px;font-weight:800;white-space:nowrap}
+.top-call:hover{background:rgba(245,158,11,.15);border-color:var(--accent)}
+.mono{font-family:var(--font);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
 .bar{height:4px;background:rgba(255,255,255,.06);border-radius:999px;overflow:hidden;margin:18px 0 34px}
-.bar>i{display:block;height:100%;width:0;background:linear-gradient(90deg,#6366f1,#a5b4fc);border-radius:999px;transition:width .4s cubic-bezier(.4,0,.2,1)}
+.bar>i{display:block;height:100%;width:0;background:linear-gradient(90deg,#f59e0b,#fbbf24);border-radius:999px;transition:width .4s cubic-bezier(.4,0,.2,1)}
 .card{flex:1;display:flex;flex-direction:column;justify-content:center}
 .reveal{animation:fade .5s ease both}
 @keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 h1{font-size:clamp(1.9rem,6vw,2.7rem);line-height:1.06;letter-spacing:-.02em;font-weight:800;margin-bottom:18px}
-h1 .grad{background:linear-gradient(100deg,#a5b4fc,#6366f1 55%,#a5b4fc);-webkit-background-clip:text;background-clip:text;color:transparent}
+.grad{color:var(--accent)}
 .lead{color:var(--text-dim);font-size:1.1rem;margin-bottom:16px;max-width:46ch}
-.meta{font-family:var(--mono);font-size:12px;color:var(--text-dim);margin-bottom:32px;letter-spacing:.04em}
-.qnum{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--accent);margin-bottom:14px}
+.meta{font-family:var(--font);font-size:13px;color:var(--text-dim);margin-bottom:32px;letter-spacing:.04em}
+.qnum{font-family:var(--font);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);margin-bottom:14px}
 .qtext{font-size:clamp(1.35rem,4.5vw,1.7rem);font-weight:700;line-height:1.25;letter-spacing:-.01em;margin-bottom:28px}
 .opts{display:flex;flex-direction:column;gap:12px}
 .opt{text-align:left;width:100%;cursor:pointer;color:var(--text);background:var(--surface);border:1px solid var(--line-soft);border-radius:14px;padding:17px 20px;font-family:var(--font);font-size:16.5px;line-height:1.4;display:flex;align-items:center;gap:14px;transition:border-color .18s ease,background .18s ease,transform .12s ease}
-.opt:hover{border-color:var(--accent);background:#181826}
+.opt:hover{border-color:var(--accent-strong);background:#1b1a22}
 .opt:active{transform:scale(.99)}
+.opt:focus-visible,.btn:focus-visible,.back:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
 .opt .dot{flex:none;width:22px;height:22px;border-radius:50%;border:2px solid var(--line);transition:.18s}
 .opt:hover .dot{border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
-.opt.sel{border-color:var(--accent-strong);background:#191930}
+.opt.sel{border-color:var(--accent-strong);background:#221c11}
 .opt.sel .dot{border-color:var(--accent-strong);background:var(--accent-strong);box-shadow:0 0 0 4px var(--accent-soft)}
-.btn{display:inline-block;font-weight:700;font-size:16px;padding:15px 30px;border-radius:999px;color:#fff;cursor:pointer;border:none;font-family:var(--font);background:linear-gradient(135deg,#6366f1,#4f46e5);box-shadow:0 0 0 1px rgba(129,140,248,.4),0 8px 30px rgba(99,102,241,.45);transition:transform .2s ease,box-shadow .2s ease}
-.btn:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(129,140,248,.55),0 12px 40px rgba(99,102,241,.6)}
+.btn{display:inline-flex;align-self:flex-start;align-items:center;justify-content:center;gap:.5rem;font-weight:800;font-size:16px;padding:16px 30px;border-radius:10px;color:var(--accent-ink);cursor:pointer;border:none;font-family:var(--font);background:var(--accent);box-shadow:0 8px 24px rgba(245,158,11,.18);transition:transform .16s ease,background .16s ease}
+.btn:hover{background:var(--accent-hover)}
+.btn:disabled{cursor:wait;opacity:.72}
 .btn:active{transform:scale(.98)}
-.btn.full{width:100%;text-align:center}
-.back{margin-top:22px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--text-dim);cursor:pointer;background:none;border:none;text-transform:uppercase}
+.btn.full{width:100%;align-self:stretch;text-align:center}
+.back{margin-top:22px;align-self:flex-start;padding:10px 2px;font-family:var(--font);font-size:12.5px;letter-spacing:.1em;color:var(--text-dim);cursor:pointer;background:none;border:none;text-transform:uppercase}
 .back:hover{color:var(--text)}
-.badge{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line);border-radius:999px;padding:7px 15px;margin-bottom:16px}
+.badge{display:inline-block;align-self:flex-start;font-family:var(--font);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line);border-radius:999px;padding:7px 15px;margin-bottom:16px}
 .rtitle{font-size:clamp(2rem,6.5vw,2.9rem);font-weight:800;letter-spacing:-.02em;line-height:1.05;margin-bottom:8px}
-.rtitle .grad{background:linear-gradient(100deg,#a5b4fc,#6366f1 55%,#a5b4fc);-webkit-background-clip:text;background-clip:text;color:transparent}
-.rsub{color:var(--text-dim);font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:24px}
+.grad{color:var(--accent)}
+.rsub{color:var(--text-dim);font-family:var(--font);font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:24px}
 .scores{display:flex;flex-direction:column;gap:16px;margin:24px 0 6px}
 .score .srow{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px}
 .score .slabel{font-size:.98rem;font-weight:500}
-.score .sval{font-family:var(--mono);font-size:1rem;color:var(--accent);font-weight:500}
+.score .sval{font-family:var(--font);font-size:1rem;color:var(--accent);font-weight:700}
 .score .strack{height:9px;background:rgba(255,255,255,.06);border-radius:999px;overflow:hidden}
 .score .sfill{height:100%;border-radius:999px;width:0;transition:width 1s cubic-bezier(.4,0,.2,1)}
-.sfill.indigo{background:linear-gradient(90deg,#6366f1,#a5b4fc)}
-.sfill.warm{background:linear-gradient(90deg,#f59e0b,#f43f5e)}
+.sfill.indigo{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+.sfill.warm{background:linear-gradient(90deg,#f87171,#fb923c)}
+.lvlnote{color:var(--text-dim);font-size:.94rem;margin:16px 0 0;line-height:1.5}
 .rbody{color:var(--text-dim);font-size:1.06rem;margin:22px 0 4px}
 .rbody strong{color:var(--text)}
 .punch{border-left:2px solid var(--accent-strong);padding:2px 0 2px 18px;margin:22px 0;font-size:1.1rem;color:var(--text);font-weight:500}
@@ -83,27 +90,45 @@ h1 .grad{background:linear-gradient(100deg,#a5b4fc,#6366f1 55%,#a5b4fc);-webkit-
 .plan h3{font-size:1.08rem;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px}
 .plan ol{list-style:none;counter-reset:p;display:flex;flex-direction:column;gap:12px}
 .plan li{counter-increment:p;position:relative;padding-left:38px;font-size:1rem;color:var(--text)}
-.plan li::before{content:counter(p);position:absolute;left:0;top:-1px;width:26px;height:26px;border-radius:50%;background:var(--accent-soft);border:1px solid var(--line);color:var(--accent);font-family:var(--mono);font-size:13px;display:flex;align-items:center;justify-content:center;font-weight:600}
-.capture{margin-top:26px;background:linear-gradient(180deg,#171728,#111119);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px}
+.plan li::before{content:counter(p);position:absolute;left:0;top:-1px;width:26px;height:26px;border-radius:50%;background:var(--accent-soft);border:1px solid var(--line);color:var(--accent);font-family:var(--font);font-size:13px;display:flex;align-items:center;justify-content:center;font-weight:600}
+.capture{margin-top:26px;background:linear-gradient(180deg,#1a1820,#121116);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px}
 .capture h3{font-size:1.2rem;font-weight:700;margin-bottom:8px}
 .capture p{color:var(--text-dim);font-size:.98rem;margin-bottom:18px}
 .frow{display:flex;gap:10px}
 .capture input{width:100%;background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;padding:14px 16px;color:var(--text);font-family:var(--font);font-size:16px;margin-bottom:10px}
 .capture input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
 .frow input{margin-bottom:0}
-.fine{font-family:var(--mono);font-size:11px;color:var(--text-dim);margin-top:12px;letter-spacing:.03em}
+.fine{font-family:var(--font);font-size:12.5px;color:var(--text-dim);margin-top:12px;letter-spacing:.03em}
 .ok{text-align:center;padding:10px 0}
 .ok .check{width:56px;height:56px;border-radius:50%;margin:0 auto 18px;background:var(--accent-soft);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:26px}
-.foot{margin-top:40px;text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--text-dim)}
-@media(max-width:520px){.shell{padding:22px 18px 60px}.opt{padding:15px 17px;font-size:15.5px}.frow{flex-direction:column;gap:0}}
+.fullplan{text-align:left;margin-top:30px}
+.diagnosis{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;margin-bottom:18px}
+.diagnosis h3,.week h3,.signals h3{font-size:1.08rem;margin-bottom:10px}
+.diagnosis p,.signal p{color:var(--text-dim);font-size:.98rem}
+.week{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;margin-bottom:18px}
+.week ol{list-style:none;display:flex;flex-direction:column;gap:0}
+.week li{padding:15px 0;border-bottom:1px solid var(--line-soft)}
+.week li:last-child{border-bottom:0;padding-bottom:0}
+.week li:first-child{padding-top:4px}
+.week li strong{display:block;color:var(--accent);font-size:.82rem;letter-spacing:.09em;text-transform:uppercase;margin-bottom:3px}
+.week li span{display:block;color:var(--text);font-size:.98rem;line-height:1.55}
+.signals{display:grid;gap:12px;margin-bottom:18px}
+.signal{border-left:2px solid var(--accent-strong);background:var(--bg-soft);padding:17px 18px}
+.signal h4{font-size:.98rem;margin-bottom:5px}
+.capture-status{color:var(--text-dim);font-size:.9rem;margin:0 auto 18px;max-width:48ch}
+.foot{margin-top:40px;text-align:center;font-family:var(--font);font-size:12.5px;letter-spacing:.08em;color:var(--text-dim)}
+@media(max-width:520px){.shell{padding:18px 16px 60px}.top{align-items:flex-start}.top-right{gap:7px;flex-direction:column;align-items:flex-end}.top-call{padding:7px 9px;font-size:11.5px}.mono{font-size:11px}.opt{padding:16px 17px;font-size:16px;line-height:1.35}.frow{flex-direction:column;gap:0}.qtext{margin-bottom:22px}.btn{width:100%;align-self:stretch}}
 </style>
 </head>
 <body>
 <div class="glow"></div>
 <div class="shell">
   <div class="top">
-    <div class="brand">ALLAN <em>MAISAK</em></div>
-    <div class="mono" id="counter"></div>
+    <a class="brand" href="index.html" aria-label="Retour à la page d'Allan Maisak">ALLAN <em>MAISAK</em></a>
+    <div class="top-right">
+      <div class="mono" id="counter"></div>
+      <a class="top-call" href="https://cal.com/allan-figfsv/appel-confiance-offert">Réserver un appel</a>
+    </div>
   </div>
   <div class="bar"><i id="progress"></i></div>
   <div class="card" id="card"></div>
@@ -116,77 +141,184 @@ const LEAD_ENDPOINT = "https://formsubmit.co/ajax/allanmaisak@gmail.com";
 const BOOK_URL = "https://cal.com/allan-figfsv/appel-confiance-offert";
 
 /* ============ QUESTIONS ============
-   Axes : ANX = attachement anxieux · EVIT = attachement évitant · VAL = dépendance à la validation */
+   Axes : N1 = provoquer la rencontre · N2 = seduire · N3 = frequenter.
+   Un niveau se debloque dans l'ordre : on renvoie le PREMIER des trois sous le seuil. */
 const Q = [
-  { q:"Une meuf que tu kiffes met des heures à répondre à ton message :",
-    o:[["Je check mon tel toutes les 5 min, je me fais des films.",{ANX:2}],
-       ["Ça m'agace, mais je passe à autre chose.",{}],
-       ["Je me ferme un peu. Tant pis pour elle.",{EVIT:1}],
-       ["Franchement je capte à peine qu'elle a pas répondu.",{}]]},
-  { q:"Une histoire commence à devenir sérieuse, elle veut se rapprocher :",
-    o:[["J'adore. Je me donne à fond direct, quitte à trop en faire.",{ANX:2}],
-       ["Je me sens un peu étouffé, j'ai besoin d'air.",{EVIT:2}],
-       ["Je suis à l'aise. On avance tranquille.",{}],
-       ["Une partie de moi a envie de fuir, sans savoir pourquoi.",{EVIT:2}]]},
-  { q:"Tu postes une story ou une photo. Franchement :",
-    o:[["Je check les vues toutes les 5 minutes.",{VAL:2}],
-       ["Je regarde une fois… et ouais, ça me fait un truc.",{VAL:1}],
-       ["J'ai coupé les réseaux, exprès.",{}],
-       ["Je m'en fous complètement.",{}]]},
-  { q:"Tu te fais rejeter. Le soir, dans ta tête :",
-    o:[["« Qu'est-ce qui cloche chez moi ? »",{VAL:2,ANX:1}],
-       ["Je rumine pendant des heures.",{ANX:2}],
-       ["« Tant pis, next. » Et je le pense vraiment.",{}],
-       ["Ça va sur le moment… mais je me referme un peu plus.",{EVIT:2}]]},
-  { q:"Dans tes histoires, ton pattern c'est plutôt :",
-    o:[["Je m'accroche. J'ai la trouille qu'elle parte.",{ANX:2}],
-       ["Je garde toujours une distance, un pied dehors.",{EVIT:2}],
-       ["Je suis présent sans me perdre.",{}],
-       ["J'étouffe vite, ou on me largue parce que « trop intense ».",{ANX:1,EVIT:1}]]},
-  { q:"Montrer tes failles, être vraiment vulnérable avec une meuf :",
-    o:[["Impossible. Je garde ça pour moi.",{EVIT:2}],
-       ["J'en fais trop, je me livre pour qu'elle reste.",{ANX:2}],
-       ["Je le fais quand je sens que c'est safe.",{}],
-       ["Rien que d'y penser, ça me terrifie.",{ANX:1,EVIT:1}]]},
-  { q:"Ton besoin de validation, en étant vraiment honnête :",
-    o:[["J'ai besoin qu'on me valide pour me sentir bien.",{VAL:2}],
-       ["Ça m'atteint, mais je bosse dessus.",{VAL:1}],
-       ["Je me valide tout seul, en gros.",{}],
-       ["Zéro. Enfin… je crois.",{EVIT:1}]]},
-  { q:"Ta dernière rupture, ou juste être seul… tu le vis comment ?",
-    o:[["Une vraie claque. Ça m'a réveillé.",{}],
-       ["J'évite d'y penser, je me ferme.",{EVIT:2}],
-       ["Digéré. J'en ai tiré des leçons.",{}],
-       ["Je cherche à combler vite, avec n'importe qui.",{ANX:1,VAL:2}]]},
-  { q:"Au fond, là, ce que tu veux VRAIMENT :",
-    o:[["Qu'on me choisisse, qu'on me valide, enfin.",{VAL:2,ANX:1}],
-       ["Arrêter de dépendre du regard des autres.",{VAL:1}],
-       ["Une relation vraie où je reste moi.",{}],
-       ["Me sentir bien seul, d'abord.",{}]]},
+  /* ---- NIVEAU 1 : PROVOQUER LA RENCONTRE ---- */
+  { q:"Tu croises une femme qui te plaît. Il se passe quoi dans les dix secondes qui suivent ?",
+    o:[["Je vais lui parler.",{N1:3}],
+       ["Je cherche une bonne raison d'y aller. Elle est déjà loin.",{N1:1}],
+       ["Rien. Et j'y repense le soir.",{N1:0}],
+       ["Je me dis que c'est pas le bon moment. Comme d'habitude.",{N1:0}]]},
+  { q:"La dernière fois que t'as parlé à une inconnue qui te plaisait, c'était quand ?",
+    o:[["Cette semaine.",{N1:3}],
+       ["Ce mois-ci.",{N1:2}],
+       ["Il y a des mois.",{N1:1}],
+       ["Je m'en souviens même pas.",{N1:0}],
+       ["Jamais. J'ai jamais fait ça.",{N1:0}]]},
+  { q:"Aujourd'hui, tu rencontres des femmes comment ?",
+    o:[["Je provoque : je sors, je parle aux gens, ça arrive.",{N1:3}],
+       ["Applications. Et ça mène nulle part.",{N1:1}],
+       ["Par le boulot ou les potes, quand ça tombe.",{N1:1}],
+       ["Je rencontre personne. C'est bien le problème.",{N1:0}]]},
+
+  /* ---- NIVEAU 2 : SÉDUIRE ---- */
+  { q:"T'as engagé la conversation, elle est réceptive. La suite ?",
+    o:[["Je prends le lead. Je propose un truc concret.",{N2:3}],
+       ["Je continue de discuter, poliment. Et ça retombe.",{N2:1}],
+       ["Je deviens très sympa. Très, très sympa.",{N2:0}],
+       ["J'attends de voir si elle relance.",{N2:0}]]},
+  { q:"Le moment où il faudrait qu'elle comprenne que tu la kiffes, pas que t'es cool :",
+    o:[["Je le montre. Clairement.",{N2:3}],
+       ["Je fais des allusions et j'espère qu'elle capte.",{N2:1}],
+       ["Je fais l'ami. On verra plus tard.",{N2:0}],
+       ["J'ose pas. Peur de casser le truc.",{N2:0}]]},
+  { q:"Pendant que tu lui parles, t'as la tête où ?",
+    o:[["Sur elle. Sur ce qu'elle dit.",{N2:3}],
+       ["Sur ce que je vais dire juste après.",{N2:1}],
+       ["Sur ce qu'elle est en train de penser de moi.",{N2:0}],
+       ["Sur les gens autour, qui regardent.",{N2:0}]]},
+
+  /* ---- NIVEAU 3 : FRÉQUENTER ---- */
+  { q:"Elle répond moins vite que d'habitude. Tu fais quoi ?",
+    o:[["Je continue ma vie. Je propose quand j'ai un truc à proposer.",{N3:3}],
+       ["Je relis nos messages pour comprendre où ça a merdé.",{N3:1}],
+       ["J'en fais plus. Je relance, j'insiste un peu.",{N3:0}],
+       ["Je me ferme d'un coup. Tant pis pour elle.",{N3:0}]]},
+  { q:"Après deux ou trois rendez-vous, en général, ça donne quoi ?",
+    o:[["Ça avance. On sait tous les deux où on va.",{N3:3}],
+       ["Ça stagne. On devient potes.",{N3:1}],
+       ["Ça s'éteint et je sais jamais pourquoi.",{N3:0}],
+       ["J'y arrive rarement, à deux ou trois rendez-vous.",{N3:0}]]},
+  { q:"Ton humeur de la semaine, elle dépend de quoi ?",
+    o:[["De ce que je fais de mes journées.",{N3:3}],
+       ["Un peu de ses messages, je l'avoue.",{N3:1}],
+       ["Beaucoup de ses messages.",{N3:0}],
+       ["De si j'ai eu une preuve, cette semaine, que je vaux quelque chose.",{N3:0}]]},
 ];
 
-/* ============ STYLES D'ATTACHEMENT ============ */
+/* ============ LES 3 NIVEAUX ============ */
 const PROFILES = {
-  ANX:{ name:"Attachement anxieux", tag:"Ton style d'attachement",
-    title:["Tu t'accroches. ","Tu as peur qu'elle parte","."],
-    body:"Quand une meuf compte pour toi, tu donnes tout, tu checkes son tel, tu rumines le moindre message. T'as besoin qu'elle te rassure pour être tranquille. Moi j'ai eu ça, je te parle pas d'en haut. Le truc, c'est que plus tu serres fort… plus elle étouffe, et plus elle finit par partir. Exactement ce que tu voulais éviter.",
-    punch:"Le jour où tu te fais confiance à TOI, t'as plus besoin qu'elle te rassure toutes les 5 minutes. Et là, tout change.",
-    plan:["Quand tu paniques (elle répond pas, elle est distante), attends avant de réagir. Écris ce que tu ressens sur ton tel, pas à elle.","Bosse UN truc à toi cette semaine qui dépend pas d'elle. Ta valeur elle vient de là, pas de son message.","La prochaine fois que tu veux « en faire plus » pour qu'elle reste, fais l'inverse. Recentre-toi sur toi. Tu vas voir."] },
-  EVIT:{ name:"Attachement évitant", tag:"Ton style d'attachement",
-    title:["Tu gardes tes distances. ","Un pied dehors","."],
-    body:"Dès qu'une histoire devient sérieuse, tu étouffes, tu te fermes, tu gardes une porte de sortie « au cas où ». Tu confonds être indépendant et te protéger. Le problème, c'est que sans t'en rendre compte, tu te prives des vraies connexions. Par peur d'être vulnérable, tu passes à côté du truc que tu veux vraiment.",
-    punch:"La vraie force, c'est pas d'avoir besoin de personne. C'est d'oser laisser quelqu'un entrer, sans fuir.",
-    plan:["Cette semaine, dis UN truc vrai, un peu vulnérable, à quelqu'un de proche. Un seul. Tu verras que tu meurs pas.","Quand tu sens l'envie de fuir une histoire qui devient sérieuse, reste. Observe ce qui se passe en toi à ce moment-là.","Arrête de garder un pied dehors « au cas où ». Engage-toi sur un truc, pour de vrai. L'engagement c'est pas une prison."] },
-  SECURE:{ name:"Plutôt sécure", tag:"Ton style d'attachement",
-    title:["T'es plutôt ","posé","."],
-    body:"T'es à l'aise avec la proximité ET avec ton autonomie. Franchement c'est rare, et c'est une force de ouf. T'as le socle le plus solide qui existe pour construire un truc sain. Ce qui te manque, c'est pas la base, c'est un dernier cran : passer à l'action pour de vrai, et pas te contenter du confort.",
-    punch:"T'as la fondation que la plupart des mecs galèrent des années à choper. Reste à l'utiliser à fond, sur le terrain.",
-    plan:["Monte ton standard. Arrête de valider les histoires moyennes juste parce que c'est confortable.","Passe à l'action sur ce qui te fait un peu peur. C'est là que ton dernier cran se joue.","Trouve un œil extérieur qui te dit la vérité sur ton angle mort. Même solide, t'en as un."] },
+  N1:{ name:"Niveau 1 : provoquer", tag:"Là où tu bloques",
+    title:["Tu rates pas les femmes. ","Tu les rencontres pas","."],
+    body:"Ton blocage est tout au début : tu provoques rien. Tu croises des femmes qui te plaisent, tu le sais sur le moment, et tu laisses passer. Après tu te racontes que c'était pas le bon moment, pas le bon endroit, pas la bonne fille. C'est jamais le bon moment. Tant que ce premier pas est pas réglé, tout le reste sert à rien : tu peux devenir le mec le plus intéressant du monde, personne le saura.",
+    punch:"Le problème c'est pas ce que tu dirais. C'est que tu y vas pas.",
+    plan:["Cette semaine, va parler à une seule inconnue. Pas pour la séduire. Juste pour prouver que tu peux traverser les dix secondes.","Fixe-toi la règle des trois secondes : tu la vois, tu y vas. Passé trois secondes, ton cerveau invente une excuse.","Note après chaque tentative ce que t'as ressenti, pas si ça a marché. C'est ça qu'on entraîne."] },
+  N2:{ name:"Niveau 2 : séduire", tag:"Là où tu bloques",
+    title:["T'arrives à parler. ","Après, ça meurt","."],
+    body:"Tu sais engager. Le problème arrive juste après : tu restes gentil. Tu discutes bien, elle rigole, et il se passe rien. Tu montres jamais que tu la kiffes, tu prends jamais le lead, tu attends qu'elle fasse le pas. Résultat : elle te trouve sympa, et sympa c'est le mot qui tue. La séduction c'est pas être aimable, c'est oser être un homme qui veut quelque chose.",
+    punch:"Elle a pas besoin de te trouver cool. Elle a besoin de sentir que tu la veux, elle.",
+    plan:["La prochaine conversation, propose un truc concret avant la fin. Un lieu, un jour. Pas « on se refait ça ».","Entraîne-toi à dire une phrase qui montre que tu la kiffes, sans blague pour te protéger derrière.","Arrête de meubler. Le silence te fait plus peur qu'à elle."] },
+  N3:{ name:"Niveau 3 : fréquenter", tag:"Là où tu bloques",
+    title:["Tu provoques, tu séduis. ","Et tu perds","."],
+    body:"Le début, tu gères. C'est après que ça t'échappe. Dès qu'elle compte un peu, tu bascules : tu relis les messages, tu calcules, ton humeur suit ses réponses. Ou l'inverse : tu te fermes d'un coup pour pas souffrir. Dans les deux cas c'est le même moteur, le besoin qu'elle valide. Et elle le sent avant toi.",
+    punch:"Tant que ta semaine dépend de ses messages, c'est pas une relation. C'est une attente.",
+    plan:["Cette semaine, décide d'un truc pour toi qui dépend d'aucune femme. Et fais-le.","Quand tu veux relancer par angoisse, attends. Pas pour jouer un jeu, pour voir ce qui se passe en toi.","Repère le moment exact où tu passes de « je vis ma vie » à « j'attends sa réponse ». C'est là que tout se joue."] },
+  ALL:{ name:"Les trois tiennent", tag:"Ton résultat",
+    title:["Sur le papier, ","tu maîtrises les trois","."],
+    body:"Tes réponses disent que tu provoques, que tu prends le lead, et que ta vie dépend pas de ses messages. Si c'est vrai, tant mieux, sincèrement. Alors la seule question qui vaut, c'est pourquoi t'as fait ce test. Soit t'es curieux. Soit y a un écart entre ce que tu réponds tranquille devant ton écran et ce qui se passe vraiment quand elle est là, en face.",
+    punch:"On répond toujours mieux à un test qu'à une femme qui te plaît.",
+    plan:["Vérifie sur le terrain, pas dans ta tête. Cette semaine, une seule interaction réelle.","Si t'y arrives : super, ton problème est ailleurs, cherche là.","Si t'y arrives pas : t'as ta réponse, et elle est pas dans ce test."] },
 };
+
+
+/* ============ PLAN COMPLET (affiche apres saisie de l'email) ============
+   Un socle par niveau + des blocs qui se declenchent selon les reponses exactes.
+   Regle : rien de generique. Chaque ligne doit etre faisable dans la semaine. */
+const FULL = {
+  N1:{
+    why:"Tu bloques au niveau 1 parce que tes réponses disent la même chose sous trois formes : tu vois, tu sais, et tu y vas pas. C'est pas un problème de méthode. C'est les dix secondes entre le moment où tu la vois et le moment où ton cerveau te trouve une sortie.",
+    days:[
+      ["Jour 1","Sors trente minutes. Parle à trois inconnus, n'importe lesquels : un mec, une vieille dame, un vendeur. Une phrase suffit. Le but c'est pas de séduire, c'est de casser l'idée que parler à quelqu'un qu'on connaît pas, c'est un événement."],
+      ["Jour 2","Repos. Le soir, note les moments de la journée où t'as croisé quelqu'un qui te plaisait sans y aller. Écris juste l'heure et le lieu. Tu vas être surpris du nombre."],
+      ["Jour 3","Règle des trois secondes : tu la vois, tu y vas dans les trois secondes. Une seule fois dans la journée. Ce que tu dis n'a aucune importance. Ce qui compte c'est que tes jambes bougent avant ta tête."],
+      ["Jour 4","Deux fois. Même règle. Tu vas remarquer que la deuxième est déjà plus facile que la première d'hier."],
+      ["Jour 5","Repos. Relis tes notes du jour 2."],
+      ["Jour 6","Trois fois. Et cette fois, reste trente secondes de plus que ce qui est confortable. C'est là que tout se joue, pas au bonjour."],
+      ["Jour 7","Bilan. Compte le nombre de fois où t'as eu peur avant. Compte le nombre de fois où il s'est passé un truc grave. Regarde le score."]
+    ],
+    exit:"Tu sais que c'est débloqué quand t'as plus besoin d'une raison pour y aller. Pas quand ça marche : quand t'y vas.",
+    trap:"L'erreur classique à ce niveau, c'est de préparer. Tu cherches la bonne phrase, le bon contexte, le bon moment. La préparation, à ce stade, c'est juste de l'évitement bien habillé."
+  },
+  N2:{
+    why:"Tu bloques au niveau 2 parce que t'as réglé le plus dur (y aller) et que tu t'arrêtes juste avant le moment qui compte. Tu discutes bien. Mais discuter, c'est pas séduire. À un moment il faut qu'elle sache que tu la kiffes, et que tu proposes quelque chose.",
+    days:[
+      ["Jour 1","Choisis ta phrase d'intérêt. Une seule, courte, que tu peux dire sans blague derrière pour te protéger. Écris-la. Dis-la à voix haute jusqu'à ce qu'elle sonne normale."],
+      ["Jour 2","Une conversation, et tu la termines en proposant un truc concret : un lieu, un jour. Pas « on se refait ça ». Même si elle dit non, l'exercice est réussi."],
+      ["Jour 3","Le silence. Dans ta prochaine conversation, laisse trois secondes de blanc sans meubler. Compte-les dans ta tête. Le silence te fait plus peur qu'à elle."],
+      ["Jour 4","Rejoue le jour 2. Deux fois."],
+      ["Jour 5","Repos. Note le moment exact où t'es redevenu « sympa ». Il y en a toujours un, et il est toujours au même endroit."],
+      ["Jour 6","Une conversation où tu dis ce que tu penses vraiment, même si ça peut lui déplaire. Un désaccord, un avis tranché. Tu vas voir que ça attire au lieu de casser."],
+      ["Jour 7","Bilan. Combien de propositions concrètes cette semaine ? Si c'est zéro, c'est ça ton vrai blocage, pas ce que tu dis."]
+    ],
+    exit:"Tu sais que c'est débloqué quand tu proposes sans attendre le signal. Le signal arrive jamais, c'est ça le piège.",
+    trap:"L'erreur classique à ce niveau, c'est d'être formidable. Drôle, cultivé, attentionné. Elle te trouve super. Et il se passe rien, parce qu'à aucun moment t'as pris le risque de vouloir quelque chose."
+  },
+  N3:{
+    why:"Tu bloques au niveau 3 parce que tu sais provoquer et tu sais séduire, mais dès qu'elle compte un peu, tu bascules. Ton humeur suit ses réponses, ou tu te fermes d'un coup pour prendre les devants. C'est le même moteur : le besoin qu'elle valide. Et ça, elle le sent avant toi.",
+    days:[
+      ["Jour 1","Écris les trois trucs de ta semaine qui dépendent d'aucune femme. Un truc physique, un truc que tu construis, un truc avec des potes. Bloque-les dans ton agenda maintenant."],
+      ["Jour 2","Zéro relance par angoisse. Si t'as envie d'écrire, attends deux heures et regarde si t'as encore envie. La plupart du temps non : c'était pas elle que tu voulais, c'était être rassuré."],
+      ["Jour 3","Fais le premier des trois trucs. En entier."],
+      ["Jour 4","Si t'échanges avec quelqu'un, propose une vraie date au lieu de continuer à discuter. Les conversations qui durent, c'est des conversations qui remplacent."],
+      ["Jour 5","Note ton humeur au réveil, et le nombre de messages que t'as reçus la veille. Fais-le sans tricher."],
+      ["Jour 6","Le deuxième truc."],
+      ["Jour 7","Relis tes notes du jour 5. Ton humeur a suivi ta semaine, ou ses réponses ? Tu vas avoir ta réponse en trente secondes."]
+    ],
+    exit:"Tu sais que c'est débloqué quand ta semaine ne dépend plus de sa réponse. Pas quand tu t'en fous : quand ça change plus ta journée.",
+    trap:"L'erreur classique à ce niveau, c'est de jouer un jeu. Répondre en retard exprès, faire semblant d'être occupé. Ça marche deux semaines, et ça t'épuise, parce que t'as toujours le compteur dans la tête. La différence entre être occupé et faire semblant, elle la sent."
+  },
+  ALL:{
+    why:"Tes réponses disent que les trois tiennent. Soit c'est vrai, soit y a un écart entre ce que tu réponds tranquille devant ton écran et ce qui se passe quand elle est là, en face. Ce plan-là sert à trancher, pas à te rassurer.",
+    days:[
+      ["Jour 1","Une seule interaction réelle avec une inconnue qui te plaît. Pas un test mental. Une vraie."],
+      ["Jour 2","Note ce qui s'est passé dans ton corps avant d'y aller. Si la réponse est « rien », le niveau 1 est vraiment réglé."],
+      ["Jour 3","Propose un truc concret à quelqu'un. Regarde si tu le fais sans négocier avec toi-même."],
+      ["Jour 4","Repos."],
+      ["Jour 5","Une semaine sans consulter tes messages pour vérifier une réponse. Compte les rechutes."],
+      ["Jour 6","Refais le jour 1. Le deuxième passage dit la vérité, pas le premier."],
+      ["Jour 7","Si les trois exercices sont passés sans accroc : ton blocage est ailleurs, et c'est pas de la séduction qu'il te faut. Si un des trois a coincé, t'as ton vrai niveau."]
+    ],
+    exit:"Le test se répond mieux qu'une femme qui te plaît. C'est le terrain qui tranche.",
+    trap:"L'erreur, à ce stade, c'est de continuer à apprendre. T'as pas un problème d'information."
+  }
+};
+
+/* Blocs declenches par une reponse precise : [indexQuestion, indexOption] */
+const EXTRAS = [
+  {q:0,o:2,t:["La rumination du soir","Repenser à elle le soir, c'est pas de la nostalgie, c'est ton cerveau qui rejoue la scène pour la finir. Il la finira jamais. La seule façon de fermer la boucle, c'est d'y aller la prochaine fois, même mal."]},
+  {q:0,o:3,t:["L'excuse du timing","« C'est pas le bon moment » revient à chaque fois, et c'est jamais la même raison. Quand une excuse change de forme mais pas de fonction, c'est pas une excuse : c'est une peur avec un bon avocat."]},
+  {q:1,o:4,t:["T'as jamais abordé personne","Alors commence encore plus bas que le plan : cette semaine, parle à des gens qui te plaisent pas. Un serveur, un mec dans la file. Ton problème c'est pas les femmes, c'est parler à un inconnu. Règle ça d'abord, ça prend trois jours."]},
+  {q:2,o:1,t:["Les applications","Elles te donnent l'impression d'agir sans jamais t'exposer. Tu peux swiper deux ans et pas progresser d'un millimètre, parce que t'as jamais eu à gérer un regard en face. Garde-les si tu veux, mais compte-les pour zéro."]},
+  {q:3,o:2,t:["La trappe du gentil","Être très sympa, c'est une stratégie d'évitement : si t'es irréprochable, tu peux pas être rejeté pour ce que tu veux, vu que t'as rien demandé. Le coût, c'est qu'elle sait jamais que t'es intéressé."]},
+  {q:4,o:2,t:["L'ami qui attend","Faire l'ami en espérant que ça bascule plus tard, ça bascule jamais. Le cadre se fige dans les premières heures. Plus t'attends, plus le dire devient un aveu bizarre au lieu d'être une évidence."]},
+  {q:5,o:2,t:["Sortir de ta tête","Penser à ce qu'elle pense de toi pendant que tu lui parles, c'est être à deux endroits en même temps. Elle voit un mec absent. L'exercice : pendant trente secondes, écoute-la vraiment, au point de pouvoir répéter sa dernière phrase."]},
+  {q:5,o:3,t:["Le public imaginaire","Les gens autour te regardent pas. Et ceux qui regardent oublient dans les dix secondes. Le seul qui va se souvenir de la scène pendant des semaines, c'est toi."]},
+  {q:6,o:2,t:["L'escalade","Quand elle répond moins et que t'en fais plus, tu confirmes exactement ce qu'elle est en train de sentir. Faire plus, c'est le seul geste qui accélère la fin."]},
+  {q:6,o:3,t:["La fermeture d'un coup","Te fermer avant d'être lâché, c'est pas de la fierté, c'est un moyen de choisir le moment de la douleur. Le prix, c'est que t'as jamais su ce qui se serait passé."]},
+  {q:7,o:1,t:["Le palier ami","Ça stagne parce que rien a été posé. Une relation qui avance pas, c'est presque toujours une relation où personne a dit ce qu'il voulait."]},
+  {q:8,o:2,t:["L'humeur sous-traitée","Quand ton humeur dépend de ses messages, t'as confié la télécommande à quelqu'un qui sait même pas qu'il l'a. C'est le truc le plus épuisant du lot, et c'est le premier à traiter."]},
+  {q:8,o:3,t:["Le besoin de preuve","Chercher chaque semaine une preuve que tu vaux quelque chose, ça veut dire que la preuve tient pas plus d'une semaine. Aucune femme peut remplir ça. C'est pour ça qu'on travaille sur toi d'abord."]}
+];
+function extrasFor(){
+  const out=[];
+  EXTRAS.forEach(function(x){ if(answers[x.q]===x.o) out.push(x.t); });
+  return out.slice(0,3);
+}
 
 /* ============ ÉTAT ============ */
 let step = -1;
 const answers = [];
+/* Ordre d'affichage melange par question : evite que la "bonne" reponse soit
+   toujours en premier. Tire une fois par session, stable si on revient en arriere. */
+let ORDER = [];
+function shuffleOrders(){
+  ORDER = Q.map(function(item){
+    const a = item.o.map(function(_,i){ return i; });
+    for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=a[i]; a[i]=a[j]; a[j]=t; }
+    return a;
+  });
+}
 const card = document.getElementById('card');
 const prog = document.getElementById('progress');
 const counter = document.getElementById('counter');
@@ -199,23 +331,24 @@ function setProgress(){
 }
 
 function intro(){
-  step = -1; setProgress();
+  step = -1; answers.length = 0; shuffleOrders(); setProgress();
   card.className = "card reveal";
   card.innerHTML = `
     <div class="mono" style="margin-bottom:18px">Le test · 2 min · 9 questions</div>
-    <h1>C'est quoi ton<br><span class="grad">style d'attachement</span> ?</h1>
-    <p class="lead">Neuf questions honnêtes. À la fin t'as ton <strong>style d'attachement</strong>, ton <strong>score de dépendance à la validation</strong>, et un <strong>plan d'action</strong>. Parce que le vrai truc qui te bloque avec les filles… c'est presque jamais ton game.</p>
+    <h1>Tu bloques à<br><span class="grad">quel niveau</span> ?</h1>
+    <p class="lead">Avec les femmes, il y a trois niveaux : <strong>provoquer la rencontre</strong>, <strong>séduire</strong>, et <strong>fréquenter</strong>. Presque tous les mecs bloquent sur un seul des trois, et bossent les deux autres pour rien. Neuf questions, et tu sais lequel c'est.</p>
     <p class="meta">Réponds sans te mentir. Personne te juge.</p>
-    <button class="btn" onclick="go(0)">Let's go →</button>`;
+    <button class="btn" onclick="go(0)">Je commence <span aria-hidden="true">&#8594;</span></button>`;
 }
 
 function render(){
   const item = Q[step];
   setProgress();
   card.className = "card reveal";
-  const opts = item.o.map((o,i)=>`
+  const order = ORDER[step] || item.o.map((_,i)=>i);
+  const opts = order.map(i=>`
     <button class="opt${answers[step]===i?' sel':''}" onclick="pick(${i})">
-      <span class="dot"></span><span>${o[0]}</span>
+      <span class="dot"></span><span>${item.o[i][0]}</span>
     </button>`).join("");
   card.innerHTML = `
     <div class="qnum">Question ${step+1}</div>
@@ -228,24 +361,28 @@ function pick(i){ answers[step] = i; setTimeout(()=>{ step+1 < Q.length ? go(ste
 function go(s){ step = s; render(); }
 
 function score(){
-  const t = {ANX:0,EVIT:0,VAL:0};
+  const t = {N1:0,N2:0,N3:0};
   answers.forEach((ai,qi)=>{ const m=Q[qi].o[ai][1]; for(const k in m) t[k]+=m[k]; });
   return t;
 }
-function attachmentKey(t){
-  if(t.ANX <= 2 && t.EVIT <= 2) return "SECURE";
-  return t.ANX >= t.EVIT ? "ANX" : "EVIT";
+/* Le niveau qui bloque = le PREMIER des trois sous le seuil. Un niveau se debloque dans l'ordre. */
+function levelKey(t){
+  if(t.N1 < 6) return "N1";
+  if(t.N2 < 6) return "N2";
+  if(t.N3 < 6) return "N3";
+  return "ALL";
 }
 function namedScores(t){
   return {
-    validation: clamp(Math.round(t.VAL/8*100), 3, 98),
-    securite:   clamp(100 - Math.round((t.ANX+t.EVIT)/12*100), 3, 98),
+    n1: clamp(Math.round(t.N1/9*100), 4, 98),
+    n2: clamp(Math.round(t.N2/9*100), 4, 98),
+    n3: clamp(Math.round(t.N3/9*100), 4, 98),
   };
 }
 
 function result(){
   const t = score();
-  const key = PROFILES[attachmentKey(t)] ? attachmentKey(t) : "SECURE";
+  const key = levelKey(t);
   const p = PROFILES[key];
   const s = namedScores(t);
   setProgress(); prog.style.width="100%"; counter.textContent="Résultat";
@@ -256,30 +393,32 @@ function result(){
     <div class="rsub">${p.title[0]}${p.title[1]}${p.title[2]}</div>
 
     <div class="scores">
-      ${scoreBar("Dépendance à la validation", s.validation, "warm")}
-      ${scoreBar("Sécurité affective", s.securite, "indigo")}
+      ${scoreBar("1 · Provoquer la rencontre", s.n1, key==="N1"?"warm":"indigo")}
+      ${scoreBar("2 · Séduire", s.n2, key==="N2"?"warm":"indigo")}
+      ${scoreBar("3 · Fréquenter", s.n3, key==="N3"?"warm":"indigo")}
     </div>
+    <p class="lvlnote">Les trois se débloquent dans l'ordre. Celui qui compte, c'est le premier qui coince : tant qu'il est pas réglé, bosser les deux autres sert à rien.</p>
 
     <p class="rbody">${p.body}</p>
     <div class="punch">${p.punch}</div>
 
     <div class="plan">
-      <h3>🎯 Ton plan pour cette semaine</h3>
+      <h3>Ton plan pour cette semaine</h3>
       <ol>${p.plan.map(a=>`<li>${a}</li>`).join("")}</ol>
     </div>
 
     <div class="capture">
-      <h3>Ton plan complet, je te l'envoie 👇</h3>
-      <p>Je t'envoie ton analyse complète (<strong>${p.name}</strong> + ton score de validation) et les leviers plus avancés pour t'en sortir. Direct par mail, rien d'autre.</p>
+      <h3>Débloque le plan complet</h3>
+      <p>Laisse ton email et le plan détaillé de ton niveau (<strong>${p.name}</strong>) s'affiche tout de suite.</p>
       <form id="capForm" onsubmit="return submitLead(event,'${key}')">
         <div class="frow">
           <input type="text" id="prenom" placeholder="Prénom" required autocomplete="given-name">
           <input type="text" id="nom" placeholder="Nom" required autocomplete="family-name">
         </div>
         <input type="email" id="email" placeholder="ton@email.com" required autocomplete="email">
-        <button class="btn full" type="submit">Envoie-moi mon plan complet</button>
+        <button class="btn full" type="submit">Afficher mon plan complet</button>
       </form>
-      <p class="fine">Zéro spam, promis. Tu te désabonnes en un clic.</p>
+      <p class="fine">En validant, tu acceptes de recevoir les emails d'Allan liés à ce coaching. Désinscription en un clic.</p>
     </div>
     <button class="back" style="margin-top:26px" onclick="intro()">↺ Refaire le test</button>`;
   requestAnimationFrame(()=>{ setTimeout(()=>{
@@ -302,39 +441,79 @@ function submitLead(e, key){
   if(!email || email.indexOf('@')<0 || !prenom) return false;
   const t = score(); const s = namedScores(t);
   const profil = PROFILES[key].name;
-  const src = "Quiz - style d'attachement";
+  const src = "Quiz - 3 niveaux";
   try{ localStorage.setItem('quiz_lead', JSON.stringify({prenom,nom,email,profil,scores:s})); }catch(_){}
 
+  const submit = document.querySelector('#capForm button[type="submit"]');
+  if(submit){ submit.disabled=true; submit.textContent="Un instant…"; }
+
   if(LEAD_ENDPOINT){
+    let settled=false;
+    const show=(captured)=>{
+      if(settled) return;
+      settled=true;
+      success(key, prenom, captured);
+    };
     fetch(LEAD_ENDPOINT, {
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify({
         _subject:`Nouveau lead quiz : ${prenom} ${nom} (${profil})`,
         prenom, nom, email, profil,
-        score_validation:s.validation, score_securite:s.securite, source:src,
-        lead_data:`LEADV2|${email}|${prenom}|${nom}|${profil}|${s.validation}|${t.ANX}|${t.EVIT}|${t.VAL}|0|0|${src}`
+        niveau_1:s.n1, niveau_2:s.n2, niveau_3:s.n3, source:src,
+        lead_data:`LEADV3|${email}|${prenom}|${nom}|${profil}|${s.n1}|${s.n2}|${s.n3}|0|0|0|${src}`
       })
-    }).catch(()=>{});
+    }).then(response=>show(response.ok)).catch(()=>show(false));
+    setTimeout(()=>show(null), 4500);
+  }else{
+    success(key, prenom, false);
   }
-  let fired=false;
-  const done=()=>{ if(!fired){ fired=true; success(key, prenom); } };
-  setTimeout(done, 600);
   return false;
 }
 
-function success(key, prenom){
+function success(key, prenom, captured){
   const p = PROFILES[key];
+  const full = FULL[key];
+  const extras = extrasFor();
+  const captureStatus = captured === true
+    ? "Tes réponses ont bien été enregistrées. Ton plan complet est juste dessous."
+    : captured === false
+      ? "Ton plan est disponible. La connexion n'a pas permis de confirmer l'enregistrement de ton email."
+      : "Ton plan est disponible. Le réseau n'a pas encore confirmé l'enregistrement de ton email.";
   card.className="card reveal";
   card.innerHTML = `
     <div class="ok">
       <div class="check">✓</div>
-      <div class="rtitle" style="font-size:clamp(1.6rem,5.5vw,2.2rem)">C'est parti${prenom?', '+prenom:''}.</div>
-      <p class="rbody" style="max-width:42ch;margin:0 auto 8px">Ton plan complet arrive dans ta boîte mail, là, tout de suite. Check tes spams si tu vois rien d'ici 5 min.</p>
-      <div class="punch" style="display:inline-block;text-align:left;margin:24px auto">Envie d'aller plus vite ? Le premier appel avec moi est offert. On regarde ta situation ensemble, tranquille, zéro engagement.</div>
-      <div style="margin-top:8px"><a class="btn" href="${BOOK_URL}" target="_blank" rel="noopener">Je réserve mon appel offert →</a></div>
-      <div style="margin-top:26px"><a href="/" class="mono" style="letter-spacing:.1em">← Revenir au site</a></div>
+      <div class="rtitle" style="font-size:clamp(1.6rem,5.5vw,2.2rem)">Ton plan est débloqué${prenom?', '+prenom:''}.</div>
+      <p class="capture-status">${captureStatus}</p>
+    </div>
+
+    <div class="fullplan">
+      <section class="diagnosis">
+        <h3>Pourquoi tu bloques ici</h3>
+        <p>${full.why}</p>
+      </section>
+
+      <section class="week">
+        <h3>Les 7 prochains jours</h3>
+        <ol>${full.days.map(day=>`<li><strong>${day[0]}</strong><span>${day[1]}</span></li>`).join("")}</ol>
+      </section>
+
+      ${extras.length ? `<section class="signals">
+        <h3>Ce que tes réponses montrent aussi</h3>
+        ${extras.map(x=>`<div class="signal"><h4>${x[0]}</h4><p>${x[1]}</p></div>`).join("")}
+      </section>` : ""}
+
+      <section class="signals">
+        <div class="signal"><h4>Le piège à éviter</h4><p>${full.trap}</p></div>
+        <div class="signal"><h4>Comment savoir que ce niveau est débloqué</h4><p>${full.exit}</p></div>
+      </section>
+
+      <div class="punch">Si tu veux aller beaucoup plus vite, on peut travailler ce niveau ensemble, en immersion. D'abord, on prend 45 minutes pour comprendre ta situation. Je te fais une offre seulement si le format est cohérent pour toi.</div>
+      <div style="text-align:center;margin-top:24px"><a class="btn" href="${BOOK_URL}" target="_blank" rel="noopener">Candidater à l'immersion →</a></div>
+      <div style="text-align:center;margin-top:26px"><a href="index.html" class="mono" style="letter-spacing:.1em;color:var(--text-dim)">← Revenir au site</a></div>
     </div>`;
+  window.scrollTo({top:0,behavior:"smooth"});
 }
 
 intro();
