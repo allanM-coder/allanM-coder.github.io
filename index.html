@@ -350,9 +350,11 @@ p{max-width:64ch}
 .journey-media{margin-top:17px;border-radius:11px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:#0e0d10}
 .journey-media img{width:100%;height:clamp(430px,62vw,640px);object-fit:cover;object-position:center 31%;filter:saturate(.86) contrast(1.04) brightness(.94)}
 .journey-media img.field-proof-hd{height:auto;aspect-ratio:3/2;object-position:center;filter:none}
-.journey-media.portrait-proof{max-width:470px;margin:20px auto 0}
-.journey-media img.field-proof-vertical{height:auto;aspect-ratio:9/16;object-fit:cover;object-position:center;filter:saturate(1.02) contrast(1.02) brightness(1.01)}
+.journey-media.authentic-proof{max-width:540px;margin:20px auto 0}
+.journey-media img.field-proof-authentic{height:auto;aspect-ratio:23/26;object-fit:cover;object-position:center;filter:none}
 .journey-media figcaption{padding:9px 11px;color:var(--dim);font-size:.76rem;line-height:1.35;background:rgba(11,11,13,.88)}
+.journey-media .field-proof-caption{display:flex;align-items:flex-start;gap:9px;padding:12px 14px;color:var(--text);font-size:.82rem;line-height:1.42;text-align:left;background:#121115;border-top:1px solid rgba(245,158,11,.22)}
+.field-proof-caption .caption-arrow{flex:0 0 auto;color:var(--accent);font-size:1.2rem;font-weight:800;line-height:1;transform:translateY(-1px) rotate(-7deg)}
 .journey-visual{margin-top:17px;padding:18px;border-radius:11px;border:1px solid rgba(255,255,255,.07);background:rgba(7,7,9,.48)}
 .analysis-screen{display:grid;grid-template-columns:1.35fr .65fr;gap:12px}
 .analysis-frame{min-height:112px;border-radius:8px;background:linear-gradient(135deg,rgba(245,158,11,.18),rgba(255,255,255,.035));border:1px solid rgba(245,158,11,.2);position:relative;overflow:hidden}
@@ -877,8 +879,9 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
           <h3>On aborde en pleine journée</h3>
           <p>Dans la rue, un café, une bibliothèque. Là où tu croises des femmes tous les jours sans jamais rien tenter.</p>
           <p>Je te mets une <strong>oreillette</strong> : je t'écoute, je te souffle quoi dire quand tu bloques. Après chaque abordage, on s'arrête et je te donne un plan précis pour la suivante. Et si tu veux voir comment je fais, je te montre. C'est mon rôle.</p>
-          <figure class="journey-media portrait-proof photo-reveal" data-photo-reveal>
-            <img class="field-proof-vertical" src="img/interaction-varsovie-allan-coaching-9x16.jpg" alt="Allan en conversation avec une femme à Varsovie, accompagné d'un ami lui-même en discussion" loading="lazy" width="941" height="1672">
+          <figure class="journey-media authentic-proof photo-reveal" data-photo-reveal>
+            <img class="field-proof-authentic" src="img/interaction-varsovie-allan-original-crop-flou-v3.jpg" alt="Allan en conversation avec deux femmes dans les rues de Varsovie en 2022, accompagné d'un ami au visage flouté" loading="lazy" width="690" height="780">
+            <figcaption class="field-proof-caption"><span class="caption-arrow" aria-hidden="true">↖</span><span>Moi, en 2022, abordant des Polonaises dans les rues de Varsovie.</span></figcaption>
           </figure>
         </div>
       </article>
