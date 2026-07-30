@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Reprendre le contrôle de sa vie sentimentale | Allan Maisak</title>
-<meta name="description" content="Que tu bloques avant d'y aller ou que tu abordes déjà sans comprendre pourquoi ça plafonne : 2 jours d'immersion avec Allan, puis 8 semaines de suivi.">
+<meta name="description" content="Que tu bloques avant d'y aller ou que tu abordes déjà sans comprendre pourquoi ça plafonne : 2 jours de coaching terrain privé en présentiel avec Allan, puis 8 semaines de suivi.">
 <meta name="theme-color" content="#0b0b0d">
 <link rel="canonical" href="https://allanm-coder.github.io/">
 <meta property="og:type" content="website">
@@ -301,6 +301,13 @@ p{max-width:64ch}
 .wave-seek{position:absolute;inset:0;z-index:3;width:100%;height:100%;opacity:0;cursor:pointer}
 .wave-shell:focus-within{outline:2px solid var(--accent-2);outline-offset:3px;border-radius:6px}
 .voice-time{color:var(--dim);font-size:.78rem;font-variant-numeric:tabular-nums;white-space:nowrap}
+.voice-speed{grid-column:2 / -1;display:flex;align-items:center;justify-content:flex-end;gap:6px;margin-top:-5px}
+.voice-speed-label{margin-right:4px;color:var(--dim);font-size:.72rem;font-weight:700}
+.speed-btn{
+  min-width:42px;padding:5px 8px;border-radius:7px;border:1px solid var(--line-soft);
+  background:rgba(255,255,255,.025);color:var(--dim);font:700 .72rem/1 var(--font);cursor:pointer;
+}
+.speed-btn:hover,.speed-btn[aria-pressed="true"]{border-color:rgba(245,158,11,.42);background:var(--accent-soft);color:var(--accent-2)}
 @keyframes wave-breathe{from{transform:scaleY(.72);opacity:.72}to{transform:scaleY(1.05);opacity:1}}
 .proof .after{margin-top:28px;color:var(--text);text-align:left;max-width:600px;margin-left:auto;margin-right:auto}
 .proof .after .mark{background:var(--accent-soft);color:var(--text-hi);font-weight:700;padding:1px 6px;border-radius:5px}
@@ -322,7 +329,8 @@ p{max-width:64ch}
 .hlist li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--dim-2)}
 .hlist li b{color:var(--text-hi);font-weight:700}
 .how .adapt{margin-top:24px;color:var(--dim)}
-.how .adapt:last-child{margin-bottom:clamp(26px,4vw,48px)}
+.how .adapt:last-child{margin-bottom:0}
+.how{padding-bottom:clamp(16px,2.5vw,28px)}
 
 /* ---------- parcours de l'immersion ---------- */
 .journey{--journey-progress:0;position:relative;margin-top:36px;padding-left:54px}
@@ -352,7 +360,7 @@ p{max-width:64ch}
 .analysis-screen{display:grid;grid-template-columns:1.35fr .65fr;gap:12px}
 .analysis-frame{min-height:112px;border-radius:8px;background:linear-gradient(135deg,rgba(245,158,11,.18),rgba(255,255,255,.035));border:1px solid rgba(245,158,11,.2);position:relative;overflow:hidden}
 .analysis-frame img{width:100%;height:100%;min-height:112px;object-fit:cover;object-position:center 38%;filter:saturate(.72) brightness(.66) contrast(1.08)}
-.analysis-frame::before{content:"REPLAY";position:absolute;left:10px;top:9px;color:var(--accent-2);font-size:.6rem;font-weight:900;letter-spacing:.12em}
+.analysis-frame::before{content:"ANALYSE";position:absolute;left:10px;top:9px;color:var(--accent-2);font-size:.6rem;font-weight:900;letter-spacing:.12em}
 .analysis-frame::after{content:"";position:absolute;left:10px;right:10px;bottom:16px;height:3px;background:linear-gradient(90deg,var(--accent) 0 58%,rgba(255,255,255,.09) 58%)}
 .analysis-notes{display:flex;flex-direction:column;gap:8px;justify-content:center}
 .analysis-notes i{display:flex;align-items:center;gap:7px;padding:7px 9px;border-radius:7px;background:rgba(111,166,126,.1);border:1px solid rgba(159,206,170,.18);color:#cfe9d5;font-style:normal;font-size:.66rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
@@ -378,11 +386,42 @@ p{max-width:64ch}
 .capline .soft{color:var(--dim);font-size:.95rem}
 
 /* ---------- resultat ---------- */
-.result-sec{padding-bottom:clamp(34px,4vw,52px)}
+.result-sec{padding-top:clamp(22px,3vw,36px);padding-bottom:clamp(34px,4vw,52px)}
 .result-intro{margin-top:24px;color:var(--text);font-size:1.08rem}
-.result-loop{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:26px}
-.result-loop span{padding:14px 12px;border-radius:10px;background:var(--surface);border:1px solid var(--line-soft);color:var(--text);font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;text-align:center}
-.result-loop b{color:var(--accent-2);font-size:1.08rem;margin-right:5px}
+.progress-loop{
+  position:relative;width:min(620px,100%);aspect-ratio:1;margin:28px auto 6px;
+  border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,.08),transparent 58%);
+}
+.progress-loop svg{position:absolute;inset:6%;width:88%;height:88%;overflow:visible}
+.loop-arc{fill:none;stroke:rgba(245,158,11,.72);stroke-width:4;stroke-linecap:round;stroke-dasharray:310;stroke-dashoffset:0}
+.loop-arrow{fill:var(--accent)}
+.loop-step{
+  position:absolute;width:clamp(118px,25%,156px);padding:10px 11px;border-radius:10px;
+  background:rgba(21,20,26,.97);border:1px solid rgba(245,158,11,.22);color:var(--text);
+  font-size:clamp(.7rem,1.6vw,.82rem);font-weight:750;line-height:1.26;text-align:center;
+}
+.loop-step b{display:block;margin-bottom:3px;color:var(--accent-2);font-size:.66rem;letter-spacing:.09em}
+.loop-step.one{left:50%;top:1%;transform:translateX(-50%)}
+.loop-step.two{right:0;top:50%;transform:translateY(-50%)}
+.loop-step.three{left:50%;bottom:1%;transform:translateX(-50%)}
+.loop-step.four{left:0;top:50%;transform:translateY(-50%)}
+.loop-core{
+  position:absolute;left:50%;top:50%;width:38%;aspect-ratio:1;transform:translate(-50%,-50%);
+  display:grid;place-content:center;text-align:center;border-radius:50%;background:var(--accent-soft);
+  border:1px solid rgba(245,158,11,.34);box-shadow:0 0 0 12px rgba(245,158,11,.035);
+}
+.loop-core .infinity{display:block;color:var(--accent-2);font-size:clamp(2rem,7vw,3.4rem);font-weight:800;line-height:.78}
+.loop-core strong{display:block;margin-top:10px;color:var(--text-hi);font-size:clamp(.9rem,2.1vw,1.15rem);line-height:1.1}
+.loop-core small{display:block;margin-top:6px;color:var(--dim);font-size:clamp(.62rem,1.4vw,.74rem)}
+@media(prefers-reduced-motion:no-preference){
+  .motion-enabled .progress-loop:not(.in) .loop-arc{stroke-dashoffset:310}
+  .motion-enabled .progress-loop.in .loop-arc{transition:stroke-dashoffset .65s var(--ease-out)}
+  .motion-enabled .progress-loop.in .loop-arc:nth-of-type(2){transition-delay:.12s}
+  .motion-enabled .progress-loop.in .loop-arc:nth-of-type(3){transition-delay:.24s}
+  .motion-enabled .progress-loop.in .loop-arc:nth-of-type(4){transition-delay:.36s}
+  .motion-enabled .progress-loop.in .infinity{animation:loop-pulse 2.8s ease-in-out .9s infinite}
+  @keyframes loop-pulse{50%{transform:scale(1.08);opacity:.78}}
+}
 .res-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;margin-top:36px;align-items:start}
 .res-col{padding:26px 24px;border-radius:var(--r-card)}
 .res-col.train{background:var(--surface);border:1px solid var(--line-soft)}
@@ -403,19 +442,20 @@ p{max-width:64ch}
 .sensation .tag em{display:block;margin:10px auto 0;max-width:28ch;font-size:clamp(1.2rem,3vw,1.65rem);line-height:1.16;font-style:normal}
 
 /* ---------- histoire ---------- */
-.story{padding-top:clamp(38px,5vw,62px)}
+.story{padding-top:clamp(38px,5vw,62px);padding-bottom:clamp(18px,2.2vw,28px)}
 .story h2{max-width:22ch}
 .story p{color:var(--text);margin-bottom:16px}
 .story-flow{margin-top:26px}
-.story-cta{margin:34px auto 0;text-align:center}
-.story-cta .btn{min-width:min(100%,310px)}
-/* photo paysage : ratio naturel, jamais recadree */
-.story-wide{margin:26px 0 10px}
-.story-wide img{
-  width:100%;height:auto;border-radius:var(--r-card);
+.story-title span,.story-title em{display:block}
+.story-title em{margin-top:5px;color:var(--accent-2);font-style:italic}
+.story-intro-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:clamp(28px,5vw,58px);align-items:stretch}
+.story-portrait{min-width:0}
+.story-portrait img{
+  width:100%;height:100%;min-height:500px;object-fit:cover;object-position:center;border-radius:var(--r-card);
   filter:saturate(.85) contrast(1.03) brightness(.95);border:1px solid var(--line-soft);
 }
-.story-wide figcaption{margin-top:9px;color:var(--dim);font-size:.88rem;font-style:italic}
+.story-portrait figcaption{margin-top:9px;color:var(--dim);font-size:.88rem;font-style:italic}
+.story-after{margin-top:30px}
 /* galerie : uniquement des 3:4, donc aucun recadrage destructeur */
 .gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0 10px}
 .gallery.gallery-3{width:min(920px,calc(100vw - 48px));margin-left:50%;transform:translateX(-50%);grid-template-columns:repeat(3,1fr);gap:16px}
@@ -438,10 +478,12 @@ p{max-width:64ch}
 }
 
 /* ---------- offre ---------- */
+.stack{padding-top:clamp(18px,2.2vw,28px);padding-bottom:clamp(22px,2.6vw,32px)}
 .stack h2{max-width:24ch}
 .bento{margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .cell{background:var(--surface);border-radius:var(--r-card);padding:26px 24px}
 .cell-metric{width:54px;height:54px;border-radius:12px;display:grid;place-content:center;margin-bottom:20px;background:rgba(245,158,11,.09);border:1px solid rgba(245,158,11,.22);color:var(--accent-2);font-size:.82rem;font-weight:900;letter-spacing:.06em}
+.cell.full .cell-metric{width:auto;padding:0 13px}
 .cell-stamp{display:inline-block;margin-top:13px;padding:4px 8px;border-radius:6px;border:1px solid rgba(245,158,11,.2);color:var(--accent-2);font-size:.69rem;font-weight:900;letter-spacing:.08em}
 .cell h3{margin-bottom:10px}
 .cell p{color:var(--dim);font-size:.99rem}
@@ -450,6 +492,7 @@ p{max-width:64ch}
 .stack-close{margin-top:28px;font-size:1.12rem;color:var(--text-hi);font-weight:700;max-width:60ch}
 
 /* ---------- fit ---------- */
+.fit-sec{padding-top:clamp(22px,2.6vw,32px);padding-bottom:clamp(32px,4vw,48px)}
 .fit-grid{margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:22px}
 .fit{border-radius:var(--r-card);padding:28px 26px}
 .fit.yes{background:linear-gradient(145deg,rgba(111,166,126,.12),rgba(21,20,26,.95));border:1px solid rgba(159,206,170,.22)}
@@ -464,7 +507,7 @@ p{max-width:64ch}
 .fit li b{color:var(--text-hi);font-weight:600}
 
 /* ---------- capacite + investissement ---------- */
-.terms{background:var(--bg-2)}
+.terms{background:var(--bg-2);padding-top:clamp(32px,4vw,48px);padding-bottom:clamp(18px,2.2vw,28px)}
 .terms-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:36px;align-items:start}
 .term-col{padding:28px 26px;border-radius:var(--r-card);background:linear-gradient(145deg,rgba(245,158,11,.11),rgba(21,20,26,.96));border:1px solid rgba(245,158,11,.2)}
 .term-col.expect{background:linear-gradient(145deg,rgba(104,157,196,.12),rgba(21,20,26,.96));border-color:rgba(143,184,216,.2)}
@@ -476,6 +519,7 @@ p{max-width:64ch}
 .terms .cta-line{text-align:center;margin-top:36px}
 
 /* ---------- faq ---------- */
+.faq{padding-top:clamp(18px,2.2vw,28px)}
 .faq h2{text-align:center;margin-bottom:36px}
 .acc{max-width:760px;margin:0 auto;border-top:1px solid var(--line-soft)}
 .acc details{border-bottom:1px solid var(--line-soft)}
@@ -587,6 +631,8 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
   .level-copy{text-align:center}
   .level-copy h2,.level-copy p{margin-left:auto;margin-right:auto}
   .level-map{min-height:400px}
+  .story-intro-grid{grid-template-columns:1fr}
+  .story-portrait img{height:auto;min-height:0}
 }
 @media(max-width:720px){
   .pain-stage{display:flex;flex-direction:column}
@@ -609,9 +655,17 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
 @media(max-width:560px){
   body{font-size:16px}
   .sec{padding:58px 0}
-  .result-sec{padding-bottom:30px}
-  .story{padding-top:34px}
-  .result-loop{grid-template-columns:1fr}
+  .how{padding-bottom:16px}
+  .result-sec{padding-top:20px;padding-bottom:30px}
+  .story{padding-top:34px;padding-bottom:26px}
+  .stack{padding-top:26px;padding-bottom:30px}
+  .fit-sec{padding-top:30px;padding-bottom:36px}
+  .terms{padding-top:36px;padding-bottom:26px}
+  .faq{padding-top:26px}
+  .progress-loop{width:100%;margin-top:24px}
+  .loop-step{width:118px;padding:8px 7px;font-size:.68rem}
+  .loop-step b{font-size:.6rem}
+  .loop-core{width:36%}
   .btn.xl{width:100%;padding:17px 18px;white-space:normal}
   .hero-actions{display:grid;grid-template-columns:1fr}
   .hero-actions .btn{width:100%;white-space:normal}
@@ -671,7 +725,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
       <h1><span class="hl">Reprends le contrôle</span> de ta vie sentimentale.</h1>
       <p class="sub">Que tu bloques encore avant d'y aller, ou que tu abordes déjà sans comprendre pourquoi ça plafonne, on trouve <b>le point précis qui t'empêche d'avancer</b>. Puis on le travaille sur le terrain.</p>
       <div class="promise reveal">
-        <p>On commence par <strong>2 jours d'immersion 1-à-1</strong> : je te montre, tu fais, on filme, on décortique. Puis on travaille pendant 8 semaines pour que le changement tienne sans moi.</p>
+        <p>On commence par <strong>2 jours de coaching terrain privé, en présentiel</strong> : je te montre, tu fais, on filme les interactions de l'après-midi, puis on les décortique. Ensuite, on travaille pendant 8 semaines pour ancrer le changement.</p>
       </div>
       <div class="hero-cta reveal">
         <div class="hero-actions">
@@ -861,7 +915,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
       <blockquote class="reveal">« Avant, je pouvais aborder 15 filles, 12 s'arrêtaient même pas. Après le coaching, j'arrête presque toutes les filles que j'aborde. Et celles que je rate, je sais exactement pourquoi. »</blockquote>
       <p class="who reveal">Kilian, 37 ans. Coaché quelques heures sur le terrain avec moi.</p>
       <div class="kaudio-wrap reveal">
-        <p class="kaudio-label">Son retour, dans sa voix, sans script :</p>
+        <p class="kaudio-label">Son retour, dans sa voix, version courte :</p>
         <audio id="kilianAudio" controls preload="metadata" aria-label="Témoignage audio de Kilian">
           <source src="audio/temoignage-kilian.mp3" type="audio/mpeg">
           Ton navigateur ne permet pas de lire cet audio.
@@ -876,7 +930,13 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
             <div class="wave-layer wave-played" data-wave-layer aria-hidden="true"></div>
             <input class="wave-seek" type="range" min="0" max="1000" value="0" step="1" aria-label="Position dans le témoignage audio">
           </div>
-          <span class="voice-time"><span data-audio-current>0:00</span> / <span data-audio-duration>4:46</span></span>
+          <span class="voice-time"><span data-audio-current>0:00</span> / <span data-audio-duration>2:22</span></span>
+          <div class="voice-speed" role="group" aria-label="Vitesse de lecture">
+            <span class="voice-speed-label">Vitesse</span>
+            <button class="speed-btn" type="button" data-audio-speed="1" aria-pressed="true">1×</button>
+            <button class="speed-btn" type="button" data-audio-speed="1.5" aria-pressed="false">1,5×</button>
+            <button class="speed-btn" type="button" data-audio-speed="2" aria-pressed="false">2×</button>
+          </div>
         </div>
       </div>
       <p class="after reveal">La phrase qui compte, c'est la dernière : <span class="mark">« je sais exactement pourquoi »</span>. C'est ça que le terrain change. Tu passes de « j'espère que ça marche » à « je vois ce qui se passe ». Et ça, ça se garde à vie.</p>
@@ -902,7 +962,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
           <p>Dans la rue, un café, une bibliothèque. Là où tu croises des femmes tous les jours sans jamais rien tenter.</p>
           <p>Je te mets une <strong>oreillette</strong> : je t'écoute, je te souffle quoi dire quand tu bloques. Après chaque abordage, on s'arrête et je te donne un plan précis pour la suivante. Et si tu veux voir comment je fais, je te montre. C'est mon rôle.</p>
           <figure class="journey-media authentic-proof photo-reveal" data-photo-reveal>
-            <img class="field-proof-authentic" src="img/interaction-varsovie-allan-original-crop-flou-v4.jpg" alt="Allan en conversation avec deux femmes dans les rues de Varsovie en 2022, accompagné d'un ami au visage anonymisé" loading="lazy" width="700" height="780">
+            <img class="field-proof-authentic" src="img/interaction-varsovie-allan-original-crop-flou-v5.jpg" alt="Allan en conversation avec deux femmes dans les rues de Varsovie en 2022, accompagné d'un ami dont toute la tête est fortement anonymisée" loading="lazy" width="1188" height="1324">
             <figcaption class="field-proof-caption"><span class="caption-arrow" aria-hidden="true">↖</span><span>Moi, en 2022, abordant des Polonaises dans les rues de Varsovie.</span></figcaption>
           </figure>
         </div>
@@ -912,8 +972,8 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
         <div class="journey-card">
           <span class="daytag">Jour 1 · le soir</span>
           <h3>On monte d'un cran, en bar</h3>
-          <p>Un bar dansant, du monde, de la musique. Plus d'opportunités, plus de challenge, et sûrement l'endroit qui t'impressionne le plus.</p>
-          <p>On y va ensemble, on aborde des groupes. Je te pousse dans tes retranchements, et honnêtement, on rigole beaucoup.</p>
+          <p>Un bar dansant, du monde, de la musique. Plus d'opportunités, plus de challenge, et sûrement <strong>l'endroit qui t'impressionne le plus.</strong></p>
+          <p>Le soir est crucial : tu peux aborder beaucoup plus de monde, essayer davantage et surtout t'autoriser à être toi-même dans un contexte qui te sort franchement de ta zone de confort. J'y suis avec toi, je te pousse quand tu négocies avec ta peur et, honnêtement, on rigole beaucoup.</p>
         </div>
       </article>
       <article class="journey-step" id="jour-2-debrief" data-journey-step>
@@ -921,8 +981,8 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
         <div class="journey-card">
           <span class="daytag">Jour 2</span>
           <h3>On décortique tout</h3>
-          <p>On s'assoit et on reprend tes interactions <strong>minute par minute, phrase par phrase</strong>. L'intonation, le regard, le moment exact où ça bascule, la phrase qui a tué l'attraction.</p>
-          <p>Tu repars avec un plan d'action complet, écrit pour toi.</p>
+          <p>On s'assoit et on reprend uniquement les interactions filmées l'après-midi. <strong>On confronte ton interprétation et la mienne</strong>, minute par minute : ton regard, ta voix, ton intention et le moment exact où ça bascule.</p>
+          <p>Tu prends des notes, puis tu repars avec un plan d'action concret.</p>
           <div class="journey-visual analysis-screen" aria-label="Allan analyse une interaction point par point">
             <span class="analysis-frame"><img src="img/podcast-1-allan-analyse.jpg" alt="Allan pendant le podcast numéro un, en train d'expliquer un point précis" loading="lazy" width="1600" height="900"></span>
             <span class="analysis-notes" aria-hidden="true"><i>Intention claire</i><i>Être relax</i><i>Intonation</i><i>Investissement</i></span>
@@ -955,7 +1015,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
         </div>
       </article>
     </div>
-    <p class="adapt reveal" style="margin-top:24px">Pour être clair : l'immersion, c'est une session l'après-midi, une session le soir, et l'analyse le lendemain. Pas deux journées entières à me suivre.</p>
+    <p class="adapt reveal" style="margin-top:24px">Pour être clair : l'immersion, c'est une session l'après-midi, une session le soir, puis l'analyse le lendemain. Je filme uniquement l'après-midi. Pas deux journées entières à me suivre.</p>
     <p class="adapt reveal">La difficulté s'adapte à ton point de départ. L'exigence, non : du réel chaque semaine.</p>
   </div>
 </section>
@@ -964,11 +1024,24 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
 <section class="sec result-sec">
   <div class="wrap narrow">
     <h2 class="reveal">Imagine ce que ça change dans une semaine normale.</h2>
-    <p class="result-intro reveal">Tu ne passes plus ta vie à attendre de te sentir prêt. Tu agis, tu regardes ce qui s'est passé, tu ajustes. Petit à petit, tu arrêtes de mesurer ta valeur à la réaction d'une femme.</p>
-    <div class="result-loop reveal" aria-label="La boucle d'entraînement">
-      <span><b>01</b> Action réelle</span>
-      <span><b>02</b> Retour précis</span>
-      <span><b>03</b> Correction suivante</span>
+    <p class="result-intro reveal">Tu ne passes plus ta vie à attendre de te sentir prêt. Tu agis, tu regardes ce qui s'est passé, tu ajustes. Tu arrêtes de mesurer ta valeur à la réaction d'une femme.</p>
+    <div class="progress-loop reveal" aria-label="Une boucle répétée : défi, retour précis, exercice, défi suivant">
+      <svg viewBox="0 0 520 520" aria-hidden="true" focusable="false">
+        <defs>
+          <marker id="loop-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+            <path class="loop-arrow" d="M0 0 L8 4 L0 8 Z"></path>
+          </marker>
+        </defs>
+        <path class="loop-arc" pathLength="310" d="M260 64 A196 196 0 0 1 456 260" marker-end="url(#loop-arrow)"></path>
+        <path class="loop-arc" pathLength="310" d="M456 260 A196 196 0 0 1 260 456" marker-end="url(#loop-arrow)"></path>
+        <path class="loop-arc" pathLength="310" d="M260 456 A196 196 0 0 1 64 260" marker-end="url(#loop-arrow)"></path>
+        <path class="loop-arc" pathLength="310" d="M64 260 A196 196 0 0 1 260 64" marker-end="url(#loop-arrow)"></path>
+      </svg>
+      <span class="loop-step one"><b>01</b>Tu abordes un défi</span>
+      <span class="loop-step two"><b>02</b>Je te donne un retour précis</span>
+      <span class="loop-step three"><b>03</b>Tu appliques l'exercice</span>
+      <span class="loop-step four"><b>04</b>On choisit le défi suivant</span>
+      <span class="loop-core"><span class="infinity">∞</span><strong>Tu deviens meilleur</strong><small>Et on recommence.</small></span>
     </div>
     <div class="res-grid">
       <div class="res-col train reveal">
@@ -977,7 +1050,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
           <li>Passer à l'action et sortir de ta zone de confort, pour de vrai.</li>
           <li>Assumer qui t'es face à une femme : la regarder dans les yeux, sourire, un corps relâché.</li>
           <li>Montrer ton intérêt sans t'excuser d'exister.</li>
-          <li>Être intéressant quand tu lui parles, et savoir manier une conversation.</li>
+          <li>Être intéressant quand tu lui parles, sans avoir besoin d'être un maestro de la conversation.</li>
           <li>Savoir sexualiser au bon moment, et prendre le lead.</li>
           <li>Repérer ce qui casse l'attraction, comprendre pourquoi, et corriger avec la suivante.</li>
           <li>Être fier de toi en rentrant, quoi qu'il se soit passé.</li>
@@ -988,9 +1061,9 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
         <ul>
           <li>Tu provoques les rencontres au lieu d'attendre que la vie décide pour toi.</li>
           <li>Tu peux montrer à une femme qu'elle te plaît sans te cacher derrière le rôle du mec sympa.</li>
-          <li>Un non reste un non. Pas une preuve que tu ne vaux rien.</li>
-          <li>Tu rentres fier de ce que t'as osé, pas détruit par ce que t'as obtenu.</li>
-          <li>Et tu crées enfin la possibilité de vivre une vraie histoire avec une femme qui te plaît vraiment.</li>
+          <li>Un non peut rejeter une approche, un moment ou ta façon de séduire aujourd'hui. Il ne rejette pas toute ta personne. Ce sont deux choses différentes.</li>
+          <li>Tu rentres fier de ce que t'as osé, pas détruit par ce que tu n'as pas réussi.</li>
+          <li><strong>Et tu crées enfin la possibilité de vivre une vraie histoire avec une femme qui te plaît.</strong></li>
         </ul>
       </div>
     </div>
@@ -1004,38 +1077,43 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
 
 <!-- 8. HISTOIRE -->
 <section class="sec story" id="mon-histoire">
-  <div class="wrap narrow">
-    <h2 class="reveal">Pourquoi moi. Et pourquoi ce format.</h2>
+  <div class="wrap">
+    <h2 class="story-title reveal"><span>Pourquoi moi.</span><em>Et pourquoi ce format.</em></h2>
     <div class="story-flow reveal">
-      <p>Moi, c'est Allan, 27 ans. À 15 ans, je me suis mis en couple avec <strong>la première fille qui voulait bien de moi</strong>. Pas parce que je l'aimais : parce que je voulais faire ma première fois, pour prouver que j'existais. Trois mois plus tard, <strong>elle me trompait, me quittait par message, me bloquait</strong>, et racontait au lycée que c'était nul avec moi.</p>
-      <p>Ce jour-là, je me suis juré de devenir tellement bon avec les femmes que je ne revivrais jamais ça. Sauf que pendant <strong>cinq ans</strong>, j'ai juste regardé des vidéos. <strong>Zéro passage à l'action.</strong></p>
-      <p>Puis j'ai commencé à aborder pour de vrai. Et pendant des années, j'ai couru : <strong>des milliers d'interactions, des centaines de rendez-vous, des rejets en pagaille</strong>. J'ai fini par savoir faire. Mais j'ai compris un truc plus tard : je collectionnais pour <strong>combler un vide</strong>, et un vide, ça se remplit pas comme ça.</p>
-      <p>Ce qui m'a vraiment débloqué, c'est pas <span class="marker">un ebook de plus</span>. C'est d'abord de <strong>me faire coacher</strong>, puis de m'entourer de mecs plus avancés et plus chauds que moi. On vivait des week-ends entiers en immersion, on bougeait, on pratiquait beaucoup. Ils me regardaient faire et me corrigeaient en direct. Je voyais un silence, un geste, une erreur. <strong>Je réessayais tout de suite.</strong> À ce rythme-là, on progresse en jours, pas en années.</p>
-      <figure class="story-wide photo-reveal" data-photo-reveal>
-        <img src="img/allan-today.jpg" alt="Allan Maisak en train de parler au micro" loading="lazy" width="1400" height="995">
-        <figcaption>Aujourd'hui. Ça fait quatre ans que j'accompagne des hommes là-dessus.</figcaption>
-      </figure>
-      <p>Et il y a eu une période où ma vie a changé de forme. <strong>Des rencontres que j'ai provoquées, pas attendues.</strong></p>
-      <div class="gallery gallery-3">
-        <figure class="photo-reveal" data-photo-reveal>
-          <img src="img/histoire-relation.jpg" alt="Allan dans un musée avec une femme rencontrée dans la rue" loading="lazy" width="600" height="800">
-          <figcaption>Abordée dans la rue, un après-midi. Le lendemain, on visitait un musée ensemble.</figcaption>
-        </figure>
-        <figure class="photo-reveal privacy-figure" data-photo-reveal>
-          <img src="img/histoire-2.jpg" alt="Allan avec une femme rencontrée dans la rue" loading="lazy" width="1100" height="1466">
-          <span class="privacy-mask" aria-hidden="true"></span>
-          <figcaption>Abordée dans une grande ville de France. On s'est fréquentés un bon moment. Ce jour-là, un photographe de rue nous a pris en photo, parce qu'on était mignons.</figcaption>
-        </figure>
-        <figure class="photo-reveal" data-photo-reveal>
-          <img src="img/histoire-3.jpg" alt="Allan avec une femme lors d'un rendez-vous dans un parc" loading="lazy" width="1100" height="1467">
-          <figcaption>Elle aussi, abordée dans la rue. Notre premier rendez-vous, dans un parc.</figcaption>
+      <div class="story-intro-grid">
+        <div class="story-intro-copy">
+          <p>Moi, c'est Allan, 27 ans. À 15 ans, je me suis mis en couple avec <strong>la première fille qui voulait bien de moi</strong>. Pas parce que je l'aimais : parce que je voulais faire ma première fois, pour prouver que j'existais. Trois mois plus tard, <strong>elle me trompait, me quittait par message, me bloquait</strong>, et racontait au lycée que j'étais nul au lit.</p>
+          <p>Ce jour-là, je me suis juré de devenir tellement bon avec les femmes que je ne revivrais jamais ça. Sauf que pendant <strong>cinq ans</strong>, j'ai juste regardé des vidéos. <strong>Zéro passage à l'action.</strong></p>
+          <p>Vers mes 20 ans, j'ai commencé à aborder pour de vrai. Ensuite, j'ai beaucoup pratiqué : <strong>des milliers d'interactions, des centaines de rendez-vous, des rejets en pagaille</strong>. Et oui, j'ai fini par coucher avec beaucoup de femmes. Au bout d'un moment, je savais faire. Je pouvais reproduire le résultat encore et encore.</p>
+          <p>Mais le plus cool, c'était même pas le sexe. C'était d'apprendre, de comprendre ce qui changeait une interaction et de me voir sortir d'une zone de confort que j'avais évitée pendant cinq ans. Ça ne réglait pas tout à l'intérieur. Mais ça, c'est une autre histoire.</p>
+          <p>Ce qui m'a vraiment débloqué, c'est pas <span class="marker">un ebook ou une vidéo YouTube de plus</span>. C'est de <strong>me faire coacher</strong>, puis de m'entourer de mecs plus avancés que moi, capables de m'expliquer ce que je ne voyais pas. On vivait des week-ends entiers en immersion. Ils me regardaient faire, me corrigeaient en direct et je réessayais tout de suite. À ce rythme-là, on progresse en jours, pas en années.</p>
+        </div>
+        <figure class="story-portrait photo-reveal" data-photo-reveal>
+          <img src="img/allan-today.jpg" alt="Allan Maisak en train de parler au micro" loading="lazy" width="1400" height="995">
+          <figcaption>Aujourd'hui. Ça fait quatre ans que j'accompagne des hommes là-dessus.</figcaption>
         </figure>
       </div>
-      <p class="respect">Ces femmes ont compté pour moi. Ce ne sont pas des trophées : c'est une vie relationnelle que j'ai appris à construire.</p>
-      <p style="margin-top:16px">J'ai rien à prouver. Toi, en revanche, <strong>tu dois pouvoir vérifier que je te parle d'un terrain que j'ai vraiment vécu</strong>. À 20 ans, j'aurais juré que ces expériences étaient réservées aux autres. Elles l'étaient pas. C'était une question d'entraînement, d'environnement, et de quelqu'un pour me corriger.</p>
-      <p>Si j'avais eu ce quelqu'un à l'époque, <strong>je me serais évité des années de course</strong>. C'est exactement ce que cette immersion existe pour te donner.</p>
-      <div class="story-cta reveal">
-        <a class="btn xl" href="https://cal.com/allan-figfsv/appel-confiance-offert" data-cal-link="allan-figfsv/appel-confiance-offert" data-cal-config='{"layout":"month_view"}'>Candidater à l'immersion<span class="arw" aria-hidden="true">&#8594;</span></a>
+      <div class="story-after narrow">
+        <p>Et ma vie a fini par changer de forme. <strong>J'ai rencontré des femmes incroyables et vécu des histoires folles, fortes, parfois très émouvantes.</strong></p>
+        <div class="gallery gallery-3">
+          <figure class="photo-reveal" data-photo-reveal>
+            <img src="img/histoire-relation.jpg" alt="Allan dans un musée avec une femme rencontrée dans la rue" loading="lazy" width="600" height="800">
+            <figcaption>Abordée dans la rue, un après-midi. Le lendemain, on visitait un musée ensemble.</figcaption>
+          </figure>
+          <figure class="photo-reveal privacy-figure" data-photo-reveal>
+            <img src="img/histoire-2.jpg" alt="Allan avec une femme rencontrée dans la rue" loading="lazy" width="1100" height="1466">
+            <span class="privacy-mask" aria-hidden="true"></span>
+            <figcaption>Abordée dans une grande ville de France. On s'est fréquentés un bon moment. Ce jour-là, un photographe de rue nous a pris en photo parce qu'« on était mignons ».</figcaption>
+          </figure>
+          <figure class="photo-reveal" data-photo-reveal>
+            <img src="img/histoire-3.jpg" alt="Allan avec une femme lors d'un rendez-vous dans un parc" loading="lazy" width="1100" height="1467">
+            <figcaption>Elle aussi, abordée dans la rue. Notre premier rendez-vous, dans un parc.</figcaption>
+          </figure>
+        </div>
+        <p class="respect">Ces femmes ont compté pour moi. Ce ne sont pas des trophées : c'est une vie relationnelle que j'ai appris à construire.</p>
+        <p style="margin-top:16px">Ces photos ne sont pas là pour jouer au collectionneur. Elles sont là pour te montrer qu'après une grosse rupture, même avec des traumas et des années à croire que ce genre d'histoires est réservé aux autres, <strong>un mec normal peut reprendre pied et construire de belles relations.</strong></p>
+        <p>Moi aussi, je pensais que c'était réservé aux plus beaux, aux naturels, à un petit groupe de mecs. Puis j'ai vu des gars qui n'avaient rien du cliché du séducteur apprendre à le faire. Le groupe est petit pour une raison simple : peu de gens font vraiment le travail. Ce n'est pas magique. C'est de l'entraînement, un bon environnement et quelqu'un capable de te corriger.</p>
+        <p>Mon seul regret, c'est de ne pas m'être fait accompagner plus tôt. Je ne sais pas si j'aurais rencontré la femme de ma vie plus vite. <strong>Mais j'aurais gagné des années, ça oui.</strong> C'est exactement ce que cette immersion veut t'éviter.</p>
       </div>
     </div>
   </div>
@@ -1048,24 +1126,24 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
     <div class="bento">
       <div class="cell reveal">
         <span class="cell-metric">2 J</span>
-        <h3>2 jours d'immersion 1-à-1</h3>
-        <p>Démonstration, pratique l'après-midi et le soir, puis décorticage le lendemain. Trois temps où je suis concentré sur toi.</p>
+        <h3>2 jours de coaching terrain privé</h3>
+        <p>Du présentiel, de la pratique l'après-midi et le soir, puis le décorticage des interactions filmées l'après-midi. Chaque exercice et chaque retour partent de ton niveau.</p>
       </div>
       <div class="cell reveal">
-        <span class="cell-metric">8×</span>
+        <span class="cell-metric" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M6.6 2.8 9.2 2c.7-.2 1.4.1 1.7.8l1.2 3c.3.6.1 1.3-.4 1.7L10 8.9c1.1 2.2 2.9 4 5.1 5.1l1.4-1.7c.4-.5 1.1-.7 1.7-.4l3 1.2c.7.3 1 1 .8 1.7l-.8 2.6c-.3 1-1.2 1.6-2.2 1.6C10.7 19 4 12.3 4 4c0-1 .6-1.9 1.6-2.2Z"></path></svg></span>
         <h3>8 appels individuels</h3>
-        <p>Un par semaine pendant deux mois, une heure, centrée sur ta pratique réelle de la semaine.</p>
+        <p>Un par semaine pendant deux mois, une heure, centré sur ta pratique réelle de la semaine.</p>
       </div>
       <div class="cell reveal">
         <span class="cell-metric">Q&amp;A</span>
-        <h3>Un canal entre les appels</h3>
-        <p>Pour les questions qui bloqueraient ta pratique jusqu'au rendez-vous suivant.</p>
+        <h3>Un accès privé entre les appels</h3>
+        <p>Tu peux me poser les questions qui te feraient avancer plus vite. Le but : ne jamais rester perdu pendant une semaine et continuer à progresser entre nos rendez-vous.</p>
         <span class="cell-stamp">&lt;24H · 7J/7</span>
       </div>
       <div class="cell full reveal">
-        <span class="cell-metric">REPLAY</span>
-        <h3>Tes interactions, décortiquées avec toi</h3>
-        <p>Ce qui est capté pendant tes deux jours sert à une seule chose : ton débrief. Ensuite, ça te revient. C'est ta trace à toi du chemin parcouru.</p>
+        <span class="cell-metric">DÉBRIEF</span>
+        <h3>On décortique tes interactions ensemble</h3>
+        <p>On reprend les interactions filmées l'après-midi. On confronte ton interprétation et la mienne. Tu prends des notes, puis tu repars avec un plan d'action concret.</p>
       </div>
     </div>
     <p class="stack-close reveal narrow">Un seul parcours : je te montre, je t'observe, on corrige, puis tu reproduis sans moi.</p>
@@ -1120,11 +1198,8 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
       </div>
     </div>
     <div class="capline reveal">
-      <p><strong>Je prends au maximum 2 ou 3 personnes par mois.</strong> C'est la capacité qui me permet d'être là sur le terrain, de préparer les débriefs et de suivre chaque personne moi-même pendant 8 semaines.</p>
-      <p class="soft">Le tarif est fixe, je te le donne pendant l'appel une fois qu'on a vérifié que le format répond à ton vrai problème. Il se règle en une fois ou en plusieurs mensualités.</p>
-    </div>
-    <div class="cta-line reveal">
-      <a class="btn xl" href="https://cal.com/allan-figfsv/appel-confiance-offert" data-cal-link="allan-figfsv/appel-confiance-offert" data-cal-config='{"layout":"month_view"}'>Candidater à l'immersion<span class="arw" aria-hidden="true">&#8594;</span></a>
+      <p><strong>Je prends au maximum 2 ou 3 personnes par mois.</strong> C'est ce qui me permet de suivre chaque personne moi-même et sérieusement pendant 8 semaines, sur le terrain comme entre les appels.</p>
+      <p class="soft">Le tarif actuel est préférentiel parce que je lance ce format et que j'en construis les premiers résultats en mon nom. Il augmentera après cette première phase. Je te donne le montant exact pendant l'appel ; tu peux régler en une fois ou en plusieurs mensualités.</p>
     </div>
   </div>
 </section>
@@ -1155,8 +1230,8 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
         <div class="ans">C'est prévu, et c'est même le principe. Je montre d'abord, puis on monte la difficulté progressivement. Je te jette pas dans le grand bain pour faire une scène. Mais on contourne pas l'action indéfiniment non plus : le format existe pour pratiquer, pas pour parler de pratique.</div>
       </details>
       <details>
-        <summary>« Et si je sais pas quoi dire ? »</summary>
-        <div class="ans">Au début, je te donne des points d'appui très concrets : quoi observer, comment ouvrir, comment relancer. Mais pas un texte à réciter comme un robot. On travaille ton intention, ton écoute, ton intonation et ta capacité à rester présent. Le but, c'est que tu saches créer une vraie conversation sans dépendre d'un script.</div>
+        <summary>« Et si je sais pas quoi faire ? »</summary>
+        <div class="ans">Au début, je te donne des points d'appui très concrets : quoi observer, comment aborder, comment relancer. Mais pas un texte à réciter comme un robot. On travaille ton intention, ton écoute, ton intonation et ta capacité à rester présent. Le but, c'est que tu saches créer une vraie conversation sans dépendre d'un script.</div>
       </details>
       <details>
         <summary>« Je veux pas jouer un personnage. »</summary>
@@ -1184,7 +1259,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
       </details>
       <details>
         <summary>« Ça coûte combien ? »</summary>
-        <div class="ans">Le tarif est fixe. Je ne l'affiche pas ici : je te le donne pendant l'appel, après avoir vérifié que le format répond bien à ton blocage. Tu peux régler en une fois ou en plusieurs mensualités. Tu repars avec l'information complète et tu décides sans pression.</div>
+        <div class="ans">Le tarif actuel est préférentiel parce que je lance ce format et que j'en construis les premiers résultats en mon nom. Il augmentera après cette première phase. Je ne l'affiche pas ici : je te donne le montant exact pendant l'appel, après avoir vérifié que le format répond bien à ton blocage. Tu peux régler en une fois ou en plusieurs mensualités, puis décider sans pression.</div>
       </details>
       <details>
         <summary>« C'est quoi exactement, cet appel ? »</summary>
@@ -1203,7 +1278,6 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
       <p class="reveal">Le diagnostic te montre ton point de départ. Pas avec une note de valeur. Avec le prochain mouvement à travailler.</p>
       <div class="level-actions reveal">
         <a class="btn" href="quiz.html">Faire le diagnostic en 2 minutes <span aria-hidden="true">→</span></a>
-        <a class="btn ghost" href="https://cal.com/allan-figfsv/appel-confiance-offert" data-cal-link="allan-figfsv/appel-confiance-offert" data-cal-config='{"layout":"month_view"}'>Réserver un appel</a>
       </div>
     </div>
     <a class="level-map reveal" href="quiz.html" aria-label="Faire le diagnostic des trois niveaux : provoquer, séduire et fréquenter">
@@ -1245,7 +1319,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
 </main>
 
 <footer class="foot">
-  <div class="wrap">Allan Maisak · Coaching terrain 1-à-1. <a href="quiz.html">Le diagnostic</a> · <a href="https://www.youtube.com/@allanmaisak" target="_blank" rel="noopener">YouTube</a></div>
+  <div class="wrap">Allan Maisak · Coaching terrain privé en présentiel. <a href="quiz.html">Le diagnostic</a> · <a href="https://www.youtube.com/@allanmaisak" target="_blank" rel="noopener">YouTube</a></div>
 </footer>
 
 <!-- STICKY CTA MOBILE -->
@@ -1349,7 +1423,7 @@ document.addEventListener("click", function(event){
     if(!reduce){
       photoReveals.forEach(function(photo){
         var photoRect = photo.getBoundingClientRect();
-        var span = Math.max(180,Math.min(viewport * .62,photoRect.height * .9));
+        var span = Math.max(150,Math.min(viewport * .48,photoRect.height * .68));
         var photoRaw = (viewport * .92 - photoRect.top) / span;
         var photoProgress = Math.max(0,Math.min(1,photoRaw));
         photo.style.setProperty('--photo-progress',photoProgress.toFixed(3));
@@ -1404,7 +1478,8 @@ document.addEventListener("click", function(event){
     var played = audioWrap.querySelector('.wave-played');
     var currentLabel = audioWrap.querySelector('[data-audio-current]');
     var durationLabel = audioWrap.querySelector('[data-audio-duration]');
-    var waveData = [100,82,100,83,92,89,92,68,81,80,74,77,87,100,93,96,75,93,71,86,77,71,72,96,91,82,100,100,76,88,89,78,81,91,78,74,83,58,76,84,89,82,89,72,89,77,69,79,79,100,80,76,83,93,70,77,85,44,78,71,67,81,75,61,91,68,48,54,92,75,71,73,61,70,73,69,52,100,65,87,80,57,75,75,33,99,40,58];
+    var speedButtons = Array.prototype.slice.call(audioWrap.querySelectorAll('[data-audio-speed]'));
+    var waveData = [85,84,57,62,66,54,64,48,61,45,71,50,54,54,58,38,59,63,44,71,74,63,89,68,48,100,61,39,37,77,61,58,55,81,66,46,59,70,67,44,58,62,60,53,58,52,52,54,54,54,69,56,67,50,73,54,36,53,43,74,80,51,58,54,57,45,62,55,40,49,39,64,51,48,32,48,86,56,48,58,42,67,45,67,49,28,57,49];
     audioWrap.querySelectorAll('[data-wave-layer]').forEach(function(layer){
       var fragment = document.createDocumentFragment();
       waveData.forEach(function(height,index){
@@ -1422,7 +1497,7 @@ document.addEventListener("click", function(event){
       return minutes + ':' + String(rest).padStart(2,'0');
     }
     function updateAudio(){
-      var duration = isFinite(audio.duration) ? audio.duration : 286;
+      var duration = isFinite(audio.duration) ? audio.duration : 143;
       var ratio = duration ? audio.currentTime / duration : 0;
       seek.value = String(Math.round(ratio * 1000));
       played.style.setProperty('--played',(ratio * 100).toFixed(2) + '%');
@@ -1442,6 +1517,16 @@ document.addEventListener("click", function(event){
     seek.addEventListener('input',function(){
       if(isFinite(audio.duration)){ audio.currentTime = (Number(seek.value) / 1000) * audio.duration; }
       updateAudio();
+    });
+    speedButtons.forEach(function(button){
+      button.addEventListener('click',function(){
+        var rate = Number(button.getAttribute('data-audio-speed')) || 1;
+        audio.playbackRate = rate;
+        audio.defaultPlaybackRate = rate;
+        speedButtons.forEach(function(item){
+          item.setAttribute('aria-pressed',item === button ? 'true' : 'false');
+        });
+      });
     });
     audio.addEventListener('play',function(){
       toggle.classList.add('is-playing');
