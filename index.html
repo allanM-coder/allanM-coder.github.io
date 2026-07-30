@@ -217,64 +217,32 @@ p{max-width:64ch}
 
 /* ---------- mecanisme ---------- */
 .turn p{margin-bottom:18px}
-.schema{margin:30px auto 36px;max-width:560px;padding:28px 24px 24px;border-radius:var(--r-card);background:linear-gradient(155deg,rgba(28,25,31,.98),rgba(18,17,21,.98));border:1px solid rgba(248,113,113,.18);position:relative;overflow:hidden}
-.schema::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(340px 220px at 95% 22%,rgba(248,113,113,.09),transparent 70%)}
-.schema h3{position:relative;font-size:1rem;margin-bottom:18px;color:var(--text-hi)}
-.exam-visual{position:relative;margin:0 0 20px;padding:16px;border-radius:12px;overflow:hidden;background:linear-gradient(135deg,rgba(12,12,15,.98),rgba(31,17,21,.96));border:1px solid rgba(248,113,113,.25);box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}
-.exam-visual::after{content:"";position:absolute;inset:auto -42px -64px auto;width:180px;height:180px;border-radius:50%;background:rgba(248,113,113,.12);filter:blur(22px);pointer-events:none}
-.exam-head{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
-.exam-head span{color:var(--dim);font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
-.exam-head strong{padding:5px 9px;border-radius:999px;background:rgba(248,113,113,.13);border:1px solid rgba(248,113,113,.35);color:var(--danger);font-size:.68rem;letter-spacing:.09em;text-transform:uppercase}
-.exam-gauges{position:relative;z-index:1;display:grid;gap:9px}
-.exam-gauge{display:grid;grid-template-columns:76px minmax(0,1fr) auto;gap:9px;align-items:center;color:var(--text);font-size:.75rem;font-weight:700}
-.exam-gauge i{height:6px;border-radius:999px;background:rgba(255,255,255,.07);overflow:hidden}
-.exam-gauge i::after{content:"";display:block;width:var(--exam-level);height:100%;border-radius:inherit;background:linear-gradient(90deg,#fb7185,#ef4444);box-shadow:0 0 14px rgba(248,113,113,.42)}
-.exam-gauge em{color:var(--danger);font-size:.66rem;font-style:normal;font-weight:900;letter-spacing:.04em;text-transform:uppercase}
-.exam-verdict{position:relative;z-index:1;margin:15px 0 0;padding-top:13px;border-top:1px solid rgba(255,255,255,.08);color:var(--text-hi);font-size:.88rem;font-weight:800;text-align:center}
-.schema-loop{position:relative;padding-right:38px}
-.schema ol{position:relative;list-style:none;margin:0;padding:0}
-.schema li{position:relative;padding:11px 13px 11px 42px;border-radius:9px;font-size:.94rem;line-height:1.4;color:var(--text);background:var(--danger-soft);border:1px solid rgba(248,113,113,.24);transition:background .3s ease,border-color .3s ease,transform .45s var(--ease-out),opacity .3s ease}
-.schema li::before{content:counter(list-item,decimal-leading-zero);position:absolute;left:13px;top:12px;color:var(--danger);font-size:.7rem;font-weight:800;letter-spacing:.04em;font-variant-numeric:tabular-nums}
-.schema li+li{margin-top:15px}
-.schema li+li::after{content:"";position:absolute;top:-12px;left:24px;width:1px;height:9px;background:rgba(248,113,113,.52)}
-.schema li.last{font-weight:700;color:var(--text-hi)}
-.schema .backloop{position:absolute;right:0;top:8px;bottom:8px;width:28px;border:2px solid rgba(248,113,113,.5);border-left:0;border-radius:0 18px 18px 0}
-.schema .backloop::after{content:"";position:absolute;left:-6px;top:-3px;border:6px solid transparent;border-bottom-color:var(--danger)}
-.schema .backlabel{position:absolute;right:7px;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;font-size:.67rem;letter-spacing:.1em;text-transform:uppercase;color:var(--danger);white-space:nowrap;background:#17151a;padding:8px 0}
-.breakthrough{position:relative;margin-top:24px;padding-top:22px;border-top:1px solid rgba(245,158,11,.22)}
-.breakthrough::before{content:"";position:absolute;left:0;top:-1px;width:0;height:1px;background:var(--accent)}
-.break-signal{display:block;color:var(--accent-2);font-size:.76rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
-.growth-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:8px;align-items:center}
-.growth-flow span{padding:9px 8px;border-radius:8px;background:var(--accent-soft);border:1px solid rgba(245,158,11,.23);color:var(--text-hi);font-size:.78rem;font-weight:800;text-align:center}
-.growth-flow i{width:16px;height:1px;background:var(--accent);position:relative}
-.growth-flow i::after{content:"";position:absolute;right:-1px;top:-3px;border:3px solid transparent;border-left-color:var(--accent)}
-@media(prefers-reduced-motion:no-preference){
-  .schema.in li{animation:loop-step 3.6s var(--ease-out) 1 both}
-  .schema.in li:nth-child(1){animation-delay:.05s}
-  .schema.in li:nth-child(2){animation-delay:.22s}
-  .schema.in li:nth-child(3){animation-delay:.39s}
-  .schema.in li:nth-child(4){animation-delay:.56s}
-  .schema.in li:nth-child(5){animation-delay:.73s}
-  .schema.in li:nth-child(6){animation-delay:.90s}
-  .schema.in .breakthrough::before{animation:break-line .8s var(--ease-out) 1.35s 1 forwards}
-  .schema.in .growth-flow{animation:growth-in .65s var(--ease-out) 1.45s 1 both}
-  @keyframes loop-step{0%{opacity:.35;transform:translateX(-7px)}10%,24%{opacity:1;transform:none;background:rgba(248,113,113,.14);border-color:rgba(248,113,113,.5)}36%,100%{opacity:1;transform:none}}
-  @keyframes break-line{to{width:100%}}
-  @keyframes growth-in{from{opacity:0;clip-path:inset(0 100% 0 0)}to{opacity:1;clip-path:inset(0)}}
-}
-.schema .loopnote{position:relative;margin-top:16px;font-size:.9rem;color:var(--dim)}
+.mechanism-truth{margin:24px 0 28px;padding:16px 18px;border-left:3px solid var(--danger);background:var(--danger-soft);color:var(--text-hi);font-size:1.04rem;font-weight:700}
+.training-map{margin:30px auto 34px;max-width:620px;border-radius:var(--r-card);overflow:hidden;background:#111014;border:1px solid var(--line);box-shadow:0 24px 70px rgba(0,0,0,.22)}
+.training-panel{position:relative;padding:24px 24px 20px}
+.training-panel.exam{background:radial-gradient(420px 230px at 95% 0,rgba(248,113,113,.12),transparent 72%),#171317}
+.training-panel.practice{background:radial-gradient(420px 230px at 95% 0,rgba(111,166,126,.13),transparent 72%),#111713}
+.flow-label{display:block;margin-bottom:8px;font-size:.68rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
+.training-panel.exam .flow-label{color:var(--danger)}
+.training-panel.practice .flow-label{color:var(--success)}
+.training-panel h3{max-width:28ch;margin-bottom:18px;font-size:1.18rem;line-height:1.2}
+.training-steps{list-style:none;display:grid}
+.training-steps li{position:relative;padding:13px 0 13px 40px;border-top:1px solid rgba(255,255,255,.065)}
+.training-steps li::before{content:counter(list-item,decimal-leading-zero);position:absolute;left:0;top:15px;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:.62rem;font-weight:900;font-variant-numeric:tabular-nums}
+.training-panel.exam li::before{color:var(--danger);background:rgba(248,113,113,.1);border:1px solid rgba(248,113,113,.28)}
+.training-panel.practice li::before{color:var(--success);background:var(--success-soft);border:1px solid rgba(159,206,170,.26)}
+.training-steps b{display:block;margin-bottom:2px;color:var(--text-hi);font-size:.91rem}
+.training-steps span{display:block;color:var(--dim);font-size:.82rem;line-height:1.42}
+.training-pivot{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 20px;background:var(--accent);color:var(--accent-ink)}
+.training-pivot span{font-size:.74rem;font-weight:700}
+.training-pivot strong{color:var(--accent-ink);font-size:.9rem;font-weight:900;text-align:right}
+.training-result{padding:17px 22px;color:var(--text);font-size:.88rem;line-height:1.5;background:#0d0d10;border-top:1px solid var(--line-soft)}
+.training-result strong{color:var(--success)}
 @media(max-width:520px){
-  .schema{padding:22px 15px 20px}
-  .exam-visual{padding:14px 12px}
-  .exam-gauge{grid-template-columns:62px minmax(0,1fr) auto;gap:7px;font-size:.7rem}
-  .schema-loop{padding-right:28px}
-  .schema li{padding-left:36px}
-  .schema li::before{left:10px}
-  .schema .backloop{width:20px}
-  .schema .backlabel{right:4px;font-size:.58rem}
-  .growth-flow{grid-template-columns:1fr;gap:6px}
-  .growth-flow i{width:1px;height:10px;margin:auto}
-  .growth-flow i::after{right:-3px;top:7px;border-left-color:transparent;border-top-color:var(--accent)}
+  .training-panel{padding:21px 17px 17px}
+  .training-pivot{align-items:flex-start;flex-direction:column;gap:2px;padding:13px 17px}
+  .training-pivot strong{text-align:left}
+  .training-result{padding:15px 17px}
 }
 
 /* ---------- preuve ---------- */
@@ -334,13 +302,13 @@ p{max-width:64ch}
 /* ---------- parcours de l'immersion ---------- */
 .journey{--journey-progress:0;position:relative;margin-top:36px;padding-left:54px}
 .journey-rail{position:absolute;left:14px;top:20px;bottom:20px;width:2px;background:rgba(255,255,255,.08);overflow:hidden}
-.journey-rail span{position:absolute;inset:0;background:linear-gradient(var(--accent),var(--accent-2));transform:scaleY(var(--journey-progress));transform-origin:top;transition:transform .1s linear}
+.journey-rail span{position:absolute;inset:0;background:linear-gradient(var(--accent),var(--accent-2));transform:translateZ(0) scaleY(var(--journey-progress));transform-origin:top;will-change:transform;backface-visibility:hidden}
 .journey-step{position:relative;padding:0 0 42px}
 .journey-step:last-child{padding-bottom:0}
 .journey-node{position:absolute;left:-52px;top:4px;width:26px;height:26px;border-radius:50%;background:var(--bg);border:2px solid var(--dim-2);display:grid;place-items:center;color:var(--dim);font-size:.68rem;font-weight:800;font-variant-numeric:tabular-nums;transition:background .3s ease,border-color .3s ease,color .3s ease,box-shadow .3s ease}
 .journey-step.is-past .journey-node{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);box-shadow:0 0 0 5px rgba(245,158,11,.12)}
-.journey-card{padding:25px 26px;border-radius:var(--r-card);background:var(--surface);border:1px solid var(--line-soft);transition:transform .45s var(--ease-out),border-color .3s ease,background .3s ease}
-.journey-step.is-past .journey-card{transform:translateX(4px);border-color:rgba(245,158,11,.2)}
+.journey-card{padding:25px 26px;border-radius:var(--r-card);background:var(--surface);border:1px solid var(--line-soft);transition:border-color .3s ease,background .3s ease}
+.journey-step.is-past .journey-card{border-color:rgba(245,158,11,.2)}
 .journey-step:last-child .journey-card{background:var(--accent-soft);border-color:rgba(245,158,11,.24)}
 .daytag{display:inline-block;font-size:.78rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--accent-2);margin-bottom:9px}
 .journey-card h3{margin-bottom:10px}
@@ -351,7 +319,7 @@ p{max-width:64ch}
 .journey-media img{width:100%;height:clamp(430px,62vw,640px);object-fit:cover;object-position:center 31%;filter:saturate(.86) contrast(1.04) brightness(.94)}
 .journey-media img.field-proof-hd{height:auto;aspect-ratio:3/2;object-position:center;filter:none}
 .journey-media.authentic-proof{max-width:540px;margin:20px auto 0}
-.journey-media img.field-proof-authentic{height:auto;aspect-ratio:23/26;object-fit:cover;object-position:center;filter:none}
+.journey-media img.field-proof-authentic{height:auto;aspect-ratio:35/39;object-fit:cover;object-position:center;filter:none}
 .journey-media figcaption{padding:9px 11px;color:var(--dim);font-size:.76rem;line-height:1.35;background:rgba(11,11,13,.88)}
 .journey-media .field-proof-caption{display:flex;align-items:flex-start;gap:9px;padding:12px 14px;color:var(--text);font-size:.82rem;line-height:1.42;text-align:left;background:#121115;border-top:1px solid rgba(245,158,11,.22)}
 .field-proof-caption .caption-arrow{flex:0 0 auto;color:var(--accent);font-size:1.2rem;font-weight:800;line-height:1;transform:translateY(-1px) rotate(-7deg)}
@@ -372,7 +340,7 @@ p{max-width:64ch}
   border:1px solid rgba(245,158,11,.22);background:#08080a;
   box-shadow:0 18px 44px rgba(0,0,0,.22);
 }
-.coaching-scrub video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#08080a}
+.coaching-scrub video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#08080a;transform:translateZ(0);backface-visibility:hidden}
 .coaching-scrub::after{content:"";position:absolute;left:0;right:0;bottom:42px;height:3px;background:linear-gradient(90deg,var(--accent) var(--scrub-progress),rgba(255,255,255,.1) var(--scrub-progress));pointer-events:none}
 .scrub-cue{position:absolute;left:12px;top:12px;padding:6px 9px;border-radius:999px;background:rgba(11,11,13,.78);border:1px solid rgba(255,255,255,.1);color:var(--text);font-size:.65rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;backdrop-filter:blur(8px)}
 .coaching-scrub figcaption{position:relative;padding:10px 12px;color:var(--dim);font-size:.75rem;line-height:1.4;background:rgba(11,11,13,.96)}
@@ -554,7 +522,6 @@ p{max-width:64ch}
 .foot a{display:inline-block;padding:10px 2px}
 @media(max-width:520px){
   .final .notready a,.foot a{padding:12px 4px}
-  .schema .backlabel{font-size:.68rem}
 }
 .final .limited{margin:14px auto 0;font-size:.84rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-2);font-weight:700}
 
@@ -789,44 +756,41 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
 <!-- 4. MECANISME -->
 <section class="sec turn">
   <div class="wrap narrow">
-    <h2 class="reveal">Tu sais déjà beaucoup de choses. Mais ta peur décide encore.</h2>
+    <h2 class="reveal">Le problème, c'est pas la peur. C'est l'examen final que tu fabriques dans ta tête.</h2>
     <div class="reveal">
-      <p style="margin-top:26px">T'as lu, regardé, pris des notes. Le savoir est là. Mais au moment d'agir, tu passes un examen.</p>
-      <p>Le problème, c'est ce que tu mets en jeu. Si elle réagit bien, t'existes. Si elle réagit mal, t'es rien. Alors tu enfiles un personnage : tu surveilles ta voix, tes mains, son regard, les gens autour. Et tu ressors de chaque tentative lessivé.</p>
-      <p>Moi j'appelle ça le <span class="k">MODE EXAMEN</span>. Dès qu'une femme te plaît, la rencontre devient un test. Tu notes ta voix, tes mains, la phrase parfaite, sa réaction. Et chaque signe devient un verdict sur ta valeur. Plus tu veux réussir, moins tu es présent.</p>
+      <p style="margin-top:26px">Tu la croises, elle te plaît. En quelques secondes, tu la mets tout en haut et tu te places en dessous. Elle devient le prix. Toi, le candidat qui croit n'avoir qu'une seule chance.</p>
+      <p>Alors tu passes de la connexion à la performance. Comme devant une page blanche, tu cherches la bonne réponse. Tu contrôles ta voix, tes gestes, tes blagues. Tu te juges pendant que tu parles. Au moindre silence ou regard bizarre, tu paniques encore plus.</p>
+      <p class="mechanism-truth">Tu n'es plus vraiment avec elle. Tu es dans ta tête, en train de te noter.</p>
     </div>
-    <figure class="schema reveal" role="group" aria-label="La boucle qui entretient le blocage, puis la nouvelle boucle de progression">
-      <h3>Ce qui se passe quand tu crois passer un examen</h3>
-      <div class="exam-visual" aria-hidden="true">
-        <div class="exam-head"><span>Une rencontre normale</span><strong>devient un test</strong></div>
-        <div class="exam-gauges">
-          <span class="exam-gauge"><span>Ma voix</span><i style="--exam-level:82%"></i><em>surveillée</em></span>
-          <span class="exam-gauge"><span>Mes gestes</span><i style="--exam-level:91%"></i><em>contrôlés</em></span>
-          <span class="exam-gauge"><span>Sa réaction</span><i style="--exam-level:100%"></i><em>verdict</em></span>
-        </div>
-        <p class="exam-verdict">Tu ne lui parles plus. Tu te regardes lui parler.</p>
-      </div>
-      <div class="schema-loop">
-        <ol>
-          <li>Elle te plaît.</li>
-          <li>Tu te sens évalué.</li>
-          <li>Tu analyses chaque détail.</li>
-          <li>Tu joues un rôle. Ou tu n'y vas pas.</li>
-          <li>Tu te juges pendant des heures.</li>
-          <li class="last">La prochaine fois, la pression monte.</li>
+    <figure class="training-map reveal" role="group" aria-label="Passer de l'examen dans sa tête à un terrain d'entraînement">
+      <div class="training-panel exam">
+        <span class="flow-label">L'examen dans ta tête</span>
+        <h3>« Il faut que je sois assez bien pour elle. »</h3>
+        <ol class="training-steps">
+          <li><b>Elle devient le prix.</b><span>Tu crois que cette interaction est ta seule chance.</span></li>
+          <li><b>Tu te regardes parler.</b><span>Voix, gestes, blagues : tu contrôles tout.</span></li>
+          <li><b>Tu perds la connexion.</b><span>Chaque réaction devient une note sur ta valeur.</span></li>
+          <li><b>Tu repars plus tendu.</b><span>La prochaine femme hérite déjà de cette pression.</span></li>
         </ol>
-        <span class="backloop" aria-hidden="true"></span>
-        <span class="backlabel" aria-hidden="true">ça recommence</span>
       </div>
-      <div class="breakthrough">
-        <span class="break-signal">Le terrain coupe la boucle</span>
-        <div class="growth-flow" aria-label="J'agis, j'observe, j'ajuste">
-          <span>J'agis</span><i aria-hidden="true"></i><span>J'observe</span><i aria-hidden="true"></i><span>J'ajuste</span>
-        </div>
+      <div class="training-pivot">
+        <span>On ne prépare pas un examen final.</span>
+        <strong>On fait des bacs blancs.</strong>
       </div>
-      <p class="loopnote">La peur peut rester. Mais elle ne conduit plus toute seule.</p>
+      <div class="training-panel practice">
+        <span class="flow-label">Le terrain d'entraînement</span>
+        <h3>« Mon objectif, c'est d'expérimenter. »</h3>
+        <ol class="training-steps">
+          <li><b>Tu abandonnes le résultat.</b><span>Tu n'as rien à obtenir d'elle pour valider ta valeur.</span></li>
+          <li><b>Tu testes dans un cadre sûr.</b><span>Je suis là, on rigole, et je te pousse quand il le faut.</span></li>
+          <li><b>On corrige une seule chose.</b><span>Pas ta personne : un geste, une intention, un moment.</span></li>
+          <li><b>Tu recommences plus libre.</b><span>Tu sors de ta tête et tu reviens dans la connexion.</span></li>
+        </ol>
+      </div>
+      <figcaption class="training-result"><strong>À force, tu n'as plus besoin de performer.</strong> Tes compétences montent, tu deviens naturellement plus confiant, plus présent et plus séduisant.</figcaption>
     </figure>
-    <p class="reveal">Ce qui l'arrête, c'est quelqu'un qui te regarde faire. Sur le terrain, on voit le moment exact où tu bascules en mode personnage. On le décortique. Tu réessaies dans la foulée. Parce qu'une vidéo t'a jamais regardé faire.</p>
+    <p class="reveal">Le terrain devient une salle de répétition, pas une scène avec un public qui attend que tu te rates. Tu peux essayer, rater, en rire, comprendre ce qui s'est passé et recommencer dans la foulée.</p>
+    <p class="reveal">Je suis à côté pour te donner ce cadre. Je t'aide à lâcher le résultat pendant un temps, je te corrige sans te juger, et je te pousse quand ton excuse parle plus fort que toi. Petit à petit, tu arrêtes de chercher à impressionner. Tu apprends à être là, à connecter et à rester toi.</p>
   </div>
 </section>
 
@@ -880,7 +844,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
           <p>Dans la rue, un café, une bibliothèque. Là où tu croises des femmes tous les jours sans jamais rien tenter.</p>
           <p>Je te mets une <strong>oreillette</strong> : je t'écoute, je te souffle quoi dire quand tu bloques. Après chaque abordage, on s'arrête et je te donne un plan précis pour la suivante. Et si tu veux voir comment je fais, je te montre. C'est mon rôle.</p>
           <figure class="journey-media authentic-proof photo-reveal" data-photo-reveal>
-            <img class="field-proof-authentic" src="img/interaction-varsovie-allan-original-crop-flou-v3.jpg" alt="Allan en conversation avec deux femmes dans les rues de Varsovie en 2022, accompagné d'un ami au visage flouté" loading="lazy" width="690" height="780">
+            <img class="field-proof-authentic" src="img/interaction-varsovie-allan-original-crop-flou-v4.jpg" alt="Allan en conversation avec deux femmes dans les rues de Varsovie en 2022, accompagné d'un ami au visage anonymisé" loading="lazy" width="700" height="780">
             <figcaption class="field-proof-caption"><span class="caption-arrow" aria-hidden="true">↖</span><span>Moi, en 2022, abordant des Polonaises dans les rues de Varsovie.</span></figcaption>
           </figure>
         </div>
@@ -917,9 +881,9 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
             <li><b>Un Q&amp;A privé.</b> Je prends le temps de répondre à tes questions les plus intimes, sans gêne et sans jugement.</li>
             <li><b>Un groupe de mecs avec qui avancer.</b> Vous pouvez discuter, vous challenger et organiser des sorties ensemble.</li>
           </ul>
-          <figure class="coaching-scrub" data-scroll-video>
-            <video muted playsinline preload="metadata" poster="img/allan-atelier-21-poster.jpg" aria-label="Allan répond à une question pendant un atelier">
-              <source src="media/allan-atelier-21-extrait.mp4" type="video/mp4">
+          <figure class="coaching-scrub" data-scroll-video data-scroll-speed="5">
+            <video muted playsinline preload="auto" poster="img/allan-atelier-21-gestes-poster.jpg" aria-label="Allan répond à une question pendant un atelier en parlant avec les mains">
+              <source src="media/allan-atelier-21-gestes-scrub.mp4" type="video/mp4">
             </video>
             <span class="scrub-cue" aria-hidden="true">Q&amp;A privé</span>
             <figcaption>Moi qui prends le temps de répondre à tes questions les plus intimes.</figcaption>
@@ -1278,10 +1242,21 @@ document.addEventListener("click", function(event){
   var journeySteps = journey ? Array.prototype.slice.call(journey.querySelectorAll('[data-journey-step]')) : [];
   var scrubFigure = document.querySelector('[data-scroll-video]');
   var scrubVideo = scrubFigure ? scrubFigure.querySelector('video') : null;
+  var scrubSpeed = scrubFigure ? Math.max(1,Number(scrubFigure.getAttribute('data-scroll-speed')) || 1) : 1;
   var scrubLastTime = -1;
+  var scrubWantedTime = -1;
+  var journeyLastProgress = -1;
+  function applyScrubSeek(){
+    if(!scrubVideo || scrubVideo.readyState < 1 || !isFinite(scrubVideo.duration) || scrubWantedTime < 0 || scrubVideo.seeking){ return; }
+    var target = Math.max(0,Math.min(scrubVideo.duration - .04,scrubWantedTime));
+    if(Math.abs(target - scrubVideo.currentTime) <= .04){ scrubLastTime = target; return; }
+    scrubVideo.currentTime = target;
+    scrubLastTime = target;
+  }
   if(scrubVideo){
     scrubVideo.pause();
     scrubVideo.addEventListener('loadedmetadata',queueScrollMotion);
+    scrubVideo.addEventListener('seeked',applyScrubSeek);
   }
   var scrollQueued = false;
   function updateScrollMotion(){
@@ -1311,13 +1286,13 @@ document.addEventListener("click", function(event){
       if(scrubFigure){
         var scrubRect = scrubFigure.getBoundingClientRect();
         var scrubRaw = (viewport * .82 - scrubRect.top) / Math.max(1,scrubRect.height + viewport * .62);
-        var scrubProgress = Math.max(0,Math.min(1,scrubRaw));
+        var scrubProgress = Math.max(0,Math.min(1,scrubRaw * scrubSpeed));
         scrubFigure.style.setProperty('--scrub-progress',(scrubProgress * 100).toFixed(2) + '%');
         if(scrubVideo && scrubVideo.readyState >= 1 && isFinite(scrubVideo.duration)){
           var scrubTarget = scrubProgress * Math.max(0,scrubVideo.duration - .08);
-          if(Math.abs(scrubTarget - scrubLastTime) > .035){
-            scrubVideo.currentTime = scrubTarget;
-            scrubLastTime = scrubTarget;
+          if(Math.abs(scrubTarget - scrubLastTime) > .04){
+            scrubWantedTime = scrubTarget;
+            applyScrubSeek();
           }
         }
       }
@@ -1326,9 +1301,15 @@ document.addEventListener("click", function(event){
     var rect = journey.getBoundingClientRect();
     var raw = (viewport * .68 - rect.top) / Math.max(1,rect.height + viewport * .18);
     var progress = Math.max(0,Math.min(1,raw));
-    journey.style.setProperty('--journey-progress',progress.toFixed(3));
+    if(Math.abs(progress - journeyLastProgress) > .001){
+      journey.style.setProperty('--journey-progress',progress.toFixed(3));
+      journeyLastProgress = progress;
+    }
     journeySteps.forEach(function(step){
-      step.classList.toggle('is-past',step.getBoundingClientRect().top < viewport * .64);
+      var stepTop = step.getBoundingClientRect().top;
+      var isPast = step.classList.contains('is-past');
+      if(!isPast && stepTop < viewport * .58){ step.classList.add('is-past'); }
+      else if(isPast && stepTop > viewport * .72){ step.classList.remove('is-past'); }
     });
   }
   function queueScrollMotion(){
