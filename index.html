@@ -881,7 +881,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
             <li><b>Un Q&amp;A privé.</b> Je prends le temps de répondre à tes questions les plus intimes, sans gêne et sans jugement.</li>
             <li><b>Un groupe de mecs avec qui avancer.</b> Vous pouvez discuter, vous challenger et organiser des sorties ensemble.</li>
           </ul>
-          <figure class="coaching-scrub" data-scroll-video data-scroll-speed="5">
+          <figure class="coaching-scrub" data-scroll-video data-scroll-start=".88" data-scroll-end=".36">
             <video muted playsinline preload="auto" poster="img/allan-atelier-21-gestes-poster.jpg" aria-label="Allan répond à une question pendant un atelier en parlant avec les mains">
               <source src="media/allan-atelier-21-gestes-scrub.mp4" type="video/mp4">
             </video>
@@ -1242,7 +1242,8 @@ document.addEventListener("click", function(event){
   var journeySteps = journey ? Array.prototype.slice.call(journey.querySelectorAll('[data-journey-step]')) : [];
   var scrubFigure = document.querySelector('[data-scroll-video]');
   var scrubVideo = scrubFigure ? scrubFigure.querySelector('video') : null;
-  var scrubSpeed = scrubFigure ? Math.max(1,Number(scrubFigure.getAttribute('data-scroll-speed')) || 1) : 1;
+  var scrubStartRatio = scrubFigure ? Number(scrubFigure.getAttribute('data-scroll-start')) || .88 : .88;
+  var scrubEndRatio = scrubFigure ? Number(scrubFigure.getAttribute('data-scroll-end')) || .36 : .36;
   var scrubLastTime = -1;
   var scrubWantedTime = -1;
   var journeyLastProgress = -1;
@@ -1285,8 +1286,9 @@ document.addEventListener("click", function(event){
       });
       if(scrubFigure){
         var scrubRect = scrubFigure.getBoundingClientRect();
-        var scrubRaw = (viewport * .82 - scrubRect.top) / Math.max(1,scrubRect.height + viewport * .62);
-        var scrubProgress = Math.max(0,Math.min(1,scrubRaw * scrubSpeed));
+        var scrubStart = viewport * scrubStartRatio;
+        var scrubEnd = viewport * scrubEndRatio;
+        var scrubProgress = Math.max(0,Math.min(1,(scrubStart - scrubRect.top) / Math.max(1,scrubStart - scrubEnd)));
         scrubFigure.style.setProperty('--scrub-progress',(scrubProgress * 100).toFixed(2) + '%');
         if(scrubVideo && scrubVideo.readyState >= 1 && isFinite(scrubVideo.duration)){
           var scrubTarget = scrubProgress * Math.max(0,scrubVideo.duration - .08);
