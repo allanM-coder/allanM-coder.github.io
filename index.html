@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Immersion terrain 1-à-1 : oser séduire, en vrai | Allan Maisak</title>
-<meta name="description" content="Tu vois une femme qui te plaît et tu la laisses passer ? 2 jours d'immersion terrain avec moi, puis 8 semaines pour ne plus laisser ta peur décider.">
+<title>Reprendre le contrôle de sa vie sentimentale | Allan Maisak</title>
+<meta name="description" content="Que tu bloques avant d'y aller ou que tu abordes déjà sans comprendre pourquoi ça plafonne : 2 jours d'immersion avec Allan, puis 8 semaines de suivi.">
 <meta name="theme-color" content="#0b0b0d">
 <link rel="canonical" href="https://allanm-coder.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
-<meta property="og:title" content="Elle est partie. Et depuis, tu subis.">
-<meta property="og:description" content="Tu vois une femme qui te plaît et tu la laisses passer ? 2 jours de terrain avec moi, puis 8 semaines pour reprendre le lead sur toi-même.">
+<meta property="og:title" content="Reprends le contrôle de ta vie sentimentale.">
+<meta property="og:description" content="On trouve le point précis qui t'empêche d'avancer, on le travaille sur le terrain, puis on l'ancre pendant 8 semaines.">
 <meta property="og:url" content="https://allanm-coder.github.io/">
 <meta property="og:image" content="https://allanm-coder.github.io/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -129,6 +129,7 @@ p{max-width:64ch}
   display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;
   padding-top:clamp(44px,6vw,80px);padding-bottom:clamp(52px,7vw,92px);
 }
+.hero-kicker{display:block;margin-bottom:14px;color:var(--dim);font-size:.78rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
 .hero h1{font-size:clamp(2.05rem,5.2vw,3.4rem);font-weight:800}
 .hero .sub{margin-top:22px;font-size:clamp(1.06rem,2vw,1.28rem);color:var(--dim);line-height:1.52;max-width:36ch}
 .hero .sub b{color:var(--text);font-weight:600}
@@ -137,6 +138,8 @@ p{max-width:64ch}
 .promise p+p{margin-top:12px}
 .promise .dimline{color:var(--dim);font-size:.96rem}
 .hero-cta{margin-top:28px}
+.hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.hero-actions .btn.ghost{padding:15px 18px;font-size:.94rem}
 .hero-photo img{
   width:100%;max-height:540px;border-radius:var(--r-card);
   aspect-ratio:4/5;object-fit:cover;object-position:50% 18%;
@@ -244,6 +247,28 @@ p{max-width:64ch}
   .training-pivot strong{text-align:left}
   .training-result{padding:15px 17px}
 }
+
+/* ---------- point de départ ---------- */
+.origin-proof{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(680px 420px at 78% 18%,rgba(245,158,11,.08),transparent 68%),
+    var(--bg-2);
+}
+.origin-proof::before{content:"";position:absolute;inset:0;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);pointer-events:none}
+.origin-grid{display:grid;grid-template-columns:minmax(0,.86fr) minmax(430px,1.14fr);gap:clamp(34px,6vw,72px);align-items:center}
+.origin-copy h2{max-width:18ch}
+.origin-copy p{margin-top:18px;color:var(--text)}
+.origin-copy .origin-truth{padding:17px 18px;border-left:3px solid var(--accent);background:var(--accent-soft);color:var(--text-hi);font-weight:700}
+.origin-photos{display:grid;grid-template-columns:.78fr 1.22fr;gap:14px;align-items:stretch}
+.origin-photos figure{min-width:0}
+.origin-photos img{
+  width:100%;height:100%;min-height:420px;object-fit:cover;border-radius:var(--r-card);
+  border:1px solid var(--line-soft);filter:saturate(.84) contrast(1.03) brightness(.94);
+}
+.origin-photos .origin-portrait img{object-position:50% 28%}
+.origin-photos .origin-meeting img{object-position:58% 50%}
+.origin-photos figcaption{margin-top:9px;color:var(--dim);font-size:.82rem;line-height:1.4}
 
 /* ---------- preuve ---------- */
 .proof{background:var(--bg-2);padding-top:clamp(52px,7vw,84px)}
@@ -550,6 +575,8 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
   .hero-photo{max-width:320px;margin:0 auto}
   .hero-photo img{max-height:50vh}
   .hero .sub,.promise{max-width:none}
+  .origin-grid{grid-template-columns:1fr}
+  .origin-copy h2{max-width:22ch}
   .res-grid,.terms-grid,.fit-grid{grid-template-columns:1fr}
   .bento{grid-template-columns:1fr 1fr}
   .cell.full{grid-column:1 / -1}
@@ -586,6 +613,10 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
   .story{padding-top:34px}
   .result-loop{grid-template-columns:1fr}
   .btn.xl{width:100%;padding:17px 18px;white-space:normal}
+  .hero-actions{display:grid;grid-template-columns:1fr}
+  .hero-actions .btn{width:100%;white-space:normal}
+  .origin-photos{grid-template-columns:1fr}
+  .origin-photos img{min-height:0;height:auto}
   .bento{grid-template-columns:1fr}
   .nav .btn{display:none}
   .sticky-cta{display:block}
@@ -636,14 +667,17 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
 <header class="hero">
   <div class="wrap hero-grid">
     <div class="hero-text">
-      <h1>Elle est partie.<br>Et depuis, tu <span class="hl">SUBIS</span>.</h1>
-      <p class="sub">Ou peut-être qu'il n'y a personne, et que ça dure. Dans le métro, un bar, un afterwork, la même scène revient : une femme te plaît, tu hésites, le moment passe. <b>Et une fois de plus, c'est ta peur qui a décidé.</b></p>
+      <span class="hero-kicker">Après une rupture, ou des années à laisser le hasard décider</span>
+      <h1><span class="hl">Reprends le contrôle</span> de ta vie sentimentale.</h1>
+      <p class="sub">Que tu bloques encore avant d'y aller, ou que tu abordes déjà sans comprendre pourquoi ça plafonne, on trouve <b>le point précis qui t'empêche d'avancer</b>. Puis on le travaille sur le terrain.</p>
       <div class="promise reveal">
-        <p>Le but, c'est pas de faire disparaître ta timidité. C'est qu'elle arrête de décider à ta place. Tu vois une femme qui te plaît, tu vas lui parler, tu assumes ton intérêt, et tu rentres fier d'avoir été toi, quelle que soit sa réponse.</p>
-        <p class="dimline">Pendant 2 mois, on entraîne ça dans la vraie vie. D'abord <strong>2 jours d'immersion 1-à-1</strong> : j'aborde devant toi, tu fais, on filme, on décortique. Puis 8 semaines d'appels pour que tu puisses le refaire sans moi.</p>
+        <p>On commence par <strong>2 jours d'immersion 1-à-1</strong> : je te montre, tu fais, on filme, on décortique. Puis on travaille pendant 8 semaines pour que le changement tienne sans moi.</p>
       </div>
       <div class="hero-cta reveal">
-        <a class="btn xl" href="https://cal.com/allan-figfsv/appel-confiance-offert" data-cal-link="allan-figfsv/appel-confiance-offert" data-cal-config='{"layout":"month_view"}'>Candidater à l'immersion<span class="arw" aria-hidden="true">&#8594;</span></a>
+        <div class="hero-actions">
+          <a class="btn xl" href="https://cal.com/allan-figfsv/appel-confiance-offert" data-cal-link="allan-figfsv/appel-confiance-offert" data-cal-config='{"layout":"month_view"}'>Candidater à l'immersion<span class="arw" aria-hidden="true">&#8594;</span></a>
+          <a class="btn ghost" href="quiz.html">Je ne sais pas où ça bloque</a>
+        </div>
         <p class="cta-note">Un appel de 45 minutes. Je vérifie que le format te correspond, je te donne le déroulé et le tarif.</p>
       </div>
     </div>
@@ -681,14 +715,14 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
             </figure>
           </div>
         </article>
-        <article class="pain-scene reveal" data-pain-place="Bar" data-pain-state="Tu empruntes ton courage">
+        <article class="pain-scene reveal" data-pain-place="Après l'approche" data-pain-state="Tu ne vois pas ce qui pêche">
           <div class="pain-scene-inner">
             <div>
-              <span class="pain-place">Dans un bar</span>
-              <p>Une femme te regarde dans les yeux. Tu le vois. Mais tu attends encore un signe, puis encore un. Tu reprends un verre pour te fabriquer du courage. Quand tu te lèves enfin, t'es tendu, tu réfléchis à chaque mot. Ou tu ne te lèves pas du tout, et <span class="marker danger">tu rumines en rentrant</span>.</p>
+              <span class="pain-place">Quand tu abordes déjà</span>
+              <p>Tu sais démarrer une conversation. Tu y vas, parfois souvent. Mais les mêmes rejets reviennent et tu ne sais pas pourquoi. Ton regard ? Ton intention ? Le moment où tu proposes de vous revoir ? Tu changes de phrase au hasard, alors que <span class="marker danger">le vrai problème reste intact</span>.</p>
             </div>
-            <figure class="pain-art" aria-label="Illustration d'une hésitation dans un bar">
-              <img src="img/scene-bar-hesitation-bright.jpg" alt="Illustration d'un homme qui hésite à aller parler à une femme dans un bar" loading="lazy" width="1586" height="992">
+            <figure class="pain-art" aria-label="Illustration d'une conversation qui plafonne dans un bar">
+              <img src="img/scene-bar-hesitation-bright.jpg" alt="Illustration d'un homme qui ne comprend pas pourquoi une conversation ne progresse pas" loading="lazy" width="1586" height="992">
             </figure>
           </div>
         </article>
@@ -724,7 +758,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
       <div class="quotes">
         <p class="quote reveal">Je vois un peu ce qu'il faut faire, mais je n'arrive pas à le faire.</p>
       </div>
-      <p class="close reveal">Si t'as hoché la tête quelque part, ton problème n'est pas juste de manquer de femmes. C'est de <strong>ne plus te faire confiance au moment où ça compte</strong>.</p>
+      <p class="close reveal">Si t'as hoché la tête quelque part, tu n'as peut-être pas besoin de plus d'informations. Tu as besoin de voir <strong>ce qui te bloque vraiment</strong> : le passage à l'action, ou ce qui se passe une fois que tu y es.</p>
     </div>
   </div>
 </section>
@@ -756,49 +790,73 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
 <!-- 4. MECANISME -->
 <section class="sec turn">
   <div class="wrap narrow">
-    <h2 class="reveal">Le problème, c'est pas la peur. C'est l'examen final que tu fabriques dans ta tête.</h2>
+    <h2 class="reveal">Le problème peut venir de quelque chose que tu fais. Pas d'une tare mystérieuse dans ce que tu es.</h2>
     <div class="reveal">
-      <p style="margin-top:26px">Tu la croises, elle te plaît. En quelques secondes, tu la mets tout en haut et tu te places en dessous. Elle devient le prix. Toi, le candidat qui croit n'avoir qu'une seule chance.</p>
-      <p>Alors tu passes de la connexion à la performance. Comme devant une page blanche, tu cherches la bonne réponse. Tu contrôles ta voix, tes gestes, tes blagues. Tu te juges pendant que tu parles. Au moindre silence ou regard bizarre, tu paniques encore plus.</p>
-      <p class="mechanism-truth">Tu n'es plus vraiment avec elle. Tu es dans ta tête, en train de te noter.</p>
+      <p style="margin-top:26px">Parfois, le point qui pêche arrive avant même le premier mot : tu attends d'être sûr, tu mets la femme sur un piédestal et tu cherches la phrase parfaite.</p>
+      <p>Parfois, tu agis déjà. Mais ton regard fuit, ton intention reste floue, tu parles trop vite, tu forces une étape ou tu ne prends jamais le lead. Comme tu essaies de tout corriger en même temps, tu ne sais jamais ce qui a vraiment changé.</p>
+      <p class="mechanism-truth">On ne va pas juger ta valeur. On va isoler une chose observable, la travailler, puis vérifier ce qu'elle change.</p>
     </div>
-    <figure class="training-map reveal" role="group" aria-label="Passer de l'examen dans sa tête à un terrain d'entraînement">
+    <figure class="training-map reveal" role="group" aria-label="Passer d'une interprétation floue à une correction précise sur le terrain">
       <div class="training-panel exam">
-        <span class="flow-label">L'examen dans ta tête</span>
-        <h3>« Il faut que je sois assez bien pour elle. »</h3>
+        <span class="flow-label">Quand tu analyses seul</span>
+        <h3>« Ça n'a pas marché. Le problème, c'est moi. »</h3>
         <ol class="training-steps">
-          <li><b>Elle devient le prix.</b><span>Tu crois que cette interaction est ta seule chance.</span></li>
-          <li><b>Tu te regardes parler.</b><span>Voix, gestes, blagues : tu contrôles tout.</span></li>
-          <li><b>Tu perds la connexion.</b><span>Chaque réaction devient une note sur ta valeur.</span></li>
-          <li><b>Tu repars plus tendu.</b><span>La prochaine femme hérite déjà de cette pression.</span></li>
+          <li><b>Tu mélanges les faits et ton histoire.</b><span>Un silence devient : « je suis inintéressant ».</span></li>
+          <li><b>Tu changes tout à la fois.</b><span>Phrase, posture, humour, look : impossible de savoir ce qui compte.</span></li>
+          <li><b>Tu cours après le résultat.</b><span>Sa réaction devient la seule mesure de ta progression.</span></li>
+          <li><b>Tu répètes sans apprendre.</b><span>Plus d'interactions, mais les mêmes erreurs.</span></li>
         </ol>
       </div>
       <div class="training-pivot">
-        <span>On ne prépare pas un examen final.</span>
-        <strong>On fait des bacs blancs.</strong>
+        <span>On ne corrige pas « ta personnalité ».</span>
+        <strong>On isole le point précis.</strong>
       </div>
       <div class="training-panel practice">
-        <span class="flow-label">Le terrain d'entraînement</span>
-        <h3>« Mon objectif, c'est d'expérimenter. »</h3>
+        <span class="flow-label">La boucle qu'on répète</span>
+        <h3>Une observation. Un objectif. Un nouvel essai.</h3>
         <ol class="training-steps">
-          <li><b>Tu abandonnes le résultat.</b><span>Tu n'as rien à obtenir d'elle pour valider ta valeur.</span></li>
-          <li><b>Tu testes dans un cadre sûr.</b><span>Je suis là, on rigole, et je te pousse quand il le faut.</span></li>
-          <li><b>On corrige une seule chose.</b><span>Pas ta personne : un geste, une intention, un moment.</span></li>
-          <li><b>Tu recommences plus libre.</b><span>Tu sors de ta tête et tu reviens dans la connexion.</span></li>
+          <li><b>On sépare les faits du récit.</b><span>Ce qu'elle a fait. Ce que tu as fait. Ce que tu en as conclu.</span></li>
+          <li><b>On repère le moment qui a basculé.</b><span>Regard, voix, intention, rythme, écoute ou prise de lead.</span></li>
+          <li><b>On choisit un seul objectif.</b><span>Quelque chose de clair à tester dans la prochaine interaction.</span></li>
+          <li><b>Tu appliques et on recommence.</b><span>Le terrain répond. Le débrief transforme la réponse en apprentissage.</span></li>
         </ol>
       </div>
-      <figcaption class="training-result"><strong>À force, tu n'as plus besoin de performer.</strong> Tes compétences montent, tu deviens naturellement plus confiant, plus présent et plus séduisant.</figcaption>
+      <figcaption class="training-result"><strong>Tu passes de « je ne sais pas ce qui cloche » à « je sais exactement ce que je travaille ».</strong> C'est là que la progression arrête d'être aléatoire.</figcaption>
     </figure>
-    <p class="reveal">Le terrain devient une salle de répétition, pas une scène avec un public qui attend que tu te rates. Tu peux essayer, rater, en rire, comprendre ce qui s'est passé et recommencer dans la foulée.</p>
-    <p class="reveal">Je suis à côté pour te donner ce cadre. Je t'aide à lâcher le résultat pendant un temps, je te corrige sans te juger, et je te pousse quand ton excuse parle plus fort que toi. Petit à petit, tu arrêtes de chercher à impressionner. Tu apprends à être là, à connecter et à rester toi.</p>
+    <p class="reveal">Le terrain devient une salle de répétition. Tu peux essayer, rater, comprendre ce qui s'est passé et recommencer dans la foulée, avec un objectif plus précis.</p>
+    <p class="reveal">Je suis à côté pour te montrer, t'observer et te corriger sans te juger. Et quand ton excuse parle plus fort que toi, je te pousse à appliquer ce qu'on vient de décider.</p>
   </div>
 </section>
 
-<!-- 5. PREUVE -->
+<!-- 5. POINT DE DÉPART -->
+<section class="sec origin-proof">
+  <div class="wrap origin-grid">
+    <div class="origin-copy">
+      <span class="desire-kicker reveal">« Facile pour toi »</span>
+      <h2 class="reveal">Tu vois le Allan d'aujourd'hui. Pas celui qui a commencé.</h2>
+      <p class="reveal">Tu peux regarder mes photos actuelles et te dire : « Oui, mais toi t'es beau, musclé, déjà confiant. » Je comprends. Sauf que ce que tu vois aujourd'hui est aussi le résultat du chemin.</p>
+      <p class="reveal">Je fais 1,79 m. Pendant cinq ans, j'ai regardé des vidéos sans agir. Je ne savais pas m'habiller, je n'étais pas musclé, et personne ne me parlait de mon physique comme d'un avantage.</p>
+      <p class="origin-truth reveal">Je vais pas te raconter que le physique ne compte jamais. Il joue sur une première impression. Mais il ne t'apprend pas à regarder dans les yeux, assumer ton intérêt, comprendre un rejet ou construire une relation.</p>
+      <p class="reveal">Je ne vais pas te transformer en moi. On va voir ce qui, chez toi, t'empêche d'avancer, puis le travailler point par point.</p>
+    </div>
+    <div class="origin-photos">
+      <figure class="origin-portrait photo-reveal" data-photo-reveal>
+        <img src="img/allan-porto-2019-portrait-avant.jpg" alt="Allan à Porto en 2019, avant d'avoir construit son apparence actuelle" loading="lazy" width="1094" height="1462">
+        <figcaption>Porto, 2019. Après 36 jours de marche : barbe en vrac, cheveux trop longs, aucune tenue pensée pour séduire.</figcaption>
+      </figure>
+      <figure class="origin-meeting photo-reveal" data-photo-reveal>
+        <img src="img/allan-porto-2019-rencontre-floutee.jpg" alt="Allan à Porto en 2019 avec une femme dont le visage est fortement anonymisé" loading="lazy" width="1448" height="1086">
+        <figcaption>Le soir même. Je ne me sentais pas « avantagé ». J'ai simplement arrêté d'attendre de me sentir prêt.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 6. PREUVE -->
 <section class="sec proof">
   <div class="wrap">
     <div class="proof-card">
-      <h2 class="reveal" style="margin-bottom:30px">Voilà un élève que j'ai accompagné. Il a commencé là où tu bloques : le terrain.</h2>
+      <h2 class="reveal" style="margin-bottom:30px">Kilian abordait déjà. Ce qui lui manquait, c'était de comprendre pourquoi ça coinçait.</h2>
       <div class="kmark reveal">K</div>
       <blockquote class="reveal">« Avant, je pouvais aborder 15 filles, 12 s'arrêtaient même pas. Après le coaching, j'arrête presque toutes les filles que j'aborde. Et celles que je rate, je sais exactement pourquoi. »</blockquote>
       <p class="who reveal">Kilian, 37 ans. Coaché quelques heures sur le terrain avec moi.</p>
@@ -833,7 +891,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
 <!-- 6. DEROULE -->
 <section class="sec how">
   <div class="wrap narrow">
-    <h2 class="reveal">2 jours d'immersion. Puis 8 semaines pour sortir sans moi.</h2>
+    <h2 class="reveal">2 jours pour franchir un cap. Puis 8 semaines pour l'ancrer.</h2>
     <div class="journey reveal" id="immersionJourney">
       <div class="journey-rail" aria-hidden="true"><span></span></div>
       <article class="journey-step" id="jour-1-terrain" data-journey-step>
@@ -938,8 +996,8 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
     </div>
     <p class="res-note reveal">Je vais être droit : personne peut te garantir la réaction d'une femme, et je le ferai pas. Ce qui dépend de toi, on l'entraîne jusqu'à ce que ça sorte. Le reste, c'est la vie, et c'est très bien comme ça.</p>
     <div class="sensation reveal">
-      <p>Le but, c'est pas de te fabriquer un personnage confiant. Au début, tu vas peut-être emprunter des gestes, une structure, une façon de faire. Puis tu accumules tes propres preuves : j'ai eu peur, j'y suis allé, je suis toujours là.</p>
-      <span class="tag"><strong>Tu restes toi.</strong><em>La peur ne prend plus les décisions à ta place.</em></span>
+      <p>Tu ne vas pas réciter un rôle. Tu vas essayer différentes façons d'être plus direct, plus léger, plus vulnérable ou plus assumé. Certaines te sembleront fausses. D'autres vont révéler une partie de toi que tu n'utilisais jamais.</p>
+      <span class="tag"><strong>Tu élargis ton registre.</strong><em>Puis tu gardes ce qui te ressemble et fonctionne.</em></span>
     </div>
   </div>
 </section>
@@ -989,7 +1047,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
     <h2 class="reveal narrow" style="text-align:center">Ce que t'achètes, en vrai.</h2>
     <div class="bento">
       <div class="cell reveal">
-        <span class="cell-metric">48H</span>
+        <span class="cell-metric">2 J</span>
         <h3>2 jours d'immersion 1-à-1</h3>
         <p>Démonstration, pratique l'après-midi et le soir, puis décorticage le lendemain. Trois temps où je suis concentré sur toi.</p>
       </div>
@@ -1017,15 +1075,16 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
 <!-- 10. POUR QUI -->
 <section class="sec fit-sec">
   <div class="wrap">
-    <h2 class="reveal narrow" style="text-align:center">Je prends pas tout le monde. Deux ou trois par mois, les bons.</h2>
+    <h2 class="reveal narrow" style="text-align:center">Ce format est exigeant. Il n'est pas pour tout le monde.</h2>
     <div class="fit-grid">
       <div class="fit yes reveal">
         <h3>C'est pour toi si</h3>
         <ul>
           <li><span class="ck">✓</span>T'as pris une claque, ou ça fait trop longtemps que ça bloque. Et tu sens que le vrai sujet dépasse la bonne phrase d'accroche.</li>
-          <li><span class="ck">✓</span>T'as déjà essayé seul : les applis, les photos Instagram, les vidéos de séduction. Le savoir est là, il sort pas au bon moment.</li>
+          <li><span class="ck">✓</span>Tu bloques encore avant d'y aller, ou tu abordes déjà sans réussir à comprendre pourquoi ça plafonne.</li>
+          <li><span class="ck">✓</span>T'es quelqu'un de gentil et réfléchi, mais ta gentillesse se transforme parfois en effacement dès qu'une femme te plaît.</li>
           <li><span class="ck">✓</span>Tu veux des rencontres vraies, avec en ligne de mire une relation qui compte.</li>
-          <li><span class="ck">✓</span>T'es prêt à pratiquer chaque semaine et à regarder honnêtement ce que tu fais.</li>
+          <li><span class="ck">✓</span>T'es prêt à appliquer précisément, pratiquer chaque semaine et regarder honnêtement ce que tu fais.</li>
         </ul>
       </div>
       <div class="fit no reveal">
@@ -1049,9 +1108,9 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
     <div class="terms-grid">
       <div class="term-col reveal">
         <h3>Ce que j'attends de toi</h3>
-        <p>Que tu m'écoutes de A à Z. Tu vas avoir peur, tu vas sortir de ta zone de confort : fais-moi confiance, tu en ressortiras grandi.</p>
-        <p>Que tu suives les plans d'action que je te donne, et que pendant les 8 semaines tu passes vraiment à l'action.</p>
-        <p class="soft">Tu peux remettre en question ce que je dis, questionner, débattre. Le seul truc non négociable, c'est que tu donnes 100 % d'effort.</p>
+        <p>Que tu me fasses confiance assez longtemps pour appliquer précisément ce qu'on décide, même quand ça te sort de tes habitudes.</p>
+        <p>Si un exercice ne donne pas l'effet attendu, on vérifie d'abord comment tu l'as appliqué. Ensuite, on ajuste ensemble.</p>
+        <p class="soft">Tu peux poser toutes tes questions. Mais pendant ces 8 semaines, on ne négocie pas avec chaque peur au moment d'agir.</p>
       </div>
       <div class="term-col expect reveal">
         <h3>Ce que tu peux attendre de moi</h3>
@@ -1061,7 +1120,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
       </div>
     </div>
     <div class="capline reveal">
-      <p><strong>Je prends 2 ou 3 personnes par mois, pas plus.</strong> Et l'offre va évoluer : elle deviendra plus chère, et l'immersion terrain finira par disparaître. Aujourd'hui je la fais parce que je veux être proche de vous, en vrai, quelques instants.</p>
+      <p><strong>Je prends au maximum 2 ou 3 personnes par mois.</strong> C'est la capacité qui me permet d'être là sur le terrain, de préparer les débriefs et de suivre chaque personne moi-même pendant 8 semaines.</p>
       <p class="soft">Le tarif est fixe, je te le donne pendant l'appel une fois qu'on a vérifié que le format répond à ton vrai problème. Il se règle en une fois ou en plusieurs mensualités.</p>
     </div>
     <div class="cta-line reveal">
@@ -1077,11 +1136,19 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
     <div class="acc reveal">
       <details>
         <summary>« Pourquoi toi ? »</summary>
-        <div class="ans">En mon nom propre, j'ai un seul témoignage publié, et je te le dis franchement. Mais ça fait <b>quatre ans que je coache des hommes</b> à provoquer des rencontres et à séduire, au sein d'un autre accompagnement. Si tu cherches un peu, tu trouveras. J'ai accompagné des centaines d'hommes, du grand débutant au mec déjà à l'aise, et je suis passé par tous ces niveaux moi-même. Il y en a trois : savoir <b>provoquer</b> une rencontre, savoir <b>séduire</b>, savoir <b>fréquenter</b>. On regarde à l'appel où tu en es, et on part de là.</div>
+        <div class="ans">En mon nom propre, j'ai un seul témoignage publié, et je te le dis franchement. Mais ça fait <b>quatre ans que je coache des hommes</b> à provoquer des rencontres et à séduire, au sein d'un autre accompagnement. J'ai accompagné des centaines d'hommes, du grand débutant au mec déjà à l'aise, et je suis passé par tous ces niveaux moi-même. Mon travail n'est pas de te réciter une théorie : je te regarde faire, je repère le point qui pêche et je te montre quoi changer.</div>
       </details>
       <details>
         <summary>« Est-ce que c'est adapté à mon niveau ? »</summary>
-        <div class="ans">Le format s'adapte au point de départ : on cale la difficulté sur toi, pas l'inverse. Si t'as jamais abordé, on commence plus bas. Si tu sais démarrer mais que tu joues un personnage ou que tu t'écroules au premier non, c'est exactement le cœur du travail. On tranche ensemble à l'appel.</div>
+        <div class="ans">Le format s'adapte au point de départ : on cale la difficulté sur toi, pas l'inverse. Si t'as jamais abordé, on construit le passage à l'action. Si tu abordes déjà, on ne te fait pas recommencer au niveau débutant : on regarde où ça plafonne, de l'ouverture jusqu'à la suite de la relation. On tranche ensemble à l'appel.</div>
+      </details>
+      <details>
+        <summary>« Facile pour toi : t'es beau, musclé, déjà confiant. »</summary>
+        <div class="ans">Aujourd'hui, oui, je prends soin de moi. Mais ce n'est pas mon point de départ. Je fais 1,79 m, j'ai passé cinq ans à regarder des vidéos sans agir, et j'ai appris à m'habiller, construire mon corps et être plus à l'aise en pratiquant. Le physique joue sur une première impression. Il ne t'apprend pas à assumer ton intérêt, comprendre ce qui casse une interaction ou construire une relation. C'est ce qu'on travaille ici.</div>
+      </details>
+      <details>
+        <summary>« Et si le problème venait vraiment de moi ? »</summary>
+        <div class="ans">Il peut venir de quelque chose que tu fais : ton regard, ta voix, une intention floue, ta façon de mener la conversation ou de réagir à un non. Mais ça ne veut pas dire qu'il y a une tare dans ce que tu es. On transforme le jugement global en comportements observables. Et un comportement, ça se travaille.</div>
       </details>
       <details>
         <summary>« Et si je bloque, si j'ose pas ? »</summary>
@@ -1090,6 +1157,10 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
       <details>
         <summary>« Et si je sais pas quoi dire ? »</summary>
         <div class="ans">Au début, je te donne des points d'appui très concrets : quoi observer, comment ouvrir, comment relancer. Mais pas un texte à réciter comme un robot. On travaille ton intention, ton écoute, ton intonation et ta capacité à rester présent. Le but, c'est que tu saches créer une vraie conversation sans dépendre d'un script.</div>
+      </details>
+      <details>
+        <summary>« Je veux pas jouer un personnage. »</summary>
+        <div class="ans">Moi non plus. Mais « rester toi-même » ne veut pas dire garder toutes les habitudes qui te bloquent. On te fait essayer plusieurs façons d'être plus direct, plus léger, plus vulnérable ou plus assumé. Tu sentiras ce qui sonne faux et ce qui révèle une partie de toi que tu n'utilisais jamais. Tu ne gardes pas un rôle : tu élargis ta façon d'être.</div>
       </details>
       <details>
         <summary>« Moi, je veux une copine. Pas collectionner les femmes. »</summary>
@@ -1101,7 +1172,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
       </details>
       <details>
         <summary>« J'ai peur de ma réputation dans ma ville. »</summary>
-        <div class="ans">Insight libérateur : les gens pensent beaucoup moins à toi que tu l'imagines. Si tu abordes avec respect, que tu lis les signaux et que tu pars dès que ce n'est pas réciproque, tu n'es pas en train de te fabriquer une réputation. Le vrai coût, c'est de laisser cette peur décider à ta place pendant des années et de rater toutes les femmes que tu aurais pu simplement rencontrer.</div>
+        <div class="ans">Les gens pensent beaucoup moins à toi que tu l'imagines. Si tu abordes avec respect, que tu lis les signaux et que tu pars dès que ce n'est pas réciproque, tu n'es pas en train de te fabriquer une réputation. Le vrai coût, c'est de laisser cette peur décider à ta place pendant des années et de rater toutes les femmes que tu aurais pu simplement rencontrer.</div>
       </details>
       <details>
         <summary>« Il faut combien de temps, concrètement ? »</summary>
@@ -1109,7 +1180,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
       </details>
       <details>
         <summary>« Ça se passe où ? »</summary>
-        <div class="ans">Je suis basé à Toulouse, donc on peut le faire ici. Mais on peut aussi bouger : une autre ville en France, ou à l'étranger. C'est l'avantage du truc, quand tu sais aborder, ça marche partout. On cale ça ensemble à l'appel. Les 8 appels des semaines suivantes sont en visio, d'où tu veux.</div>
+        <div class="ans">Je suis basé à Toulouse, donc on peut le faire ici. Mais on peut aussi bouger : une autre ville en France, ou à l'étranger. Une rue, un café et un bar ne demandent pas exactement les mêmes codes. Le but est justement que tu saches t'adapter au contexte sans dépendre d'un seul décor. On cale le lieu ensemble à l'appel. Les 8 appels suivants sont en visio, d'où tu veux.</div>
       </details>
       <details>
         <summary>« Ça coûte combien ? »</summary>
@@ -1165,10 +1236,10 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
     </div>
     <div class="final-details reveal">
       <p>Remplis bien le formulaire : il me sert à voir où t'en es. Ensuite, 45 minutes avec moi pour vérifier que ce format répond à ton blocage, puis je te donne le déroulé et le tarif fixe.</p>
-      <p>Je garde encore <strong>2 places ce mois-ci</strong>, pas plus. Après ça, l'offre évolue, elle devient plus chère, et l'immersion terrain finit par disparaître.</p>
+      <p>Je prends au maximum <strong>2 ou 3 personnes par mois</strong>, parce que je suis personnellement présent sur le terrain et sur chaque suivi.</p>
     </div>
     <p class="notready reveal">Pas encore prêt à en parler ? <a href="quiz.html">Fais le diagnostic en 2 minutes</a>. Tu verras déjà où ça coince.</p>
-    <p class="limited reveal">Deux places disponibles ce mois-ci</p>
+    <p class="limited reveal">Accompagnement personnel · capacité volontairement limitée</p>
   </div>
 </section>
 </main>
