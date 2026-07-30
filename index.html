@@ -329,6 +329,7 @@ p{max-width:64ch}
 .hlist li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--dim-2)}
 .hlist li b{color:var(--text-hi);font-weight:700}
 .how .adapt{margin-top:24px;color:var(--dim)}
+.how .adapt:last-child{margin-bottom:clamp(26px,4vw,48px)}
 
 /* ---------- parcours de l'immersion ---------- */
 .journey{--journey-progress:0;position:relative;margin-top:36px;padding-left:54px}
@@ -349,6 +350,8 @@ p{max-width:64ch}
 .journey-media{margin-top:17px;border-radius:11px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:#0e0d10}
 .journey-media img{width:100%;height:clamp(430px,62vw,640px);object-fit:cover;object-position:center 31%;filter:saturate(.86) contrast(1.04) brightness(.94)}
 .journey-media img.field-proof-hd{height:auto;aspect-ratio:3/2;object-position:center;filter:none}
+.journey-media.portrait-proof{max-width:470px;margin:20px auto 0}
+.journey-media img.field-proof-vertical{height:auto;aspect-ratio:9/16;object-fit:cover;object-position:center;filter:saturate(1.02) contrast(1.02) brightness(1.01)}
 .journey-media figcaption{padding:9px 11px;color:var(--dim);font-size:.76rem;line-height:1.35;background:rgba(11,11,13,.88)}
 .journey-visual{margin-top:17px;padding:18px;border-radius:11px;border:1px solid rgba(255,255,255,.07);background:rgba(7,7,9,.48)}
 .analysis-screen{display:grid;grid-template-columns:1.35fr .65fr;gap:12px}
@@ -357,10 +360,8 @@ p{max-width:64ch}
 .analysis-frame::before{content:"REPLAY";position:absolute;left:10px;top:9px;color:var(--accent-2);font-size:.6rem;font-weight:900;letter-spacing:.12em}
 .analysis-frame::after{content:"";position:absolute;left:10px;right:10px;bottom:16px;height:3px;background:linear-gradient(90deg,var(--accent) 0 58%,rgba(255,255,255,.09) 58%)}
 .analysis-notes{display:flex;flex-direction:column;gap:8px;justify-content:center}
-.analysis-notes i{display:block;padding:7px 9px;border-radius:7px;background:rgba(255,255,255,.07);color:var(--dim);font-style:normal;font-size:.66rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
-.analysis-notes i:nth-child(2){width:82%;background:rgba(248,113,113,.13);color:#f3b5b5}
-.analysis-notes i:nth-child(3){width:94%}
-.analysis-notes i:nth-child(4){width:74%;background:rgba(245,158,11,.16);color:var(--accent-2)}
+.analysis-notes i{display:flex;align-items:center;gap:7px;padding:7px 9px;border-radius:7px;background:rgba(111,166,126,.1);border:1px solid rgba(159,206,170,.18);color:#cfe9d5;font-style:normal;font-size:.66rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
+.analysis-notes i::before{content:"✓";display:grid;place-content:center;flex:0 0 16px;width:16px;height:16px;border-radius:50%;background:rgba(159,206,170,.14);color:#86efac;font-size:.68rem;font-weight:900}
 .week-rhythm{display:grid;grid-template-columns:repeat(8,1fr);gap:6px;align-items:end;height:96px}
 .week-rhythm span{height:var(--week,40%);border-radius:5px 5px 2px 2px;background:linear-gradient(var(--accent-2),rgba(245,158,11,.2));border:1px solid rgba(245,158,11,.2)}
 .journey-visual-label{display:flex;justify-content:space-between;margin-top:10px;color:var(--dim);font-size:.72rem}
@@ -411,6 +412,8 @@ p{max-width:64ch}
 .story h2{max-width:22ch}
 .story p{color:var(--text);margin-bottom:16px}
 .story-flow{margin-top:26px}
+.story-cta{margin:34px auto 0;text-align:center}
+.story-cta .btn{min-width:min(100%,310px)}
 /* photo paysage : ratio naturel, jamais recadree */
 .story-wide{margin:26px 0 10px}
 .story-wide img{
@@ -535,11 +538,15 @@ p{max-width:64ch}
 
 /* ---------- final ---------- */
 .final{background:var(--bg-2);text-align:center}
-.final h2{max-width:22ch;margin:0 auto}
-.final .body{max-width:56ch;margin:22px auto 0;color:var(--text)}
-.final .body p{margin:0 auto 15px}
+.final-kicker{display:block;margin-bottom:16px;color:var(--accent-2);font-size:.8rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.final h2{max-width:24ch;margin:0 auto}
+.final .body{max-width:59ch;margin:26px auto 0;color:var(--text);text-align:left}
+.final .body p{margin:0 auto 17px}
+.final .body p:first-child{font-size:1.08rem;color:var(--text-hi)}
 .final .body .dim{color:var(--dim)}
-.final .punch{font-size:1.16rem;color:var(--text-hi);font-weight:700;max-width:46ch;margin:30px auto 6px}
+.final .punch{font-size:1.2rem;color:var(--text-hi);font-weight:700;max-width:46ch;margin:34px auto 6px}
+.final-details{max-width:58ch;margin:34px auto 0;padding-top:24px;border-top:1px solid var(--line-soft);color:var(--dim);font-size:.94rem}
+.final-details p{margin:0 auto 11px}
 .final .notready{margin:18px auto 0;color:var(--dim);font-size:.95rem;max-width:52ch}
 .final .notready a{color:var(--accent-2);text-decoration:underline;display:inline-block;padding:8px 2px}
 .foot a{display:inline-block;padding:10px 2px}
@@ -870,9 +877,8 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
           <h3>On aborde en pleine journée</h3>
           <p>Dans la rue, un café, une bibliothèque. Là où tu croises des femmes tous les jours sans jamais rien tenter.</p>
           <p>Je te mets une <strong>oreillette</strong> : je t'écoute, je te souffle quoi dire quand tu bloques. Après chaque abordage, on s'arrête et je te donne un plan précis pour la suivante. Et si tu veux voir comment je fais, je te montre. C'est mon rôle.</p>
-          <figure class="journey-media photo-reveal" data-photo-reveal>
-            <img class="field-proof-hd" src="img/interaction-lille-allan-original-crop.jpg" alt="Allan en conversation avec une femme en pleine rue à Lille, photographiée de dos" loading="lazy" width="720" height="480">
-            <figcaption>Interaction réelle à Lille, en pleine rue l'après-midi. Elle est de dos : son visage n'est pas exposé.</figcaption>
+          <figure class="journey-media portrait-proof photo-reveal" data-photo-reveal>
+            <img class="field-proof-vertical" src="img/interaction-varsovie-allan-coaching-9x16.jpg" alt="Allan en conversation avec une femme à Varsovie, accompagné d'un ami lui-même en discussion" loading="lazy" width="941" height="1672">
           </figure>
         </div>
       </article>
@@ -894,7 +900,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
           <p>Tu repars avec un plan d'action complet, écrit pour toi.</p>
           <div class="journey-visual analysis-screen" aria-label="Allan analyse une interaction point par point">
             <span class="analysis-frame"><img src="img/podcast-1-allan-analyse.jpg" alt="Allan pendant le podcast numéro un, en train d'expliquer un point précis" loading="lazy" width="1600" height="900"></span>
-            <span class="analysis-notes" aria-hidden="true"><i>Intention</i><i>Regard</i><i>Voix</i><i>Timing</i></span>
+            <span class="analysis-notes" aria-hidden="true"><i>Intention claire</i><i>Être relax</i><i>Intonation</i><i>Investissement</i></span>
           </div>
         </div>
       </article>
@@ -1003,6 +1009,9 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
       <p class="respect">Ces femmes ont compté pour moi. Ce ne sont pas des trophées : c'est une vie relationnelle que j'ai appris à construire.</p>
       <p style="margin-top:16px">J'ai rien à prouver. Toi, en revanche, <strong>tu dois pouvoir vérifier que je te parle d'un terrain que j'ai vraiment vécu</strong>. À 20 ans, j'aurais juré que ces expériences étaient réservées aux autres. Elles l'étaient pas. C'était une question d'entraînement, d'environnement, et de quelqu'un pour me corriger.</p>
       <p>Si j'avais eu ce quelqu'un à l'époque, <strong>je me serais évité des années de course</strong>. C'est exactement ce que cette immersion existe pour te donner.</p>
+      <div class="story-cta reveal">
+        <a class="btn xl" href="https://cal.com/allan-figfsv/appel-confiance-offert" data-cal-link="allan-figfsv/appel-confiance-offert" data-cal-config='{"layout":"month_view"}'>Candidater à l'immersion<span class="arw" aria-hidden="true">&#8594;</span></a>
+      </div>
     </div>
   </div>
 </section>
@@ -1097,7 +1106,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
 <!-- 12. FAQ -->
 <section class="sec faq">
   <div class="wrap">
-    <h2 class="reveal">Les questions qui restent.</h2>
+    <h2 class="reveal">Les questions que tu te poses. J'y réponds.</h2>
     <div class="acc reveal">
       <details>
         <summary>« Pourquoi toi ? »</summary>
@@ -1112,12 +1121,32 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
         <div class="ans">C'est prévu, et c'est même le principe. Je montre d'abord, puis on monte la difficulté progressivement. Je te jette pas dans le grand bain pour faire une scène. Mais on contourne pas l'action indéfiniment non plus : le format existe pour pratiquer, pas pour parler de pratique.</div>
       </details>
       <details>
+        <summary>« Et si je sais pas quoi dire ? »</summary>
+        <div class="ans">Au début, je te donne des points d'appui très concrets : quoi observer, comment ouvrir, comment relancer. Mais pas un texte à réciter comme un robot. On travaille ton intention, ton écoute, ton intonation et ta capacité à rester présent. Le but, c'est que tu saches créer une vraie conversation sans dépendre d'un script.</div>
+      </details>
+      <details>
+        <summary>« Moi, je veux une copine. Pas collectionner les femmes. »</summary>
+        <div class="ans">Parfait : le but n'est pas d'accumuler des numéros. Le but, c'est de ne plus choisir une relation par défaut parce que tu crois que tu n'auras pas d'autre occasion. Quand tu manques d'options et d'estime de toi, tu peux t'accrocher à une relation qui te correspond mal et t'y sacrifier. Ici, tu construis les compétences sociales, le discernement et l'estime nécessaires pour <b>rencontrer, séduire et choisir en conscience</b>. Je ne peux pas te promettre une personne ni sa réaction. Je peux t'aider à devenir capable de créer les rencontres où une relation juste devient possible.</div>
+      </details>
+      <details>
+        <summary>« Et si j'ai pas le temps d'aborder au quotidien ? »</summary>
+        <div class="ans">Tu n'as pas besoin de bloquer trois heures ni d'aborder des centaines de femmes. Tu pratiques dans ta vie normale : en allant prendre un café, dans les transports, pendant une sortie. Une interaction réellement vécue puis bien analysée vaut mieux que cinquante approches automatiques. Mon rôle, c'est justement de t'éviter le détour des milliers d'essais au hasard.</div>
+      </details>
+      <details>
+        <summary>« J'ai peur de ma réputation dans ma ville. »</summary>
+        <div class="ans">Insight libérateur : les gens pensent beaucoup moins à toi que tu l'imagines. Si tu abordes avec respect, que tu lis les signaux et que tu pars dès que ce n'est pas réciproque, tu n'es pas en train de te fabriquer une réputation. Le vrai coût, c'est de laisser cette peur décider à ta place pendant des années et de rater toutes les femmes que tu aurais pu simplement rencontrer.</div>
+      </details>
+      <details>
         <summary>« Il faut combien de temps, concrètement ? »</summary>
         <div class="ans">Les deux jours d'immersion, une heure d'appel par semaine pendant huit semaines, et du temps de pratique entre les appels, dans ta vie normale. Si tu ne peux rien pratiquer en ce moment, c'est pas le bon moment, et je préfère te le dire.</div>
       </details>
       <details>
         <summary>« Ça se passe où ? »</summary>
         <div class="ans">Je suis basé à Toulouse, donc on peut le faire ici. Mais on peut aussi bouger : une autre ville en France, ou à l'étranger. C'est l'avantage du truc, quand tu sais aborder, ça marche partout. On cale ça ensemble à l'appel. Les 8 appels des semaines suivantes sont en visio, d'où tu veux.</div>
+      </details>
+      <details>
+        <summary>« Ça coûte combien ? »</summary>
+        <div class="ans">Le tarif est fixe. Je ne l'affiche pas ici : je te le donne pendant l'appel, après avoir vérifié que le format répond bien à ton blocage. Tu peux régler en une fois ou en plusieurs mensualités. Tu repars avec l'information complète et tu décides sans pression.</div>
       </details>
       <details>
         <summary>« C'est quoi exactement, cet appel ? »</summary>
@@ -1156,14 +1185,20 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
 <!-- 14. FINAL -->
 <section class="sec final">
   <div class="wrap">
-    <h2 class="reveal">La prochaine étape pour toi : candidater.</h2>
+    <span class="final-kicker reveal">Maintenant, imagine</span>
+    <h2 class="reveal">Une femme te plaît. La peur est là. Mais cette fois, tu bouges.</h2>
     <div class="body reveal">
-      <p>Remplis bien le formulaire, c'est lui qui me sert à voir où t'en es. Ensuite, 45 minutes avec moi : je vérifie que ton blocage est celui que ce format règle, je te donne le déroulé et le tarif.</p>
-      <p class="dim">Je garde encore <strong>2 places ce mois-ci</strong>, pas plus. Après ça, l'offre évolue, elle devient plus chère, et l'immersion terrain finit par disparaître.</p>
+      <p>Tu la vois dans la rue. Ton ventre se serre. Sauf que tu n'attends plus que la peur disparaisse : tu respires, tu vas lui parler et tu assumes ton intérêt sans jouer un rôle.</p>
+      <p>Tu sais lancer la conversation, écouter, créer de l'attirance quand c'est réciproque et prendre le lead sans forcer. Si ça ne matche pas, tu repars intact. Si ça matche, tu ne laisses plus l'occasion mourir dans ta tête.</p>
+      <p>Et peut-être que, dans quelques semaines, tu commences à fréquenter une femme qui te plaît vraiment. Pas parce que le hasard a enfin décidé d'être gentil avec toi. Parce que tu es devenu l'homme capable de créer la rencontre et de choisir en conscience.</p>
     </div>
-    <p class="punch reveal">La prochaine femme qui te plaît va arriver sans prévenir. À ce moment-là, qui prend le lead : ta peur, ou toi ?</p>
+    <p class="punch reveal">Tout commence par un geste plus simple que l'aborder : candidater à l'immersion.</p>
     <div class="reveal" style="margin-top:26px">
       <a class="btn xl" id="final-cta" href="https://cal.com/allan-figfsv/appel-confiance-offert" data-cal-link="allan-figfsv/appel-confiance-offert" data-cal-config='{"layout":"month_view"}'>Candidater à l'immersion<span class="arw" aria-hidden="true">&#8594;</span></a>
+    </div>
+    <div class="final-details reveal">
+      <p>Remplis bien le formulaire : il me sert à voir où t'en es. Ensuite, 45 minutes avec moi pour vérifier que ce format répond à ton blocage, puis je te donne le déroulé et le tarif fixe.</p>
+      <p>Je garde encore <strong>2 places ce mois-ci</strong>, pas plus. Après ça, l'offre évolue, elle devient plus chère, et l'immersion terrain finit par disparaître.</p>
     </div>
     <p class="notready reveal">Pas encore prêt à en parler ? <a href="quiz.html">Fais le diagnostic en 2 minutes</a>. Tu verras déjà où ça coince.</p>
     <p class="limited reveal">Deux places disponibles ce mois-ci</p>
