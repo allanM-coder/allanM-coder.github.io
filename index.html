@@ -18,7 +18,7 @@
 <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <style>
 /* ============================================================
    Allan Maisak - immersion terrain
@@ -451,12 +451,12 @@ p{max-width:64ch}
 .story-intro-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:clamp(28px,5vw,58px);align-items:stretch}
 .story-portrait{min-width:0}
 .story-portrait img{
-  width:100%;height:100%;min-height:500px;object-fit:cover;object-position:center;border-radius:var(--r-card);
+  width:100%;height:100%;min-height:500px;object-fit:cover;object-position:35% center;border-radius:var(--r-card);
   filter:saturate(.85) contrast(1.03) brightness(.95);border:1px solid var(--line-soft);
 }
 .story-portrait figcaption{margin-top:9px;color:var(--dim);font-size:.88rem;font-style:italic}
 .story-after{margin-top:30px}
-/* galerie : uniquement des 3:4, donc aucun recadrage destructeur */
+/* Galerie 3:4 : recadrages visuels non destructifs, originaux préservés. */
 .gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0 10px}
 .gallery.gallery-3{width:min(920px,calc(100vw - 48px));margin-left:50%;transform:translateX(-50%);grid-template-columns:repeat(3,1fr);gap:16px}
 .respect{margin-top:14px;font-size:.9rem;color:var(--dim-2);font-style:italic}
@@ -475,6 +475,10 @@ p{max-width:64ch}
 @media(prefers-reduced-motion:no-preference){
   .motion-enabled .photo-reveal{--photo-progress:0}
   .motion-enabled .photo-reveal img{transform:scale(var(--photo-scale,1.045));will-change:transform}
+}
+.photo-reveal.story-photo-crop img{
+  transform:scale(var(--crop-scale,1.14));
+  transform-origin:var(--crop-origin,50% 100%);
 }
 
 /* ---------- offre ---------- */
@@ -697,7 +701,9 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
   .reveal{opacity:1;transform:none;transition:none}
   html{scroll-behavior:auto}
   .btn{transition:none}
-  .photo-reveal,.photo-reveal img{clip-path:none!important;transform:none!important;transition:none!important}
+  .photo-reveal{clip-path:none!important;transform:none!important;transition:none!important}
+  .photo-reveal:not(.story-photo-crop) img{clip-path:none!important;transform:none!important;transition:none!important}
+  .photo-reveal.story-photo-crop img{transform:scale(var(--crop-scale,1.14))!important;transition:none!important}
   .level-ring{stroke-dashoffset:0}
   .level-label{opacity:1;transform:none}
   .journey-rail span{transition:none}
@@ -769,14 +775,14 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
             </figure>
           </div>
         </article>
-        <article class="pain-scene reveal" data-pain-place="Après l'approche" data-pain-state="Tu ne vois pas ce qui pêche">
+        <article class="pain-scene reveal" data-pain-place="Dans un bar" data-pain-state="Tu restes assis">
           <div class="pain-scene-inner">
             <div>
-              <span class="pain-place">Quand tu abordes déjà</span>
-              <p>Tu sais démarrer une conversation. Tu y vas, parfois souvent. Mais les mêmes rejets reviennent et tu ne sais pas pourquoi. Ton regard ? Ton intention ? Le moment où tu proposes de vous revoir ? Tu changes de phrase au hasard, alors que <span class="marker danger">le vrai problème reste intact</span>.</p>
+              <span class="pain-place">Quand elle te regarde</span>
+              <p>T'es au bar. Une femme te regarde. Une fois, puis deux. Tu sens qu'il y a peut-être une ouverture, mais tu cherches encore un signe de plus. Tu bouges pas. Elle finit par partir. Ce qui te fait chier, c'est pas seulement de l'avoir ratée. C'est de sentir que <span class="marker danger">t'es toujours pas libre d'y aller</span>.</p>
             </div>
-            <figure class="pain-art" aria-label="Illustration d'une conversation qui plafonne dans un bar">
-              <img src="img/scene-bar-hesitation-bright.jpg" alt="Illustration d'un homme qui ne comprend pas pourquoi une conversation ne progresse pas" loading="lazy" width="1586" height="992">
+            <figure class="pain-art" aria-label="Illustration d'un moment d'hésitation dans un bar">
+              <img src="img/scene-bar-hesitation-bright.jpg" alt="Illustration d'un homme qui reste assis alors qu'une femme le regarde dans un bar" loading="lazy" width="1586" height="992">
             </figure>
           </div>
         </article>
@@ -915,7 +921,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
       <blockquote class="reveal">« Avant, je pouvais aborder 15 filles, 12 s'arrêtaient même pas. Après le coaching, j'arrête presque toutes les filles que j'aborde. Et celles que je rate, je sais exactement pourquoi. »</blockquote>
       <p class="who reveal">Kilian, 37 ans. Coaché quelques heures sur le terrain avec moi.</p>
       <div class="kaudio-wrap reveal">
-        <p class="kaudio-label">Son retour, dans sa voix, version courte :</p>
+        <p class="kaudio-label">Son retour, dans sa voix :</p>
         <audio id="kilianAudio" controls preload="metadata" aria-label="Témoignage audio de Kilian">
           <source src="audio/temoignage-kilian.mp3" type="audio/mpeg">
           Ton navigateur ne permet pas de lire cet audio.
@@ -930,7 +936,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
             <div class="wave-layer wave-played" data-wave-layer aria-hidden="true"></div>
             <input class="wave-seek" type="range" min="0" max="1000" value="0" step="1" aria-label="Position dans le témoignage audio">
           </div>
-          <span class="voice-time"><span data-audio-current>0:00</span> / <span data-audio-duration>2:22</span></span>
+          <span class="voice-time"><span data-audio-current>0:00</span> / <span data-audio-duration>4:12</span></span>
           <div class="voice-speed" role="group" aria-label="Vitesse de lecture">
             <span class="voice-speed-label">Vitesse</span>
             <button class="speed-btn" type="button" data-audio-speed="1" aria-pressed="true">1×</button>
@@ -983,7 +989,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
           <h3>On décortique tout</h3>
           <p>On s'assoit et on reprend uniquement les interactions filmées l'après-midi. <strong>On confronte ton interprétation et la mienne</strong>, minute par minute : ton regard, ta voix, ton intention et le moment exact où ça bascule.</p>
           <p>Tu prends des notes, puis tu repars avec un plan d'action concret.</p>
-          <div class="journey-visual analysis-screen" aria-label="Allan analyse une interaction point par point">
+          <div class="journey-visual analysis-screen" role="img" aria-label="Allan analyse une interaction point par point">
             <span class="analysis-frame"><img src="img/podcast-1-allan-analyse.jpg" alt="Allan pendant le podcast numéro un, en train d'expliquer un point précis" loading="lazy" width="1600" height="900"></span>
             <span class="analysis-notes" aria-hidden="true"><i>Intention claire</i><i>Être relax</i><i>Intonation</i><i>Investissement</i></span>
           </div>
@@ -1000,13 +1006,13 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
             <li><b>Un groupe de mecs avec qui avancer.</b> Vous pouvez discuter, vous challenger et organiser des sorties ensemble.</li>
           </ul>
           <figure class="coaching-scrub" data-scroll-video data-scroll-start=".88" data-scroll-end=".36">
-            <video muted playsinline preload="auto" poster="img/allan-atelier-21-gestes-poster.jpg" aria-label="Allan répond à une question pendant un atelier en parlant avec les mains">
+            <video muted playsinline preload="auto" poster="img/allan-atelier-21-gestes-poster.jpg" aria-hidden="true">
               <source src="media/allan-atelier-21-gestes-scrub.mp4" type="video/mp4">
             </video>
             <span class="scrub-cue" aria-hidden="true">Q&amp;A privé</span>
             <figcaption>Moi qui prends le temps de répondre à tes questions les plus intimes.</figcaption>
           </figure>
-          <div class="journey-visual" aria-label="Rythme des huit semaines d'accompagnement">
+          <div class="journey-visual" role="img" aria-label="Rythme des huit semaines d'accompagnement">
             <div class="week-rhythm" aria-hidden="true">
               <span style="--week:40%"></span><span style="--week:51%"></span><span style="--week:60%"></span><span style="--week:72%"></span><span style="--week:82%"></span><span style="--week:92%"></span><span style="--week:96%"></span><span style="--week:100%"></span>
             </div>
@@ -1025,7 +1031,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
   <div class="wrap narrow">
     <h2 class="reveal">Imagine ce que ça change dans une semaine normale.</h2>
     <p class="result-intro reveal">Tu ne passes plus ta vie à attendre de te sentir prêt. Tu agis, tu regardes ce qui s'est passé, tu ajustes. Tu arrêtes de mesurer ta valeur à la réaction d'une femme.</p>
-    <div class="progress-loop reveal" aria-label="Une boucle répétée : défi, retour précis, exercice, défi suivant">
+    <div class="progress-loop reveal" role="img" aria-label="Une boucle répétée : défi, retour précis, exercice, défi suivant">
       <svg viewBox="0 0 520 520" aria-hidden="true" focusable="false">
         <defs>
           <marker id="loop-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
@@ -1096,7 +1102,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
       <div class="story-after narrow">
         <p>Et ma vie a fini par changer de forme. <strong>J'ai rencontré des femmes incroyables et vécu des histoires folles, fortes, parfois très émouvantes.</strong></p>
         <div class="gallery gallery-3">
-          <figure class="photo-reveal" data-photo-reveal>
+          <figure class="photo-reveal story-photo-crop" data-photo-reveal style="--crop-scale:1.14;--crop-origin:50% 100%">
             <img src="img/histoire-relation.jpg" alt="Allan dans un musée avec une femme rencontrée dans la rue" loading="lazy" width="600" height="800">
             <figcaption>Abordée dans la rue, un après-midi. Le lendemain, on visitait un musée ensemble.</figcaption>
           </figure>
@@ -1105,7 +1111,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
             <span class="privacy-mask" aria-hidden="true"></span>
             <figcaption>Abordée dans une grande ville de France. On s'est fréquentés un bon moment. Ce jour-là, un photographe de rue nous a pris en photo parce qu'« on était mignons ».</figcaption>
           </figure>
-          <figure class="photo-reveal" data-photo-reveal>
+          <figure class="photo-reveal story-photo-crop" data-photo-reveal style="--crop-scale:1.14;--crop-origin:50% 100%">
             <img src="img/histoire-3.jpg" alt="Allan avec une femme lors d'un rendez-vous dans un parc" loading="lazy" width="1100" height="1467">
             <figcaption>Elle aussi, abordée dans la rue. Notre premier rendez-vous, dans un parc.</figcaption>
           </figure>
@@ -1479,7 +1485,7 @@ document.addEventListener("click", function(event){
     var currentLabel = audioWrap.querySelector('[data-audio-current]');
     var durationLabel = audioWrap.querySelector('[data-audio-duration]');
     var speedButtons = Array.prototype.slice.call(audioWrap.querySelectorAll('[data-audio-speed]'));
-    var waveData = [85,84,57,62,66,54,64,48,61,45,71,50,54,54,58,38,59,63,44,71,74,63,89,68,48,100,61,39,37,77,61,58,55,81,66,46,59,70,67,44,58,62,60,53,58,52,52,54,54,54,69,56,67,50,73,54,36,53,43,74,80,51,58,54,57,45,62,55,40,49,39,64,51,48,32,48,86,56,48,58,42,67,45,67,49,28,57,49];
+    var waveData = [100,85,92,93,87,85,89,80,90,80,84,78,76,79,85,88,89,82,94,99,80,78,91,79,83,80,90,81,86,83,72,70,82,83,90,79,86,81,87,83,82,76,79,88,86,87,76,75,87,90,78,83,81,73,79,72,82,84,77,81,74,83,78,76,73,67,90,82,81,77,79,73,73,82,78,69,95,72,87,76,86,70,76,83,51,89,73,72];
     audioWrap.querySelectorAll('[data-wave-layer]').forEach(function(layer){
       var fragment = document.createDocumentFragment();
       waveData.forEach(function(height,index){
@@ -1497,7 +1503,7 @@ document.addEventListener("click", function(event){
       return minutes + ':' + String(rest).padStart(2,'0');
     }
     function updateAudio(){
-      var duration = isFinite(audio.duration) ? audio.duration : 143;
+      var duration = isFinite(audio.duration) ? audio.duration : 253;
       var ratio = duration ? audio.currentTime / duration : 0;
       seek.value = String(Math.round(ratio * 1000));
       played.style.setProperty('--played',(ratio * 100).toFixed(2) + '%');
