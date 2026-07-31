@@ -2,12 +2,12 @@
  * Mesure volontairement minimale et anonyme.
  * - Aucun pixel publicitaire, aucune session replay, aucun autocapture.
  * - Aucun nom, email, téléphone, réponse au quiz ou texte saisi n'est envoyé.
- * - La collecte reste totalement inactive tant que POSTHOG_PROJECT_TOKEN est vide.
+ * - Le projet PostHog est hébergé dans l'Union européenne et fonctionne sans cookies.
  */
 (function(){
   'use strict';
 
-  var POSTHOG_PROJECT_TOKEN = '';
+  var POSTHOG_PROJECT_TOKEN = 'phc_C3pbynATQXWLQb9Cp3JwLUjE4LdRWJbzwNyhzvwejund';
   var POSTHOG_HOST = 'https://eu.i.posthog.com';
   var page = document.body.getAttribute('data-analytics-page') || 'inconnue';
   var allowedUtm = ['utm_source','utm_medium','utm_campaign','utm_content'];
@@ -65,7 +65,7 @@
     if(!link){ return; }
     if(link.href.indexOf('cal.com/') !== -1){
       var target = new URL(link.href);
-      window.amTrack('cal_click',{placement:target.searchParams.get('utm_content') || link.id || 'sans-id'});
+      window.amTrack('cal_click',{placement:link.getAttribute('data-analytics-placement') || target.searchParams.get('utm_content') || link.id || 'sans-id'});
     }else if(/(?:^|\/)quiz\.html(?:$|[?#])/.test(link.getAttribute('href') || '')){
       window.amTrack('quiz_click',{placement:link.className || 'lien'});
     }

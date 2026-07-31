@@ -403,7 +403,7 @@ function success(key, prenom, captured){
       </section>
 
       <div class="punch">Si tu veux aller beaucoup plus vite, on peut travailler ce niveau ensemble, en immersion. D'abord, on prend 45 minutes pour comprendre ta situation. Je te fais une offre seulement si le format est cohérent pour toi.</div>
-      <div style="text-align:center;margin-top:24px"><a class="btn" href="${trackedBookUrl('quiz-result')}" target="_blank" rel="noopener">Candidater à l'immersion →</a></div>
+      <div style="text-align:center;margin-top:24px"><a class="btn" href="${trackedBookUrl('quiz-result')}" data-cal-link="allan-figfsv/appel-confiance-offert" data-cal-namespace="appel-confiance-offert" data-cal-config='{"layout":"month_view"}' data-analytics-placement="quiz-result">Candidater à l'immersion →</a></div>
       <div style="text-align:center;margin-top:26px"><a href="index.html" class="mono" style="letter-spacing:.1em;color:var(--text-dim)">← Revenir au site</a></div>
     </div>`;
   window.scrollTo({top:0,behavior:"smooth"});
