@@ -1,6 +1,9 @@
 /* ============ CONFIG CAPTURE ============ */
 const LEAD_ENDPOINT = "https://formsubmit.co/ajax/allanmaisak@gmail.com";
 const BOOK_URL = "https://cal.com/allan-figfsv/appel-confiance-offert";
+function trackEvent(name,properties){
+  if(typeof window.amTrack === 'function'){ window.amTrack(name,properties || {}); }
+}
 const TRACKING_KEYS = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
 const TRACKING = Object.fromEntries(TRACKING_KEYS.map(k=>[k,new URLSearchParams(location.search).get(k)||'']));
 function trackedBookUrl(content){
@@ -181,6 +184,8 @@ function extrasFor(){
 /* ============ ÉTAT ============ */
 let step = -1;
 const answers = [];
+let quizStarted = false;
+let quizCompleted = false;
 /* Ordre d'affichage melange par question : evite que la "bonne" reponse soit
    toujours en premier. Tire une fois par session, stable si on revient en arriere. */
 let ORDER = [];
@@ -203,7 +208,7 @@ function setProgress(){
 }
 
 function intro(){
-  step = -1; answers.length = 0; shuffleOrders(); setProgress();
+  step = -1; answers.length = 0; quizStarted = false; quizCompleted = false; shuffleOrders(); setProgress();
   card.className = "card reveal";
   card.innerHTML = `
     <div class="mono" style="margin-bottom:18px">Le test · 2 min · 9 questions</div>
@@ -229,8 +234,15 @@ function render(){
     ${step>0?'<button class="back" onclick="go('+(step-1)+')">← Retour</button>':''}`;
 }
 
-function pick(i){ answers[step] = i; setTimeout(()=>{ step+1 < Q.length ? go(step+1) : result(); }, 190); }
-function go(s){ step = s; render(); }
+function pick(i){
+  answers[step] = i;
+  trackEvent('quiz_question_answered',{question:step + 1,total:Q.length});
+  setTimeout(()=>{ step+1 < Q.length ? go(step+1) : result(); }, 190);
+}
+function go(s){
+  if(s === 0 && !quizStarted){ quizStarted = true; trackEvent('quiz_started',{questions:Q.length}); }
+  step = s; render();
+}
 
 function score(){
   const t = {N1:0,N2:0,N3:0};
@@ -253,6 +265,7 @@ function namedScores(t){
 }
 
 function result(){
+  if(!quizCompleted){ quizCompleted = true; trackEvent('quiz_completed',{questions:Q.length}); }
   const t = score();
   const key = levelKey(t);
   const p = PROFILES[key];
@@ -315,6 +328,7 @@ function submitLead(e, key){
   const consentResult = document.getElementById('consentResult').checked;
   const consentMarketing = document.getElementById('consentMarketing').checked;
   if(!email || email.indexOf('@')<0 || !prenom || !consentResult) return false;
+  trackEvent('quiz_email_submitted',{marketing_opt_in:consentMarketing});
   const t = score(); const s = namedScores(t);
   const profil = PROFILES[key].name;
   const src = TRACKING.utm_source || "site-direct";
@@ -350,6 +364,7 @@ function submitLead(e, key){
 }
 
 function success(key, prenom, captured){
+  trackEvent('quiz_plan_unlocked',{email_delivery_confirmed:captured === true});
   const p = PROFILES[key];
   const full = FULL[key];
   const extras = extrasFor();

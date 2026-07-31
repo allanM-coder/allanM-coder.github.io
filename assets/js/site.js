@@ -1,4 +1,8 @@
 /* Pas de script Cal au chargement. Les vrais liens restent rapides et traçables. */
+function trackEvent(name,properties){
+  if(typeof window.amTrack === 'function'){ window.amTrack(name,properties || {}); }
+}
+
 (function(){
   var allowed = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
   var current = new URLSearchParams(window.location.search);
@@ -158,6 +162,8 @@
     var currentLabel = audioWrap.querySelector('[data-audio-current]');
     var durationLabel = audioWrap.querySelector('[data-audio-duration]');
     var speedButtons = Array.prototype.slice.call(audioWrap.querySelectorAll('[data-audio-speed]'));
+    var audioStarted = false;
+    var audioMilestones = {25:false,50:false,75:false,100:false};
     var waveData = [100,85,92,93,87,85,89,80,90,80,84,78,76,79,85,88,89,82,94,99,80,78,91,79,83,80,90,81,86,83,72,70,82,83,90,79,86,81,87,83,82,76,79,88,86,87,76,75,87,90,78,83,81,73,79,72,82,84,77,81,74,83,78,76,73,67,90,82,81,77,79,73,73,82,78,69,95,72,87,76,86,70,76,83,51,89,73,72];
     audioWrap.querySelectorAll('[data-wave-layer]').forEach(function(layer){
       var fragment = document.createDocumentFragment();
@@ -205,9 +211,11 @@
         speedButtons.forEach(function(item){
           item.setAttribute('aria-pressed',item === button ? 'true' : 'false');
         });
+        trackEvent('kilian_audio_speed',{speed:rate});
       });
     });
     audio.addEventListener('play',function(){
+      if(!audioStarted){ audioStarted = true; trackEvent('kilian_audio_play'); }
       toggle.classList.add('is-playing');
       audioWrap.classList.add('is-playing');
       toggle.setAttribute('aria-label','Mettre en pause le témoignage de Kilian');
@@ -217,9 +225,22 @@
       audioWrap.classList.remove('is-playing');
       toggle.setAttribute('aria-label','Lire le témoignage de Kilian');
     });
-    audio.addEventListener('timeupdate',updateAudio);
+    audio.addEventListener('timeupdate',function(){
+      updateAudio();
+      if(!isFinite(audio.duration) || !audio.duration){ return; }
+      var percent = Math.floor((audio.currentTime / audio.duration) * 100);
+      [25,50,75].forEach(function(milestone){
+        if(percent >= milestone && !audioMilestones[milestone]){
+          audioMilestones[milestone] = true;
+          trackEvent('kilian_audio_progress',{percent:milestone});
+        }
+      });
+    });
     audio.addEventListener('durationchange',updateAudio);
-    audio.addEventListener('ended',function(){ audioWrap.classList.remove('is-playing'); audio.currentTime = 0; updateAudio(); });
+    audio.addEventListener('ended',function(){
+      if(!audioMilestones[100]){ audioMilestones[100] = true; trackEvent('kilian_audio_progress',{percent:100}); }
+      audioWrap.classList.remove('is-playing'); audio.currentTime = 0; updateAudio();
+    });
     audio.addEventListener('error',function(){ audioWrap.classList.remove('audio-enhanced'); });
     updateAudio();
   }
