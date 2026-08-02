@@ -27,9 +27,9 @@
     return output;
   }
 
-  window.amTrack = function(name,extra){
+  window.amTrack = function(name,extra,options){
     if(!POSTHOG_PROJECT_TOKEN || !window.posthog || typeof window.posthog.capture !== 'function'){ return; }
-    window.posthog.capture('am_' + clean(name).replace(/[^a-zA-Z0-9_]/g,'_'),properties(extra));
+    window.posthog.capture('am_' + clean(name).replace(/[^a-zA-Z0-9_]/g,'_'),properties(extra),options || {});
   };
   window.amTrack.enabled = Boolean(POSTHOG_PROJECT_TOKEN);
 

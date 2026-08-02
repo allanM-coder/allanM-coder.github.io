@@ -61,7 +61,9 @@ document.addEventListener('click',function(event){
 Cal.ns['appel-confiance-offert']('on',{
   action:'bookingSuccessfulV2',
   callback:function(){
-    if(typeof window.amTrack==='function'){ window.amTrack('cal_booking_success'); }
-    window.setTimeout(function(){ window.location.assign('merci.html'); },180);
+    if(typeof window.amTrack==='function'){
+      window.amTrack('cal_booking_success',{}, {send_instantly:true});
+    }
+    window.setTimeout(function(){ window.location.assign('merci.html'); },500);
   }
 });
