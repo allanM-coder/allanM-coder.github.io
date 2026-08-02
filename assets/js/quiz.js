@@ -301,11 +301,11 @@ function result(){
           <input type="text" id="nom" placeholder="Nom" required autocomplete="family-name">
         </div>
         <input type="email" id="email" placeholder="ton@email.com" required autocomplete="email">
-        <label class="consent"><input type="checkbox" id="consentResult" required><span>J'accepte que mes réponses et mon email soient utilisés pour m'afficher ce diagnostic et me recontacter à son sujet. <a href="cadre.html" target="_blank" rel="noopener">Confidentialité</a>.</span></label>
-        <label class="consent"><input type="checkbox" id="consentMarketing"><span>Je veux aussi recevoir les emails d'Allan sur les rencontres et les relations. Désinscription en un clic.</span></label>
+        <label class="consent"><input type="checkbox" id="consentResult" required><span>J'accepte de recevoir mon diagnostic et d'être recontacté à ce sujet. <a href="cadre.html" target="_blank" rel="noopener">Confidentialité</a>.</span></label>
+        <label class="consent"><input type="checkbox" id="consentMarketing"><span>Je veux recevoir les emails d'Allan. Je me désinscris quand je veux.</span></label>
         <button class="btn full" type="submit">Afficher mon plan complet</button>
       </form>
-      <p class="fine">La deuxième case est facultative et n'est jamais précochée.</p>
+      <p class="fine">La deuxième case est facultative.</p>
     </div>
     <button class="back" style="margin-top:26px" onclick="intro()">↺ Refaire le test</button>`;
   requestAnimationFrame(()=>{ setTimeout(()=>{
