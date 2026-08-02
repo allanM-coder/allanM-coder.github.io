@@ -245,6 +245,26 @@ function trackEvent(name,properties){
     updateAudio();
   }
 
+  var testimonialVideo = document.getElementById('theophileVideo');
+  if(testimonialVideo){
+    var videoSpeedButtons = Array.prototype.slice.call(document.querySelectorAll('[data-video-speed]'));
+    var videoStarted = false;
+    videoSpeedButtons.forEach(function(button){
+      button.addEventListener('click',function(){
+        var rate = Number(button.getAttribute('data-video-speed')) || 1;
+        testimonialVideo.playbackRate = rate;
+        testimonialVideo.defaultPlaybackRate = rate;
+        videoSpeedButtons.forEach(function(item){
+          item.setAttribute('aria-pressed',item === button ? 'true' : 'false');
+        });
+        trackEvent('theophile_video_speed',{speed:rate});
+      });
+    });
+    testimonialVideo.addEventListener('play',function(){
+      if(!videoStarted){ videoStarted = true; trackEvent('theophile_video_play'); }
+    });
+  }
+
   var sticky = document.getElementById('stickyCta');
   var hero = document.querySelector('.hero');
   var finalCta = document.getElementById('final-cta');
