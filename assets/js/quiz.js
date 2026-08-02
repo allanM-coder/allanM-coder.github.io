@@ -377,7 +377,7 @@ function success(key, prenom, captured){
   card.innerHTML = `
     <div class="ok">
       <div class="check">✓</div>
-      <div class="rtitle" style="font-size:clamp(1.6rem,5.5vw,2.2rem)">Ton plan est débloqué${prenom?', '+prenom:''}.</div>
+      <div class="rtitle" style="font-size:clamp(1.6rem,5.5vw,2.2rem)">Ton plan est débloqué.</div>
       <p class="capture-status">${captureStatus}</p>
     </div>
 
