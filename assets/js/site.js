@@ -12,6 +12,11 @@ function trackEvent(name,properties){
     if(!url.searchParams.get('utm_content')){ url.searchParams.set('utm_content',link.id || ('cta-' + (index + 1))); }
     link.href = url.toString();
   });
+  document.querySelectorAll('a[href*="quiz.html"]').forEach(function(link){
+    var url = new URL(link.href,window.location.href);
+    allowed.forEach(function(key){ if(current.get(key)){ url.searchParams.set(key,current.get(key)); } });
+    link.href = url.toString();
+  });
 })();
 
 (function(){
