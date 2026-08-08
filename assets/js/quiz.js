@@ -1,5 +1,5 @@
 /* ============ CONFIG CAPTURE ============ */
-const LEAD_ENDPOINT = "https://formsubmit.co/ajax/allanmaisak@gmail.com";
+const LEAD_ENDPOINT = "/api/quiz";
 const BOOK_URL = "https://cal.com/allan-figfsv/appel-confiance-offert";
 function trackEvent(name,properties){
   if(typeof window.amTrack === 'function'){ window.amTrack(name,properties || {}); }
@@ -332,8 +332,6 @@ function submitLead(e, key){
   const t = score(); const s = namedScores(t);
   const profil = PROFILES[key].name;
   const src = TRACKING.utm_source || "site-direct";
-  const clean = value=>String(value||'').replace(/[|\r\n<>]/g,' ').trim();
-
   const submit = document.querySelector('#capForm button[type="submit"]');
   if(submit){ submit.disabled=true; submit.textContent="Un instant…"; }
 
@@ -353,7 +351,7 @@ function submitLead(e, key){
         niveau_1:s.n1, niveau_2:s.n2, niveau_3:s.n3, source:src,
         consentement_emails:consentMarketing?'oui':'non',
         utm_source:TRACKING.utm_source,utm_medium:TRACKING.utm_medium,utm_campaign:TRACKING.utm_campaign,utm_content:TRACKING.utm_content,utm_term:TRACKING.utm_term,
-        lead_data:`LEADV4|${clean(email)}|${clean(prenom)}|${clean(nom)}|${clean(profil)}|${s.n1}|${s.n2}|${s.n3}|${consentMarketing?'1':'0'}|${clean(TRACKING.utm_source)}|${clean(TRACKING.utm_medium)}|${clean(TRACKING.utm_campaign)}|${clean(TRACKING.utm_content)}|${clean(TRACKING.utm_term)}|quiz`
+        website:""
       })
     }).then(response=>show(response.ok)).catch(()=>show(false));
     setTimeout(()=>show(null), 4500);
